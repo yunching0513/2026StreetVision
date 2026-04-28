@@ -1,0 +1,12 @@
+[general]
+name=QGIS AI Assistant
+qgisMinimumVersion=3.0
+description=一個在 QGIS 中透過自然語言提供操作輔助的 AI 工具。
+version=0.1
+author=Jules
+email=jules@example.com
+about=此工具提供對話介面，並能讀取 QGIS 專案狀態供 AI 參考。
+tracker=
+repository=
+category=Plugins
+icon=icon.png
