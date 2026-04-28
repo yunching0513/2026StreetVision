@@ -1,6 +1,6 @@
 # Film Camera App
 
-A full iOS application built with SwiftUI, AVFoundation, and CoreImage that allows users to take live photos or edit existing photos using 5 unique country-themed film LUTs (Japan, Netherlands, Taiwan, Germany, and France).
+A full iOS application built with SwiftUI, AVFoundation, and CoreImage that allows users to take live photos or edit existing photos using 5 film simulation styles (Kodak Portra 400, Fuji Superia 400, Kodak Gold 200, Fuji Pro 400H, Ilford HP5).
 
 ## How to run
 
