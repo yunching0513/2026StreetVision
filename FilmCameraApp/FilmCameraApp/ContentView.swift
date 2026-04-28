@@ -52,7 +52,7 @@ struct ContentView: View {
     @ViewBuilder
     private func getEditorView() -> some View {
         if let inputImage = inputImage {
-            PhotoEditorView(image: inputImage, luts: cameraManager.luts, isPresented: $navigateToEditor, parentImage: $inputImage)
+            PhotoEditorView(image: inputImage, isPresented: $navigateToEditor, parentImage: $inputImage)
         } else {
             EmptyView()
         }

@@ -6,17 +6,14 @@ struct PhotoEditorView: View {
     @Binding var isPresented: Bool
     @Binding var parentImage: UIImage?
     @State private var processedImage: UIImage?
-    @State private var activeFilter: String = "None"
+    @State private var activeFilter: FilmStyle = .none
     @State private var showSaveAlert = false
 
     // CoreImage
     private let context = CIContext()
-    private let luts: [String: CIFilter]
-    let filters = ["None", "Japan", "Netherlands", "Taiwan", "Germany", "France"]
 
-    init(image: UIImage, luts: [String: CIFilter], isPresented: Binding<Bool>, parentImage: Binding<UIImage?>) {
+    init(image: UIImage, isPresented: Binding<Bool>, parentImage: Binding<UIImage?>) {
         self.originalImage = image
-        self.luts = luts
         self._isPresented = isPresented
         self._parentImage = parentImage
         self._processedImage = State(initialValue: image)
@@ -37,12 +34,12 @@ struct PhotoEditorView: View {
 
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack(spacing: 15) {
-                    ForEach(filters, id: \.self) { filter in
+                    ForEach(FilmStyle.allCases, id: \.self) { filter in
                         Button(action: {
                             activeFilter = filter
                             applyFilter()
                         }) {
-                            Text(filter)
+                            Text(filter.rawValue)
                                 .padding(.vertical, 8)
                                 .padding(.horizontal, 16)
                                 .background(activeFilter == filter ? Color.yellow : Color.gray.opacity(0.5))
@@ -69,21 +66,14 @@ struct PhotoEditorView: View {
     }
 
     private func applyFilter() {
-        guard activeFilter != "None" else {
-            processedImage = originalImage
-            return
-        }
+        guard let ciImage = CIImage(image: originalImage) else { return }
 
-        // Ensure orientation is preserved correctly when converting back and forth from CIImage
-        guard let ciImage = CIImage(image: originalImage),
-              let filter = luts[activeFilter] else { return }
+        let processedCIImage = activeFilter.apply(to: ciImage) ?? ciImage
 
-        filter.setValue(ciImage, forKey: kCIInputImageKey)
-
-        if let outputImage = filter.outputImage,
-           let cgImage = context.createCGImage(outputImage, from: outputImage.extent) {
-            // Restore scale and orientation properties lost during CoreImage rendering
+        if let cgImage = context.createCGImage(processedCIImage, from: processedCIImage.extent) {
             processedImage = UIImage(cgImage: cgImage, scale: originalImage.scale, orientation: originalImage.imageOrientation)
+        } else {
+            processedImage = originalImage
         }
     }
 

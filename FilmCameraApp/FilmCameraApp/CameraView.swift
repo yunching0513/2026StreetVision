@@ -2,7 +2,6 @@ import SwiftUI
 
 struct CameraView: View {
     @ObservedObject var cameraManager: CameraManager
-    let filters = ["None", "Japan", "Netherlands", "Taiwan", "Germany", "France"]
 
     var body: some View {
         ZStack {
@@ -24,11 +23,11 @@ struct CameraView: View {
                 // Filter Selection
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack(spacing: 15) {
-                        ForEach(filters, id: \.self) { filter in
+                        ForEach(FilmStyle.allCases, id: \.self) { filter in
                             Button(action: {
                                 cameraManager.activeFilter = filter
                             }) {
-                                Text(filter)
+                                Text(filter.rawValue)
                                     .padding(.vertical, 8)
                                     .padding(.horizontal, 16)
                                     .background(cameraManager.activeFilter == filter ? Color.yellow : Color.gray.opacity(0.5))

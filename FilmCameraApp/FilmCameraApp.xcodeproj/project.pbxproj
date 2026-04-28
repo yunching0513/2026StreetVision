@@ -13,11 +13,7 @@
 		1A2B3C4D5E6F7G8H9I0J1K2R /* CameraManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F7G8H9I0J1K2S /* CameraManager.swift */; };
 		1A2B3C4D5E6F7G8H9I0J1K2T /* PhotoEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F7G8H9I0J1K2U /* PhotoEditorView.swift */; };
 		1A2B3C4D5E6F7G8H9I0J1K2V /* PhotoPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F7G8H9I0J1K2W /* PhotoPicker.swift */; };
-		1A2B3C4D5E6F7G8H9I0J1K2X /* JapanFilter.cube in Resources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F7G8H9I0J1K2Y /* JapanFilter.cube */; };
-		1A2B3C4D5E6F7G8H9I0J1K2Z /* NetherlandsFilter.cube in Resources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F7G8H9I0J1K3A /* NetherlandsFilter.cube */; };
-		1A2B3C4D5E6F7G8H9I0J1K3B /* TaiwanFilter.cube in Resources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F7G8H9I0J1K3C /* TaiwanFilter.cube */; };
-		1A2B3C4D5E6F7G8H9I0J1K3D /* GermanyFilter.cube in Resources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F7G8H9I0J1K3E /* GermanyFilter.cube */; };
-		1A2B3C4D5E6F7G8H9I0J1K3F /* FranceFilter.cube in Resources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F7G8H9I0J1K3G /* FranceFilter.cube */; };
+		1A2B3C4D5E6F7G8H9I0J1K2X /* FilmStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F7G8H9I0J1K2Y /* FilmStyle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,11 +24,7 @@
 		1A2B3C4D5E6F7G8H9I0J1K2S /* CameraManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraManager.swift; sourceTree = "<group>"; };
 		1A2B3C4D5E6F7G8H9I0J1K2U /* PhotoEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoEditorView.swift; sourceTree = "<group>"; };
 		1A2B3C4D5E6F7G8H9I0J1K2W /* PhotoPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPicker.swift; sourceTree = "<group>"; };
-		1A2B3C4D5E6F7G8H9I0J1K2Y /* JapanFilter.cube */ = {isa = PBXFileReference; lastKnownFileType = file; path = JapanFilter.cube; sourceTree = "<group>"; };
-		1A2B3C4D5E6F7G8H9I0J1K3A /* NetherlandsFilter.cube */ = {isa = PBXFileReference; lastKnownFileType = file; path = NetherlandsFilter.cube; sourceTree = "<group>"; };
-		1A2B3C4D5E6F7G8H9I0J1K3C /* TaiwanFilter.cube */ = {isa = PBXFileReference; lastKnownFileType = file; path = TaiwanFilter.cube; sourceTree = "<group>"; };
-		1A2B3C4D5E6F7G8H9I0J1K3E /* GermanyFilter.cube */ = {isa = PBXFileReference; lastKnownFileType = file; path = GermanyFilter.cube; sourceTree = "<group>"; };
-		1A2B3C4D5E6F7G8H9I0J1K3G /* FranceFilter.cube */ = {isa = PBXFileReference; lastKnownFileType = file; path = FranceFilter.cube; sourceTree = "<group>"; };
+		1A2B3C4D5E6F7G8H9I0J1K2Y /* FilmStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmStyle.swift; sourceTree = "<group>"; };
 		1A2B3C4D5E6F7G8H9I0J1K4A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -64,22 +56,10 @@
 				1A2B3C4D5E6F7G8H9I0J1K2S /* CameraManager.swift */,
 				1A2B3C4D5E6F7G8H9I0J1K2U /* PhotoEditorView.swift */,
 				1A2B3C4D5E6F7G8H9I0J1K2W /* PhotoPicker.swift */,
-				1A2B3C4D5E6F7G8H9I0J1K5A /* LUTs */,
+				1A2B3C4D5E6F7G8H9I0J1K2Y /* FilmStyle.swift */,
 				1A2B3C4D5E6F7G8H9I0J1K4A /* Info.plist */,
 			);
 			path = FilmCameraApp;
-			sourceTree = "<group>";
-		};
-		1A2B3C4D5E6F7G8H9I0J1K5A /* LUTs */ = {
-			isa = PBXGroup;
-			children = (
-				1A2B3C4D5E6F7G8H9I0J1K2Y /* JapanFilter.cube */,
-				1A2B3C4D5E6F7G8H9I0J1K3A /* NetherlandsFilter.cube */,
-				1A2B3C4D5E6F7G8H9I0J1K3C /* TaiwanFilter.cube */,
-				1A2B3C4D5E6F7G8H9I0J1K3E /* GermanyFilter.cube */,
-				1A2B3C4D5E6F7G8H9I0J1K3G /* FranceFilter.cube */,
-			);
-			path = LUTs;
 			sourceTree = "<group>";
 		};
 		1A2B3C4D5E6F7G8H9I0J0005 /* Products */ = {
@@ -142,11 +122,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1A2B3C4D5E6F7G8H9I0J1K2X /* JapanFilter.cube in Resources */,
-				1A2B3C4D5E6F7G8H9I0J1K2Z /* NetherlandsFilter.cube in Resources */,
-				1A2B3C4D5E6F7G8H9I0J1K3B /* TaiwanFilter.cube in Resources */,
-				1A2B3C4D5E6F7G8H9I0J1K3D /* GermanyFilter.cube in Resources */,
-				1A2B3C4D5E6F7G8H9I0J1K3F /* FranceFilter.cube in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -163,6 +138,7 @@
 				1A2B3C4D5E6F7G8H9I0J1K2R /* CameraManager.swift in Sources */,
 				1A2B3C4D5E6F7G8H9I0J1K2T /* PhotoEditorView.swift in Sources */,
 				1A2B3C4D5E6F7G8H9I0J1K2V /* PhotoPicker.swift in Sources */,
+				1A2B3C4D5E6F7G8H9I0J1K2X /* FilmStyle.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
