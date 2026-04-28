@@ -1,0 +1,286 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1A2B3C4D5E6F7G8H9I0J1K2L /* FilmCameraAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F7G8H9I0J1K2M /* FilmCameraAppApp.swift */; };
+		1A2B3C4D5E6F7G8H9I0J1K2N /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F7G8H9I0J1K2O /* ContentView.swift */; };
+		1A2B3C4D5E6F7G8H9I0J1K2P /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F7G8H9I0J1K2Q /* CameraView.swift */; };
+		1A2B3C4D5E6F7G8H9I0J1K2R /* CameraManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F7G8H9I0J1K2S /* CameraManager.swift */; };
+		1A2B3C4D5E6F7G8H9I0J1K2T /* PhotoEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F7G8H9I0J1K2U /* PhotoEditorView.swift */; };
+		1A2B3C4D5E6F7G8H9I0J1K2V /* PhotoPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F7G8H9I0J1K2W /* PhotoPicker.swift */; };
+		1A2B3C4D5E6F7G8H9I0J1K2X /* JapanFilter.cube in Resources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F7G8H9I0J1K2Y /* JapanFilter.cube */; };
+		1A2B3C4D5E6F7G8H9I0J1K2Z /* NetherlandsFilter.cube in Resources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F7G8H9I0J1K3A /* NetherlandsFilter.cube */; };
+		1A2B3C4D5E6F7G8H9I0J1K3B /* TaiwanFilter.cube in Resources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F7G8H9I0J1K3C /* TaiwanFilter.cube */; };
+		1A2B3C4D5E6F7G8H9I0J1K3D /* GermanyFilter.cube in Resources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F7G8H9I0J1K3E /* GermanyFilter.cube */; };
+		1A2B3C4D5E6F7G8H9I0J1K3F /* FranceFilter.cube in Resources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F7G8H9I0J1K3G /* FranceFilter.cube */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1A2B3C4D5E6F7G8H9I0J0001 /* FilmCameraApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FilmCameraApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1A2B3C4D5E6F7G8H9I0J1K2M /* FilmCameraAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmCameraAppApp.swift; sourceTree = "<group>"; };
+		1A2B3C4D5E6F7G8H9I0J1K2O /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		1A2B3C4D5E6F7G8H9I0J1K2Q /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
+		1A2B3C4D5E6F7G8H9I0J1K2S /* CameraManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraManager.swift; sourceTree = "<group>"; };
+		1A2B3C4D5E6F7G8H9I0J1K2U /* PhotoEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoEditorView.swift; sourceTree = "<group>"; };
+		1A2B3C4D5E6F7G8H9I0J1K2W /* PhotoPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPicker.swift; sourceTree = "<group>"; };
+		1A2B3C4D5E6F7G8H9I0J1K2Y /* JapanFilter.cube */ = {isa = PBXFileReference; lastKnownFileType = file; path = JapanFilter.cube; sourceTree = "<group>"; };
+		1A2B3C4D5E6F7G8H9I0J1K3A /* NetherlandsFilter.cube */ = {isa = PBXFileReference; lastKnownFileType = file; path = NetherlandsFilter.cube; sourceTree = "<group>"; };
+		1A2B3C4D5E6F7G8H9I0J1K3C /* TaiwanFilter.cube */ = {isa = PBXFileReference; lastKnownFileType = file; path = TaiwanFilter.cube; sourceTree = "<group>"; };
+		1A2B3C4D5E6F7G8H9I0J1K3E /* GermanyFilter.cube */ = {isa = PBXFileReference; lastKnownFileType = file; path = GermanyFilter.cube; sourceTree = "<group>"; };
+		1A2B3C4D5E6F7G8H9I0J1K3G /* FranceFilter.cube */ = {isa = PBXFileReference; lastKnownFileType = file; path = FranceFilter.cube; sourceTree = "<group>"; };
+		1A2B3C4D5E6F7G8H9I0J1K4A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1A2B3C4D5E6F7G8H9I0J0002 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1A2B3C4D5E6F7G8H9I0J0003 = {
+			isa = PBXGroup;
+			children = (
+				1A2B3C4D5E6F7G8H9I0J0004 /* FilmCameraApp */,
+				1A2B3C4D5E6F7G8H9I0J0005 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		1A2B3C4D5E6F7G8H9I0J0004 /* FilmCameraApp */ = {
+			isa = PBXGroup;
+			children = (
+				1A2B3C4D5E6F7G8H9I0J1K2M /* FilmCameraAppApp.swift */,
+				1A2B3C4D5E6F7G8H9I0J1K2O /* ContentView.swift */,
+				1A2B3C4D5E6F7G8H9I0J1K2Q /* CameraView.swift */,
+				1A2B3C4D5E6F7G8H9I0J1K2S /* CameraManager.swift */,
+				1A2B3C4D5E6F7G8H9I0J1K2U /* PhotoEditorView.swift */,
+				1A2B3C4D5E6F7G8H9I0J1K2W /* PhotoPicker.swift */,
+				1A2B3C4D5E6F7G8H9I0J1K5A /* LUTs */,
+				1A2B3C4D5E6F7G8H9I0J1K4A /* Info.plist */,
+			);
+			path = FilmCameraApp;
+			sourceTree = "<group>";
+		};
+		1A2B3C4D5E6F7G8H9I0J1K5A /* LUTs */ = {
+			isa = PBXGroup;
+			children = (
+				1A2B3C4D5E6F7G8H9I0J1K2Y /* JapanFilter.cube */,
+				1A2B3C4D5E6F7G8H9I0J1K3A /* NetherlandsFilter.cube */,
+				1A2B3C4D5E6F7G8H9I0J1K3C /* TaiwanFilter.cube */,
+				1A2B3C4D5E6F7G8H9I0J1K3E /* GermanyFilter.cube */,
+				1A2B3C4D5E6F7G8H9I0J1K3G /* FranceFilter.cube */,
+			);
+			path = LUTs;
+			sourceTree = "<group>";
+		};
+		1A2B3C4D5E6F7G8H9I0J0005 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1A2B3C4D5E6F7G8H9I0J0001 /* FilmCameraApp.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1A2B3C4D5E6F7G8H9I0J0006 /* FilmCameraApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1A2B3C4D5E6F7G8H9I0J0007 /* Build configuration list for PBXNativeTarget "FilmCameraApp" */;
+			buildPhases = (
+				1A2B3C4D5E6F7G8H9I0J0008 /* Sources */,
+				1A2B3C4D5E6F7G8H9I0J0002 /* Frameworks */,
+				1A2B3C4D5E6F7G8H9I0J0009 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FilmCameraApp;
+			productName = FilmCameraApp;
+			productReference = 1A2B3C4D5E6F7G8H9I0J0001 /* FilmCameraApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1A2B3C4D5E6F7G8H9I0J000A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1400;
+				LastUpgradeCheck = 1400;
+			};
+			buildConfigurationList = 1A2B3C4D5E6F7G8H9I0J000B /* Build configuration list for PBXProject "FilmCameraApp" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 1A2B3C4D5E6F7G8H9I0J0003;
+			productRefGroup = 1A2B3C4D5E6F7G8H9I0J0005 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1A2B3C4D5E6F7G8H9I0J0006 /* FilmCameraApp */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1A2B3C4D5E6F7G8H9I0J0009 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1A2B3C4D5E6F7G8H9I0J1K2X /* JapanFilter.cube in Resources */,
+				1A2B3C4D5E6F7G8H9I0J1K2Z /* NetherlandsFilter.cube in Resources */,
+				1A2B3C4D5E6F7G8H9I0J1K3B /* TaiwanFilter.cube in Resources */,
+				1A2B3C4D5E6F7G8H9I0J1K3D /* GermanyFilter.cube in Resources */,
+				1A2B3C4D5E6F7G8H9I0J1K3F /* FranceFilter.cube in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1A2B3C4D5E6F7G8H9I0J0008 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1A2B3C4D5E6F7G8H9I0J1K2L /* FilmCameraAppApp.swift in Sources */,
+				1A2B3C4D5E6F7G8H9I0J1K2N /* ContentView.swift in Sources */,
+				1A2B3C4D5E6F7G8H9I0J1K2P /* CameraView.swift in Sources */,
+				1A2B3C4D5E6F7G8H9I0J1K2R /* CameraManager.swift in Sources */,
+				1A2B3C4D5E6F7G8H9I0J1K2T /* PhotoEditorView.swift in Sources */,
+				1A2B3C4D5E6F7G8H9I0J1K2V /* PhotoPicker.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		1A2B3C4D5E6F7G8H9I0J000C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		1A2B3C4D5E6F7G8H9I0J000D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		1A2B3C4D5E6F7G8H9I0J000E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = FilmCameraApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.FilmCameraApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		1A2B3C4D5E6F7G8H9I0J000F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = FilmCameraApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.FilmCameraApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1A2B3C4D5E6F7G8H9I0J000B /* Build configuration list for PBXProject "FilmCameraApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1A2B3C4D5E6F7G8H9I0J000C /* Debug */,
+				1A2B3C4D5E6F7G8H9I0J000D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1A2B3C4D5E6F7G8H9I0J0007 /* Build configuration list for PBXNativeTarget "FilmCameraApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1A2B3C4D5E6F7G8H9I0J000E /* Debug */,
+				1A2B3C4D5E6F7G8H9I0J000F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1A2B3C4D5E6F7G8H9I0J000A /* Project object */;
+}

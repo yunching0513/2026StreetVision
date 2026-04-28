@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>NSCameraUsageDescription</key>
+    <string>We need access to your camera to take film photos.</string>
+    <key>NSPhotoLibraryAddUsageDescription</key>
+    <string>We need access to save the filtered photos to your library.</string>
+    <key>NSPhotoLibraryUsageDescription</key>
+    <string>We need access to read and save the filtered photos to your library.</string>
+    <key>UILaunchScreen</key>
+    <dict/>
+</dict>
+</plist>
