@@ -1,0 +1,1078 @@
+<!DOCTYPE html>
+<!-- saved from url=(0109)file:///Users/yunching0513/Downloads/VZT_%E7%86%B1%E5%82%B7%E5%AE%B3%E8%B3%87%E8%A8%8A%E5%9C%96%E8%A1%A8.html -->
+<html lang="zh-TW"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>台灣熱傷害就診人次 — VZT 資料報告</title>
+<link href="./台灣熱傷害就診人次 — VZT 資料報告_files/css2" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --lime:  #C8D400;
+  --lime-dk: #A8B200;
+  --black: #1A1A1A;
+  --g1:    #4A4A4A;
+  --g2:    #888888;
+  --g3:    #D0D0D0;
+  --g4:    #F5F5F3;
+  --white: #FFFFFF;
+  --zh: 'Noto Sans TC', sans-serif;
+  --en: 'Space Grotesk', sans-serif;
+  --mono: 'JetBrains Mono', monospace;
+}
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--zh);
+  background: var(--white);
+  color: var(--black);
+  line-height: 1.85;
+  font-weight: 300;
+}
+
+/* PROGRESS */
+.prog { position:fixed; top:0; left:0; height:2px; background:var(--lime); z-index:200; width:0; transition:width .1s linear; }
+
+/* STICKY NAV */
+.snav {
+  position:fixed; top:0; left:0; right:0; z-index:100;
+  background:rgba(26,26,26,.96); backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(255,255,255,.08);
+  display:flex; align-items:center; justify-content:space-between;
+  padding:0 60px; height:48px;
+  transform:translateY(-100%); transition:transform .3s ease;
+}
+.snav.on { transform:translateY(0); }
+.snav-brand { font-family:var(--en); font-size:10px; font-weight:600; letter-spacing:.22em; text-transform:uppercase; color:rgba(255,255,255,.35); }
+.snav-links { display:flex; gap:28px; list-style:none; }
+.snav-links a { font-family:var(--en); font-size:10px; font-weight:600; letter-spacing:.16em; text-transform:uppercase; color:rgba(255,255,255,.35); text-decoration:none; transition:color .2s; }
+.snav-links a:hover, .snav-links a.act { color:var(--lime); }
+
+/* HERO */
+.hero {
+  background:var(--black); color:var(--white);
+  padding:64px 80px; min-height:100vh;
+  display:flex; flex-direction:column;
+  position:relative; overflow:hidden;
+}
+.hero-top { display:flex; justify-content:space-between; align-items:flex-start; position:relative; z-index:2; }
+.hero-badge {
+  border:1px solid rgba(255,255,255,.25); padding:8px 16px;
+  font-family:var(--en); font-size:11px; font-weight:600;
+  letter-spacing:.2em; text-transform:uppercase; color:rgba(255,255,255,.45);
+  animation:fadeUp .7s .1s both;
+}
+.hero-tag { font-family:var(--en); font-size:10px; letter-spacing:.16em; color:rgba(255,255,255,.35); text-align:right; line-height:1.8; animation:fadeUp .7s .2s both; }
+
+.hero-num {
+  font-family:var(--en); font-size:clamp(160px,20vw,300px);
+  font-weight:300; line-height:.82; letter-spacing:-.04em;
+  color:rgba(200,212,0,.95); user-select:none;
+  animation:fadeIn .9s .3s both;
+  position:relative; z-index:2;
+  margin:auto 0 0;
+}
+.hero-num sup { font-size:.32em; color:rgba(200,212,0,.5); letter-spacing:0; vertical-align:super; margin-left:4px; }
+
+.hero-deco {
+  position:absolute; right:-60px; top:50%; transform:translateY(-50%);
+  opacity:.08; z-index:1; animation:rotateSlow 80s linear infinite;
+}
+
+.hero-body { z-index:2; position:relative; animation:fadeUp .9s .5s both; }
+.hero-en { font-family:var(--en); font-size:13px; font-weight:500; letter-spacing:.24em; text-transform:uppercase; color:var(--lime); margin-bottom:16px; }
+.hero-zh { font-size:clamp(32px,4vw,56px); font-weight:100; letter-spacing:.06em; line-height:1.3; }
+.hero-zh strong { display:block; font-size:clamp(14px,1.8vw,24px); font-weight:700; letter-spacing:.16em; color:rgba(255,255,255,.6); margin-top:12px; }
+.hero-sub { margin-top:22px; font-size:16px; color:rgba(255,255,255,.55); line-height:1.9; border-left:3px solid var(--lime); padding-left:18px; max-width:600px; }
+
+.hero-foot {
+  display:flex; justify-content:space-between; align-items:flex-end;
+  padding-top:28px; border-top:1px solid rgba(255,255,255,.1); margin-top:56px;
+  z-index:2; position:relative; animation:fadeUp .9s .7s both;
+}
+.hero-src { font-size:12px; color:rgba(255,255,255,.35); line-height:1.9; }
+.hero-src strong { color:rgba(255,255,255,.7); font-weight:400; }
+.hero-toc-mini { font-family:var(--en); font-size:10px; letter-spacing:.1em; color:rgba(255,255,255,.25); text-align:right; line-height:1.9; }
+
+/* WRAP */
+.wrap { max-width:1280px; margin:0 auto; padding:0 80px; }
+
+/* SECTION */
+section {
+  padding:112px 0; border-top:1px solid var(--g3);
+  opacity:0; transform:translateY(28px);
+  transition:opacity .65s ease, transform .65s ease;
+}
+section.in { opacity:1; transform:translateY(0); }
+section:first-of-type { border-top:none; }
+
+.sec-label { display:flex; align-items:baseline; gap:22px; margin-bottom:52px; }
+.sec-num { font-family:var(--en); font-size:84px; font-weight:300; line-height:.9; color:var(--lime); letter-spacing:-.02em; }
+.sec-head { flex:1; padding-bottom:12px; border-bottom:1px solid var(--g3); }
+.sec-en { font-family:var(--en); font-size:11px; font-weight:600; letter-spacing:.22em; text-transform:uppercase; color:var(--g2); margin-bottom:6px; }
+.sec-title { font-size:44px; font-weight:100; letter-spacing:.04em; line-height:1.3; }
+.sec-title strong { font-weight:700; }
+
+.lead { font-size:20px; font-weight:300; line-height:1.95; color:var(--g1); max-width:860px; margin-bottom:56px; }
+.lead strong { font-weight:700; color:var(--black); }
+
+.sub-h { display:flex; align-items:baseline; gap:14px; margin:52px 0 22px; }
+.sub-n { font-family:var(--en); font-size:13px; font-weight:600; color:var(--lime-dk); letter-spacing:.1em; }
+.sub-t { font-size:24px; font-weight:700; letter-spacing:.04em; }
+
+/* KPI STRIP */
+.kpi-strip { display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:var(--g3); border:1px solid var(--g3); margin-bottom:64px; }
+.kpi {
+  background:var(--white); padding:28px 24px 24px;
+  border-bottom:4px solid var(--lime);
+}
+.kpi-label { font-family:var(--en); font-size:10px; font-weight:600; letter-spacing:.18em; text-transform:uppercase; color:var(--g2); margin-bottom:14px; }
+.kpi-val { font-family:var(--en); font-size:52px; font-weight:300; line-height:.85; letter-spacing:-.02em; color:var(--black); margin-bottom:10px; }
+.kpi-val .unit { font-size:.4em; color:var(--g2); font-weight:400; margin-left:2px; }
+.kpi-desc { font-size:13px; color:var(--g2); line-height:1.6; }
+.kpi.hi .kpi-val { color:var(--lime-dk); }
+
+/* CHART CONTAINERS */
+.chart-box { background:var(--g4); padding:40px; margin-bottom:24px; }
+.chart-hd { display:flex; justify-content:space-between; align-items:baseline; margin-bottom:28px; padding-bottom:14px; border-bottom:1px solid var(--g3); }
+.chart-hd-name { font-size:16px; font-weight:700; letter-spacing:.04em; }
+.chart-hd-tag { font-family:var(--mono); font-size:10px; color:var(--g2); }
+
+/* TREND CHART */
+.trend-svg { width:100%; overflow:visible; }
+
+/* MONTH BARS */
+.month-grid { display:flex; align-items:flex-end; gap:8px; height:120px; }
+.mb { flex:1; display:flex; flex-direction:column; align-items:center; gap:6px; height:100%; justify-content:flex-end; }
+.mb-bar { width:100%; background:var(--g3); border-radius:0; }
+.mb-bar.peak { background:var(--lime); }
+.mb-bar.hi { background:var(--g1); }
+.mb-lbl { font-family:var(--en); font-size:9px; color:var(--g2); letter-spacing:.04em; }
+
+/* AGE STACKED */
+.age-grid { display:flex; align-items:flex-end; gap:5px; height:180px; }
+.age-col { flex:1; display:flex; flex-direction:column-reverse; align-items:center; position:relative; }
+.age-seg { width:100%; }
+.age-xlbl { position:absolute; bottom:-20px; font-family:var(--en); font-size:9px; color:var(--g2); }
+.age-xlbl.pk { color:var(--lime-dk); font-weight:600; }
+
+/* SEX BARS */
+.sex-list { display:flex; flex-direction:column; gap:7px; }
+.sex-row { display:flex; align-items:center; gap:10px; }
+.sex-yr { font-family:var(--en); font-size:10px; color:var(--g2); min-width:34px; }
+.sex-track { flex:1; height:16px; display:flex; overflow:hidden; }
+.sex-m { background:var(--black); display:flex; align-items:center; justify-content:flex-end; padding-right:5px; }
+.sex-f { background:var(--g3); display:flex; align-items:center; padding-left:5px; }
+.sex-m span, .sex-f span { font-family:var(--en); font-size:8px; color:var(--white); white-space:nowrap; }
+.sex-f span { color:var(--g2); }
+.sex-tot { font-family:var(--mono); font-size:10px; color:var(--g2); min-width:40px; text-align:right; }
+
+/* ELDER LINE */
+.elder-svg { width:100%; overflow:visible; }
+
+/* LEGEND */
+.legend { display:flex; gap:20px; flex-wrap:wrap; margin-top:16px; }
+.leg-item { display:flex; align-items:center; gap:7px; font-size:12px; color:var(--g2); }
+.leg-dot { width:12px; height:12px; }
+
+/* HIGHLIGHT */
+.hl { border-left:4px solid var(--lime); padding:20px 24px; font-size:18px; font-weight:300; line-height:1.85; max-width:800px; margin:32px 0; }
+.hl strong { font-weight:700; color:var(--black); }
+
+/* TIMELINE */
+.tl { background:var(--white); }
+.tl-row { display:grid; grid-template-columns:90px 1fr; border-bottom:1px solid var(--g3); }
+.tl-row:last-child { border-bottom:none; }
+.tl-y { font-family:var(--en); font-size:17px; font-weight:600; color:var(--lime-dk); padding:16px 20px 16px 0; border-right:3px solid var(--lime); text-align:right; }
+.tl-c { padding:16px 0 16px 22px; font-size:15px; color:var(--g1); }
+
+/* STAT CARD */
+.stat-inline { display:inline-block; background:var(--white); padding:20px 26px; border-bottom:4px solid var(--lime); }
+.stat-n { font-family:var(--en); font-size:80px; font-weight:300; line-height:.85; }
+.stat-n .u { font-size:.38em; color:var(--g2); }
+.stat-l { font-size:14px; color:var(--g1); margin-top:10px; line-height:1.5; }
+
+/* GRID LAYOUTS */
+.row2 { display:grid; grid-template-columns:1fr 1fr; gap:20px; }
+.row32 { display:grid; grid-template-columns:1.65fr 1fr; gap:20px; }
+
+/* FOOTER */
+footer { background:var(--black); color:var(--white); padding:80px; margin-top:80px; }
+.foot-g { display:grid; grid-template-columns:2fr 1fr 1fr; gap:60px; }
+.foot-h { font-family:var(--en); font-size:11px; font-weight:600; letter-spacing:.2em; text-transform:uppercase; color:var(--lime); margin-bottom:16px; }
+.foot-meta { font-size:13px; color:rgba(255,255,255,.4); line-height:1.9; }
+.foot-meta strong { color:var(--white); font-weight:400; }
+.foot-list { list-style:none; }
+.foot-list li { font-size:13px; color:rgba(255,255,255,.55); padding:3px 0; font-weight:300; }
+.foot-bottom { padding-top:28px; margin-top:52px; border-top:1px solid rgba(255,255,255,.1); display:flex; justify-content:space-between; font-family:var(--en); font-size:10px; letter-spacing:.16em; color:rgba(255,255,255,.25); }
+
+/* BACK TOP */
+.btt { position:fixed; bottom:32px; right:32px; width:44px; height:44px; background:var(--lime); border:none; cursor:pointer; font-size:16px; display:flex; align-items:center; justify-content:center; opacity:0; transition:opacity .3s; z-index:100; }
+.btt.on { opacity:1; }
+.btt:hover { background:var(--lime-dk); }
+
+/* ANIMATIONS */
+@keyframes fadeUp { from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)} }
+@keyframes fadeIn  { from{opacity:0}to{opacity:1} }
+@keyframes rotateSlow { to{transform:translateY(-50%) rotate(360deg)} }
+
+/* TOOLTIP */
+.tt { position:fixed; pointer-events:none; z-index:99; background:var(--black); border-top:2px solid var(--lime); padding:10px 16px; font-size:12px; display:none; box-shadow:0 8px 24px rgba(0,0,0,.3); }
+.tt-y { font-family:var(--en); font-size:10px; color:var(--g2); letter-spacing:.1em; margin-bottom:3px; }
+.tt-v { font-family:var(--en); font-size:22px; font-weight:300; color:var(--white); }
+.tt-u { font-size:12px; color:var(--g2); }
+
+/* NOTE */
+.note { font-size:12px; color:var(--g2); margin-top:12px; font-family:var(--en); letter-spacing:.04em; }
+</style>
+</head>
+<body>
+
+<div class="prog" id="prog" style="width: 0%;"></div>
+
+<nav class="snav" id="snav">
+  <div class="snav-brand">VZT DATA REPORT · 熱傷害就診人次</div>
+  <ul class="snav-links">
+    <li><a href="file:///Users/yunching0513/Downloads/VZT_%E7%86%B1%E5%82%B7%E5%AE%B3%E8%B3%87%E8%A8%8A%E5%9C%96%E8%A1%A8.html#s01" class="act">01 總覽</a></li>
+    <li><a href="file:///Users/yunching0513/Downloads/VZT_%E7%86%B1%E5%82%B7%E5%AE%B3%E8%B3%87%E8%A8%8A%E5%9C%96%E8%A1%A8.html#s02" class="">02 趨勢</a></li>
+    <li><a href="file:///Users/yunching0513/Downloads/VZT_%E7%86%B1%E5%82%B7%E5%AE%B3%E8%B3%87%E8%A8%8A%E5%9C%96%E8%A1%A8.html#s03" class="">03 年齡</a></li>
+    <li><a href="file:///Users/yunching0513/Downloads/VZT_%E7%86%B1%E5%82%B7%E5%AE%B3%E8%B3%87%E8%A8%8A%E5%9C%96%E8%A1%A8.html#s04" class="">04 性別</a></li>
+    <li><a href="file:///Users/yunching0513/Downloads/VZT_%E7%86%B1%E5%82%B7%E5%AE%B3%E8%B3%87%E8%A8%8A%E5%9C%96%E8%A1%A8.html#s05" class="">05 季節</a></li>
+    <li><a href="file:///Users/yunching0513/Downloads/VZT_%E7%86%B1%E5%82%B7%E5%AE%B3%E8%B3%87%E8%A8%8A%E5%9C%96%E8%A1%A8.html#s06" class="">06 高齡</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<header class="hero" id="hero">
+  <div class="hero-top">
+    <div class="hero-badge">VZT DATA REPORT · 2026.05</div>
+    <div class="hero-tag">衛福部國健署 / 疾管署<br>2011–2024 · N = 33,859</div>
+  </div>
+
+  <svg class="hero-deco" width="700" height="700" viewBox="0 0 700 700" aria-hidden="true">
+    <circle cx="350" cy="350" r="280" fill="none" stroke="#C8D400" stroke-width="100"></circle>
+    <circle cx="350" cy="350" r="280" fill="none" stroke="#C8D400" stroke-width="100" stroke-dasharray="880 1760" style="transform-origin:350px 350px;transform:rotate(-90deg)" opacity=".5"></circle>
+  </svg>
+
+  <div class="hero-num" style="margin-top:auto">
+    3,942<sup>人</sup>
+  </div>
+
+  <div class="hero-body" style="margin-top:44px">
+    <div class="hero-en">Heat Illness Emergency Visits · Taiwan · Data Analysis</div>
+    <div class="hero-zh">
+      台灣熱傷害<br>就診人次分析
+      <strong>2011 — 2024</strong>
+    </div>
+    <div class="hero-sub">
+      2024年台灣熱傷害就診人次達3,942人，為2011年基準值1,487人的<strong>2.65倍</strong>，首度突破3,000人次門檻，創下14年來歷史新高。
+    </div>
+  </div>
+
+  <div class="hero-foot">
+    <div class="hero-src">
+      資料來源：<strong>衛生福利部國民健康署</strong> / 疾管署「即時疫情監視及預警系統」<br>
+      熱急症就醫數據 · 政府資料開放平台 · 統計截至 2026.01.29
+    </div>
+    <div class="hero-toc-mini">
+      01 — 總覽 KPI<br>
+      02 — 歷年趨勢<br>
+      03 — 年齡層結構<br>
+      04 — 性別分布<br>
+      05 — 月份季節性<br>
+      06 — 高齡族群
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+<!-- 01 KPI -->
+<section id="s01" class="in">
+  <div class="sec-label">
+    <div class="sec-num">01</div>
+    <div class="sec-head">
+      <div class="sec-en">Key Indicators · Overview</div>
+      <div class="sec-title">核心<strong>數字</strong></div>
+    </div>
+  </div>
+
+  <div class="kpi-strip">
+    <div class="kpi hi">
+      <div class="kpi-label">2024 歷史最高</div>
+      <div class="kpi-val">3,942<span class="unit">人</span></div>
+      <div class="kpi-desc">首度突破 3,000 人次門檻</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-label">14 年累計成長</div>
+      <div class="kpi-val">+165<span class="unit">%</span></div>
+      <div class="kpi-desc">2011 年基準 1,487 人次</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-label">男女比例（歷年平均）</div>
+      <div class="kpi-val">3<span class="unit">: 1</span></div>
+      <div class="kpi-desc">男性佔約 75%，與戶外工作結構有關</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-label">就診高峰月份</div>
+      <div class="kpi-val">7<span class="unit">月</span></div>
+      <div class="kpi-desc">佔全年累計總量 27.7%</div>
+    </div>
+  </div>
+
+  <div class="hl">
+    台灣百年來均溫增加 <strong>1.0–1.4°C</strong>，超過全球平均。2011 年後熱傷害就診人數<strong>從未低於 2,000 人次</strong>（2014 年起），氣候變遷與都市熱島效應的複合衝擊，正以可量測的速度累積。
+  </div>
+</section>
+
+<!-- 02 TREND -->
+<section id="s02" class="in">
+  <div class="sec-label">
+    <div class="sec-num">02</div>
+    <div class="sec-head">
+      <div class="sec-en">Annual Trend · 2011–2024</div>
+      <div class="sec-title">歷年<strong>趨勢</strong></div>
+    </div>
+  </div>
+
+  <p class="lead">三個歷史峰值出現在 <strong>2016 年、2020 年與 2024 年</strong>，每一次都刷新紀錄。2021 年因 COVID-19 三級警戒，民眾大幅減少戶外活動，就診人次出現短暫下滑。</p>
+
+  <div class="chart-box">
+    <div class="chart-hd">
+      <div class="chart-hd-name">全年就診人次（2011–2024）</div>
+      <div class="chart-hd-tag">yearly total · n=14 years</div>
+    </div>
+    <svg class="trend-svg" id="trendSvg" viewBox="0 0 1100 260" preserveAspectRatio="xMidYMid meet"><line x1="48" x2="1080" y1="230" y2="230" stroke="#D0D0D0" stroke-width="1"></line><text x="40" y="234" text-anchor="end" fill="#888888" font-family="Space Grotesk" font-size="11">0</text><line x1="48" x2="1080" y1="185" y2="185" stroke="#EBEBEB" stroke-width="0.5"></line><text x="40" y="189" text-anchor="end" fill="#888888" font-family="Space Grotesk" font-size="11">1K</text><line x1="48" x2="1080" y1="140" y2="140" stroke="#EBEBEB" stroke-width="0.5"></line><text x="40" y="144" text-anchor="end" fill="#888888" font-family="Space Grotesk" font-size="11">2K</text><line x1="48" x2="1080" y1="95" y2="95" stroke="#EBEBEB" stroke-width="0.5"></line><text x="40" y="99" text-anchor="end" fill="#888888" font-family="Space Grotesk" font-size="11">3K</text><line x1="48" x2="1080" y1="50.00000000000001" y2="50.00000000000001" stroke="#EBEBEB" stroke-width="0.5"></line><text x="40" y="54.00000000000001" text-anchor="end" fill="#888888" font-family="Space Grotesk" font-size="11">4K</text><defs><lineargradient id="tg" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#C8D400" stop-opacity="0.10"></stop><stop offset="100%" stop-color="#C8D400" stop-opacity="0"></stop></lineargradient></defs><path d="M48,230 L48,163.085 L127.38461538461539,158.81 L206.76923076923077,143.32999999999998 L286.1538461538462,122.54 L365.53846153846155,135.815 L444.92307692307696,101.21 L524.3076923076924,108.95 L603.6923076923076,133.25 L683.0769230769231,139.19 L762.4615384615385,105.62 L841.8461538461539,138.875 L921.2307692307692,131.26999999999998 L1000.6153846153846,106.78999999999999 L1080,52.61000000000001 L1080,230 Z" fill="url(#tg)"></path><path d="M48,163.085 L127.38461538461539,158.81 L206.76923076923077,143.32999999999998 L286.1538461538462,122.54 L365.53846153846155,135.815 L444.92307692307696,101.21 L524.3076923076924,108.95 L603.6923076923076,133.25 L683.0769230769231,139.19 L762.4615384615385,105.62 L841.8461538461539,138.875 L921.2307692307692,131.26999999999998 L1000.6153846153846,106.78999999999999 L1080,52.61000000000001" stroke="#D0D0D0" stroke-width="1.5" fill="none"></path><rect x="25.88571428571429" y="163.085" width="44.22857142857142" height="66.91499999999999" fill="#F5F5F3" style="cursor: pointer;"></rect><text x="48" y="254" text-anchor="middle" fill="#888888" font-family="Space Grotesk" font-size="9" font-weight="400">11</text><rect x="105.27032967032967" y="158.81" width="44.22857142857142" height="71.19" fill="#F5F5F3" style="cursor: pointer;"></rect><text x="127.38461538461539" y="254" text-anchor="middle" fill="#888888" font-family="Space Grotesk" font-size="9" font-weight="400">12</text><rect x="184.65494505494507" y="143.32999999999998" width="44.22857142857142" height="86.67000000000002" fill="#F5F5F3" style="cursor: pointer;"></rect><text x="206.76923076923077" y="254" text-anchor="middle" fill="#888888" font-family="Space Grotesk" font-size="9" font-weight="400">13</text><rect x="264.0395604395605" y="122.54" width="44.22857142857142" height="107.46" fill="#F5F5F3" style="cursor: pointer;"></rect><text x="286.1538461538462" y="254" text-anchor="middle" fill="#888888" font-family="Space Grotesk" font-size="9" font-weight="400">14</text><rect x="343.42417582417585" y="135.815" width="44.22857142857142" height="94.185" fill="#F5F5F3" style="cursor: pointer;"></rect><text x="365.53846153846155" y="254" text-anchor="middle" fill="#888888" font-family="Space Grotesk" font-size="9" font-weight="400">15</text><rect x="422.80879120879126" y="101.21" width="44.22857142857142" height="128.79000000000002" fill="#C8D400" style="cursor: pointer;"></rect><text x="444.92307692307696" y="91.21" text-anchor="middle" fill="#C8D400" font-family="Space Grotesk" font-size="12" font-weight="600">2,862</text><text x="444.92307692307696" y="254" text-anchor="middle" fill="#A8B200" font-family="Space Grotesk" font-size="11" font-weight="600">16</text><rect x="502.1934065934067" y="108.95" width="44.22857142857142" height="121.05" fill="#F5F5F3" style="cursor: pointer;"></rect><text x="524.3076923076924" y="254" text-anchor="middle" fill="#888888" font-family="Space Grotesk" font-size="9" font-weight="400">17</text><rect x="581.5780219780219" y="133.25" width="44.22857142857142" height="96.75" fill="#F5F5F3" style="cursor: pointer;"></rect><text x="603.6923076923076" y="254" text-anchor="middle" fill="#888888" font-family="Space Grotesk" font-size="9" font-weight="400">18</text><rect x="660.9626373626373" y="139.19" width="44.22857142857142" height="90.81" fill="#F5F5F3" style="cursor: pointer;"></rect><text x="683.0769230769231" y="254" text-anchor="middle" fill="#888888" font-family="Space Grotesk" font-size="9" font-weight="400">19</text><rect x="740.3472527472527" y="105.62" width="44.22857142857142" height="124.38" fill="#C8D400" style="cursor: pointer;"></rect><text x="762.4615384615385" y="95.62" text-anchor="middle" fill="#C8D400" font-family="Space Grotesk" font-size="12" font-weight="600">2,764</text><text x="762.4615384615385" y="254" text-anchor="middle" fill="#A8B200" font-family="Space Grotesk" font-size="11" font-weight="600">20</text><rect x="819.7318681318682" y="138.875" width="44.22857142857142" height="91.125" fill="#D0D0D0" style="cursor: pointer;"></rect><text x="841.8461538461539" y="254" text-anchor="middle" fill="#888888" font-family="Space Grotesk" font-size="9" font-weight="400">21</text><text x="841.8461538461539" y="128.875" text-anchor="middle" fill="#888888" font-family="Noto Sans TC" font-size="9">疫情警戒</text><rect x="899.1164835164834" y="131.26999999999998" width="44.22857142857142" height="98.73000000000002" fill="#F5F5F3" style="cursor: pointer;"></rect><text x="921.2307692307692" y="254" text-anchor="middle" fill="#888888" font-family="Space Grotesk" font-size="9" font-weight="400">22</text><rect x="978.5010989010989" y="106.78999999999999" width="44.22857142857142" height="123.21000000000001" fill="#F5F5F3" style="cursor: pointer;"></rect><text x="1000.6153846153846" y="254" text-anchor="middle" fill="#888888" font-family="Space Grotesk" font-size="9" font-weight="400">23</text><rect x="1057.8857142857144" y="52.61000000000001" width="44.22857142857142" height="177.39" fill="#C8D400" style="cursor: pointer;"></rect><text x="1080" y="42.61000000000001" text-anchor="middle" fill="#C8D400" font-family="Space Grotesk" font-size="12" font-weight="600">3,942</text><text x="1080" y="254" text-anchor="middle" fill="#A8B200" font-family="Space Grotesk" font-size="11" font-weight="600">24</text></svg>
+    <div class="legend">
+      <div class="leg-item"><div class="leg-dot" style="background:var(--lime)"></div>歷史峰值</div>
+      <div class="leg-item"><div class="leg-dot" style="background:var(--g3)"></div>一般年份</div>
+      <div class="leg-item"><div class="leg-dot" style="background:var(--g2);opacity:.4"></div>2021 疫情警戒</div>
+    </div>
+  </div>
+
+  <div class="tl" style="margin-top:8px">
+    <div class="tl-row">
+      <div class="tl-y">2014</div>
+      <div class="tl-c">就診人次首度突破 <strong>2,000 人次</strong>，此後再未跌破此門檻。</div>
+    </div>
+    <div class="tl-row">
+      <div class="tl-y">2016</div>
+      <div class="tl-c">當年峰值 <strong>2,862 人</strong>，台中、高雄極端高溫天數均超過 30 天。</div>
+    </div>
+    <div class="tl-row">
+      <div class="tl-y">2021</div>
+      <div class="tl-c">疫情三級警戒影響，戶外活動量驟降，就診人次降至 <strong>2,025 人</strong>。</div>
+    </div>
+    <div class="tl-row">
+      <div class="tl-y">2024</div>
+      <div class="tl-c">歷史新高 <strong>3,942 人</strong>，首度突破 3,000 人次，全球同步創下史上最熱夏季。</div>
+    </div>
+  </div>
+</section>
+
+<!-- 03 AGE -->
+<section id="s03" class="in">
+  <div class="sec-label">
+    <div class="sec-num">03</div>
+    <div class="sec-head">
+      <div class="sec-en">Age Structure · Five Groups</div>
+      <div class="sec-title">年齡層<strong>結構</strong></div>
+    </div>
+  </div>
+
+  <p class="lead"><strong>19–64 歲</strong>勞動年齡族群佔歷年總量的 73.3%，為最大宗。但值得警惕的是 <strong>65 歲以上長者</strong>在 2024 年的就診數較 2011 年成長逾 <strong>2.8 倍</strong>，高齡化與高溫的雙重衝擊正在加速。</p>
+
+  <div class="row32">
+    <div class="chart-box">
+      <div class="chart-hd">
+        <div class="chart-hd-name">年齡層堆疊（2011–2024）</div>
+        <div class="chart-hd-tag">stacked · 5 age groups</div>
+      </div>
+      <div style="position:relative;padding-bottom:28px">
+        <div class="age-grid" id="ageGrid"><div class="age-col" style="height: 100%;"><div class="age-seg" style="height: 5.84881px; background: rgb(26, 26, 26);"></div><div class="age-seg" style="height: 4.82192px; background: rgb(74, 74, 74);"></div><div class="age-seg" style="height: 47.9066px; background: rgb(200, 212, 0);"></div><div class="age-seg" style="height: 4.3308px; background: rgb(208, 208, 208);"></div><div class="age-seg" style="height: 3.4825px; background: rgb(232, 232, 230);"></div><div class="age-xlbl">11</div></div><div class="age-col" style="height: 100%;"><div class="age-seg" style="height: 6.60781px; background: rgb(26, 26, 26);"></div><div class="age-seg" style="height: 4.68798px; background: rgb(74, 74, 74);"></div><div class="age-seg" style="height: 52.2374px; background: rgb(200, 212, 0);"></div><div class="age-seg" style="height: 4.50939px; background: rgb(208, 208, 208);"></div><div class="age-seg" style="height: 2.58955px; background: rgb(232, 232, 230);"></div><div class="age-xlbl">12</div></div><div class="age-col" style="height: 100%;"><div class="age-seg" style="height: 6.83105px; background: rgb(26, 26, 26);"></div><div class="age-seg" style="height: 7.54541px; background: rgb(74, 74, 74);"></div><div class="age-seg" style="height: 62.3278px; background: rgb(200, 212, 0);"></div><div class="age-seg" style="height: 6.33993px; background: rgb(208, 208, 208);"></div><div class="age-seg" style="height: 2.94673px; background: rgb(232, 232, 230);"></div><div class="age-xlbl">13</div></div><div class="age-col" style="height: 100%;"><div class="age-seg" style="height: 9.82243px; background: rgb(26, 26, 26);"></div><div class="age-seg" style="height: 8.17047px; background: rgb(74, 74, 74);"></div><div class="age-seg" style="height: 78.5794px; background: rgb(200, 212, 0);"></div><div class="age-seg" style="height: 6.51852px; background: rgb(208, 208, 208);"></div><div class="age-seg" style="height: 3.52714px; background: rgb(232, 232, 230);"></div><div class="age-xlbl">14</div></div><div class="age-col" style="height: 100%;"><div class="age-seg" style="height: 8.5723px; background: rgb(26, 26, 26);"></div><div class="age-seg" style="height: 6.29528px; background: rgb(74, 74, 74);"></div><div class="age-seg" style="height: 69.8285px; background: rgb(200, 212, 0);"></div><div class="age-seg" style="height: 6.11669px; background: rgb(208, 208, 208);"></div><div class="age-seg" style="height: 2.6342px; background: rgb(232, 232, 230);"></div><div class="age-xlbl">15</div></div><div class="age-col" style="height: 100%;"><div class="age-seg" style="height: 11.2065px; background: rgb(26, 26, 26);"></div><div class="age-seg" style="height: 8.61695px; background: rgb(74, 74, 74);"></div><div class="age-seg" style="height: 96.8848px; background: rgb(200, 212, 0);"></div><div class="age-seg" style="height: 7.6347px; background: rgb(208, 208, 208);"></div><div class="age-seg" style="height: 3.43785px; background: rgb(232, 232, 230);"></div><div class="age-xlbl pk">16</div></div><div class="age-col" style="height: 100%;"><div class="age-seg" style="height: 11.4297px; background: rgb(26, 26, 26);"></div><div class="age-seg" style="height: 9.91172px; background: rgb(74, 74, 74);"></div><div class="age-seg" style="height: 87.9554px; background: rgb(200, 212, 0);"></div><div class="age-seg" style="height: 6.0274px; background: rgb(208, 208, 208);"></div><div class="age-seg" style="height: 4.77727px; background: rgb(232, 232, 230);"></div><div class="age-xlbl">17</div></div><div class="age-col" style="height: 100%;"><div class="age-seg" style="height: 8.97412px; background: rgb(26, 26, 26);"></div><div class="age-seg" style="height: 8.39371px; background: rgb(74, 74, 74);"></div><div class="age-seg" style="height: 70.0964px; background: rgb(200, 212, 0);"></div><div class="age-seg" style="height: 4.59868px; background: rgb(208, 208, 208);"></div><div class="age-seg" style="height: 3.92897px; background: rgb(232, 232, 230);"></div><div class="age-xlbl">18</div></div><div class="age-col" style="height: 100%;"><div class="age-seg" style="height: 7.54541px; background: rgb(26, 26, 26);"></div><div class="age-seg" style="height: 7.67935px; background: rgb(74, 74, 74);"></div><div class="age-seg" style="height: 67.6408px; background: rgb(200, 212, 0);"></div><div class="age-seg" style="height: 3.88432px; background: rgb(208, 208, 208);"></div><div class="age-seg" style="height: 3.34855px; background: rgb(232, 232, 230);"></div><div class="age-xlbl">19</div></div><div class="age-col" style="height: 100%;"><div class="age-seg" style="height: 11.9209px; background: rgb(26, 26, 26);"></div><div class="age-seg" style="height: 11.5637px; background: rgb(74, 74, 74);"></div><div class="age-seg" style="height: 91.6611px; background: rgb(200, 212, 0);"></div><div class="age-seg" style="height: 5.13445px; background: rgb(208, 208, 208);"></div><div class="age-seg" style="height: 3.12532px; background: rgb(232, 232, 230);"></div><div class="age-xlbl pk">20</div></div><div class="age-col" style="height: 100%;"><div class="age-seg" style="height: 7.50076px; background: rgb(26, 26, 26);"></div><div class="age-seg" style="height: 10.4028px; background: rgb(74, 74, 74);"></div><div class="age-seg" style="height: 68.9356px; background: rgb(200, 212, 0);"></div><div class="age-seg" style="height: 2.32166px; background: rgb(208, 208, 208);"></div><div class="age-seg" style="height: 1.25013px; background: rgb(232, 232, 230);"></div><div class="age-xlbl">21</div></div><div class="age-col" style="height: 100%;"><div class="age-seg" style="height: 9.64384px; background: rgb(26, 26, 26);"></div><div class="age-seg" style="height: 10.5368px; background: rgb(74, 74, 74);"></div><div class="age-seg" style="height: 72.4181px; background: rgb(200, 212, 0);"></div><div class="age-seg" style="height: 3.88432px; background: rgb(208, 208, 208);"></div><div class="age-seg" style="height: 1.47336px; background: rgb(232, 232, 230);"></div><div class="age-xlbl">22</div></div><div class="age-col" style="height: 100%;"><div class="age-seg" style="height: 10.001px; background: rgb(26, 26, 26);"></div><div class="age-seg" style="height: 12.1441px; background: rgb(74, 74, 74);"></div><div class="age-seg" style="height: 90.3663px; background: rgb(200, 212, 0);"></div><div class="age-seg" style="height: 5.67022px; background: rgb(208, 208, 208);"></div><div class="age-seg" style="height: 4.06291px; background: rgb(232, 232, 230);"></div><div class="age-xlbl">23</div></div><div class="age-col" style="height: 100%;"><div class="age-seg" style="height: 15.6712px; background: rgb(26, 26, 26);"></div><div class="age-seg" style="height: 19.6449px; background: rgb(74, 74, 74);"></div><div class="age-seg" style="height: 131.397px; background: rgb(200, 212, 0);"></div><div class="age-seg" style="height: 5.84881px; background: rgb(208, 208, 208);"></div><div class="age-seg" style="height: 3.43785px; background: rgb(232, 232, 230);"></div><div class="age-xlbl pk">24</div></div></div>
+      </div>
+      <div class="legend">
+        <div class="leg-item"><div class="leg-dot" style="background:var(--black)"></div>75歲以上</div>
+        <div class="leg-item"><div class="leg-dot" style="background:var(--g1)"></div>65–74歲</div>
+        <div class="leg-item"><div class="leg-dot" style="background:var(--lime)"></div>19–64歲</div>
+        <div class="leg-item"><div class="leg-dot" style="background:var(--g3)"></div>13–18歲</div>
+        <div class="leg-item"><div class="leg-dot" style="background:#D0D0D0;opacity:.5"></div>0–12歲</div>
+      </div>
+    </div>
+
+    <div class="chart-box">
+      <div class="chart-hd">
+        <div class="chart-hd-name">歷年年齡占比</div>
+        <div class="chart-hd-tag">all years combined</div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:12px;margin-top:8px" id="agePie"><div>
+      <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:5px">
+        <div style="font-size:13px;color:var(--g1)">19–64歲</div>
+        <div style="font-family:Space Grotesk;font-size:13px;font-weight:600;color:var(--black)">74.2%</div>
+      </div>
+      <div style="height:6px;background:var(--g4);width:100%">
+        <div style="height:100%;background:#C8D400;width:74.2%"></div>
+      </div></div><div>
+      <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:5px">
+        <div style="font-size:13px;color:var(--g1)">65–74歲</div>
+        <div style="font-family:Space Grotesk;font-size:13px;font-weight:600;color:var(--black)">8.9%</div>
+      </div>
+      <div style="height:6px;background:var(--g4);width:100%">
+        <div style="height:100%;background:#4A4A4A;width:8.9%"></div>
+      </div></div><div>
+      <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:5px">
+        <div style="font-size:13px;color:var(--g1)">75歲以上</div>
+        <div style="font-family:Space Grotesk;font-size:13px;font-weight:600;color:var(--black)">9.0%</div>
+      </div>
+      <div style="height:6px;background:var(--g4);width:100%">
+        <div style="height:100%;background:#1A1A1A;width:9.0%"></div>
+      </div></div><div>
+      <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:5px">
+        <div style="font-size:13px;color:var(--g1)">13–18歲</div>
+        <div style="font-family:Space Grotesk;font-size:13px;font-weight:600;color:var(--black)">5.0%</div>
+      </div>
+      <div style="height:6px;background:var(--g4);width:100%">
+        <div style="height:100%;background:#D0D0D0;width:5.0%"></div>
+      </div></div><div>
+      <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:5px">
+        <div style="font-size:13px;color:var(--g1)">0–12歲</div>
+        <div style="font-family:Space Grotesk;font-size:13px;font-weight:600;color:var(--black)">3.0%</div>
+      </div>
+      <div style="height:6px;background:var(--g4);width:100%">
+        <div style="height:100%;background:#E8E8E6;width:3.0%"></div>
+      </div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 04 SEX -->
+<section id="s04" class="in">
+  <div class="sec-label">
+    <div class="sec-num">04</div>
+    <div class="sec-head">
+      <div class="sec-en">Sex Distribution · 2011–2024</div>
+      <div class="sec-title">性別<strong>分布</strong></div>
+    </div>
+  </div>
+
+  <p class="lead">歷年男女比穩定維持在 <strong>3:1</strong> 左右。男性比例偏高，主要與戶外職業勞動者（工程、農業、軍警）以男性為多數有關。2024 年男性就診 <strong>3,124 人</strong>，創下單性別歷史新高。</p>
+
+  <div class="row2">
+    <div class="chart-box">
+      <div class="chart-hd">
+        <div class="chart-hd-name">男女就診比例（2011–2024）</div>
+        <div class="chart-hd-tag">proportion bar · each year</div>
+      </div>
+      <div class="sex-list" id="sexList"><div class="sex-row">
+      <div class="sex-yr" style="">11</div>
+      <div class="sex-track">
+        <div class="sex-m" style="width:75%"><span>75%</span></div>
+        <div class="sex-f" style="width:25%"><span>25%</span></div>
+      </div>
+      <div class="sex-tot">1,487</div></div><div class="sex-row">
+      <div class="sex-yr" style="">12</div>
+      <div class="sex-track">
+        <div class="sex-m" style="width:74%"><span>74%</span></div>
+        <div class="sex-f" style="width:26%"><span>26%</span></div>
+      </div>
+      <div class="sex-tot">1,582</div></div><div class="sex-row">
+      <div class="sex-yr" style="">13</div>
+      <div class="sex-track">
+        <div class="sex-m" style="width:74%"><span>74%</span></div>
+        <div class="sex-f" style="width:26%"><span>26%</span></div>
+      </div>
+      <div class="sex-tot">1,926</div></div><div class="sex-row">
+      <div class="sex-yr" style="">14</div>
+      <div class="sex-track">
+        <div class="sex-m" style="width:73%"><span>73%</span></div>
+        <div class="sex-f" style="width:27%"><span>27%</span></div>
+      </div>
+      <div class="sex-tot">2,388</div></div><div class="sex-row">
+      <div class="sex-yr" style="">15</div>
+      <div class="sex-track">
+        <div class="sex-m" style="width:74%"><span>74%</span></div>
+        <div class="sex-f" style="width:26%"><span>26%</span></div>
+      </div>
+      <div class="sex-tot">2,093</div></div><div class="sex-row">
+      <div class="sex-yr" style="color:var(--lime-dk);font-weight:600">16</div>
+      <div class="sex-track">
+        <div class="sex-m" style="width:74%"><span>74%</span></div>
+        <div class="sex-f" style="width:26%"><span>26%</span></div>
+      </div>
+      <div class="sex-tot">2,862</div></div><div class="sex-row">
+      <div class="sex-yr" style="">17</div>
+      <div class="sex-track">
+        <div class="sex-m" style="width:77%"><span>77%</span></div>
+        <div class="sex-f" style="width:23%"><span>23%</span></div>
+      </div>
+      <div class="sex-tot">2,690</div></div><div class="sex-row">
+      <div class="sex-yr" style="">18</div>
+      <div class="sex-track">
+        <div class="sex-m" style="width:75%"><span>75%</span></div>
+        <div class="sex-f" style="width:25%"><span>25%</span></div>
+      </div>
+      <div class="sex-tot">2,150</div></div><div class="sex-row">
+      <div class="sex-yr" style="">19</div>
+      <div class="sex-track">
+        <div class="sex-m" style="width:76%"><span>76%</span></div>
+        <div class="sex-f" style="width:24%"><span>24%</span></div>
+      </div>
+      <div class="sex-tot">2,018</div></div><div class="sex-row">
+      <div class="sex-yr" style="color:var(--lime-dk);font-weight:600">20</div>
+      <div class="sex-track">
+        <div class="sex-m" style="width:75%"><span>75%</span></div>
+        <div class="sex-f" style="width:25%"><span>25%</span></div>
+      </div>
+      <div class="sex-tot">2,764</div></div><div class="sex-row">
+      <div class="sex-yr" style="">21</div>
+      <div class="sex-track">
+        <div class="sex-m" style="width:79%"><span>79%</span></div>
+        <div class="sex-f" style="width:21%"><span>21%</span></div>
+      </div>
+      <div class="sex-tot">2,025</div></div><div class="sex-row">
+      <div class="sex-yr" style="">22</div>
+      <div class="sex-track">
+        <div class="sex-m" style="width:77%"><span>77%</span></div>
+        <div class="sex-f" style="width:23%"><span>23%</span></div>
+      </div>
+      <div class="sex-tot">2,194</div></div><div class="sex-row">
+      <div class="sex-yr" style="">23</div>
+      <div class="sex-track">
+        <div class="sex-m" style="width:76%"><span>76%</span></div>
+        <div class="sex-f" style="width:24%"><span>24%</span></div>
+      </div>
+      <div class="sex-tot">2,738</div></div><div class="sex-row">
+      <div class="sex-yr" style="color:var(--lime-dk);font-weight:600">24</div>
+      <div class="sex-track">
+        <div class="sex-m" style="width:79%"><span>79%</span></div>
+        <div class="sex-f" style="width:21%"><span>21%</span></div>
+      </div>
+      <div class="sex-tot">3,942</div></div></div>
+      <div class="legend" style="margin-top:16px">
+        <div class="leg-item"><div class="leg-dot" style="background:var(--black)"></div>男性</div>
+        <div class="leg-item"><div class="leg-dot" style="background:var(--g3)"></div>女性</div>
+      </div>
+    </div>
+
+    <div class="chart-box">
+      <div class="chart-hd">
+        <div class="chart-hd-name">2024 年性別對比</div>
+        <div class="chart-hd-tag">peak year</div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:24px;margin-top:8px">
+        <div>
+          <div style="font-family:var(--en);font-size:10px;font-weight:600;letter-spacing:.18em;color:var(--g2);margin-bottom:8px">MALE · 男性</div>
+          <div style="font-family:var(--en);font-size:72px;font-weight:300;line-height:.85;letter-spacing:-.02em">3,124</div>
+          <div style="font-size:13px;color:var(--g2);margin-top:8px">佔 2024 年總數 79.2%</div>
+        </div>
+        <div style="height:1px;background:var(--g3)"></div>
+        <div>
+          <div style="font-family:var(--en);font-size:10px;font-weight:600;letter-spacing:.18em;color:var(--g2);margin-bottom:8px">FEMALE · 女性</div>
+          <div style="font-family:var(--en);font-size:72px;font-weight:300;line-height:.85;letter-spacing:-.02em;color:var(--g2)">818</div>
+          <div style="font-size:13px;color:var(--g2);margin-top:8px">佔 2024 年總數 20.8%</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 05 MONTHLY -->
+<section id="s05" class="in">
+  <div class="sec-label">
+    <div class="sec-num">05</div>
+    <div class="sec-head">
+      <div class="sec-en">Seasonal Pattern · Monthly Distribution</div>
+      <div class="sec-title">月份<strong>季節性</strong></div>
+    </div>
+  </div>
+
+  <p class="lead">熱傷害高度集中於 <strong>6–8 月</strong>，三個月合計佔全年歷年累積量的 <strong>65.7%</strong>。7 月單月即佔 27.7%，是防護介入最關鍵的時間窗口。</p>
+
+  <div class="chart-box">
+    <div class="chart-hd">
+      <div class="chart-hd-name">各月就診人次（2011–2024 年累計）</div>
+      <div class="chart-hd-tag">cumulative 14-year total</div>
+    </div>
+    <div class="month-grid" id="monthGrid"><div class="mb"><div class="mb-bar" style="height: 1.84816%; cursor: pointer;"></div><div class="mb-lbl">1月</div></div><div class="mb"><div class="mb-bar" style="height: 3.02125%; cursor: pointer;"></div><div class="mb-lbl">2月</div></div><div class="mb"><div class="mb-bar" style="height: 8.15626%; cursor: pointer;"></div><div class="mb-lbl">3月</div></div><div class="mb"><div class="mb-bar" style="height: 16.9876%; cursor: pointer;"></div><div class="mb-lbl">4月</div></div><div class="mb"><div class="mb-bar" style="height: 34.9934%; cursor: pointer;"></div><div class="mb-lbl">5月</div></div><div class="mb"><div class="mb-bar hi" style="height: 71.4143%; cursor: pointer;"></div><div class="mb-lbl">6月</div></div><div class="mb"><div class="mb-bar peak" style="height: 100%; cursor: pointer;"></div><div class="mb-lbl">7月</div></div><div class="mb"><div class="mb-bar hi" style="height: 67.1315%; cursor: pointer;"></div><div class="mb-lbl">8月</div></div><div class="mb"><div class="mb-bar" style="height: 36.5538%; cursor: pointer;"></div><div class="mb-lbl">9月</div></div><div class="mb"><div class="mb-bar" style="height: 14.6636%; cursor: pointer;"></div><div class="mb-lbl">10月</div></div><div class="mb"><div class="mb-bar" style="height: 6.18637%; cursor: pointer;"></div><div class="mb-lbl">11月</div></div><div class="mb"><div class="mb-bar" style="height: 2.68924%; cursor: pointer;"></div><div class="mb-lbl">12月</div></div></div>
+    <div class="note" style="margin-top:20px">
+      PEAK — July 9,036 visits (27.7%) &nbsp;·&nbsp; HIGH — June 6,453 (19.8%) &nbsp;·&nbsp; HIGH — August 6,066 (18.6%)
+    </div>
+  </div>
+
+  <div class="row2" style="margin-top:8px">
+    <div class="chart-box">
+      <div class="chart-hd"><div class="chart-hd-name">高峰三個月佔比</div><div class="chart-hd-tag">Jun–Aug share</div></div>
+      <div style="display:flex;align-items:center;gap:28px">
+        <svg viewBox="0 0 160 160" width="140" aria-label="65.7%">
+          <circle cx="80" cy="80" r="60" fill="none" stroke="var(--g3)" stroke-width="24"></circle>
+          <circle cx="80" cy="80" r="60" fill="none" stroke="var(--lime)" stroke-width="24" stroke-dasharray="247.5 378" style="transform-origin:80px 80px;transform:rotate(-90deg)"></circle>
+          <text x="80" y="76" text-anchor="middle" font-family="Space Grotesk" font-size="24" font-weight="300" fill="#1A1A1A">65.7</text>
+          <text x="80" y="94" text-anchor="middle" font-family="Space Grotesk" font-size="11" fill="#888">%</text>
+        </svg>
+        <div style="font-size:14px;color:var(--g1);line-height:1.85">6–8 月三個月合計<br><strong style="font-size:18px;color:var(--black)">21,555 人次</strong><br>佔 14 年累計總量</div>
+      </div>
+    </div>
+    <div class="chart-box">
+      <div class="chart-hd"><div class="chart-hd-name">風險等級分類</div><div class="chart-hd-tag">monthly risk level</div></div>
+      <div style="display:flex;flex-direction:column;gap:10px;margin-top:4px">
+        <div style="display:flex;align-items:center;gap:14px">
+          <div style="width:3px;height:28px;background:var(--lime)"></div>
+          <div><div style="font-family:var(--en);font-size:10px;font-weight:600;letter-spacing:.16em;color:var(--lime-dk)">PEAK · 極高危</div><div style="font-size:14px;color:var(--g1)">7 月</div></div>
+        </div>
+        <div style="display:flex;align-items:center;gap:14px">
+          <div style="width:3px;height:28px;background:var(--g1)"></div>
+          <div><div style="font-family:var(--en);font-size:10px;font-weight:600;letter-spacing:.16em;color:var(--g1)">HIGH · 高危</div><div style="font-size:14px;color:var(--g1)">6 月、8 月</div></div>
+        </div>
+        <div style="display:flex;align-items:center;gap:14px">
+          <div style="width:3px;height:28px;background:var(--g3)"></div>
+          <div><div style="font-family:var(--en);font-size:10px;font-weight:600;letter-spacing:.16em;color:var(--g2)">MID · 中危</div><div style="font-size:14px;color:var(--g1)">5 月、9 月</div></div>
+        </div>
+        <div style="display:flex;align-items:center;gap:14px">
+          <div style="width:3px;height:28px;background:var(--g4)"></div>
+          <div><div style="font-family:var(--en);font-size:10px;font-weight:600;letter-spacing:.16em;color:var(--g2)">LOW · 低危</div><div style="font-size:14px;color:var(--g1)">1–4 月、10–12 月</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 06 ELDER -->
+<section id="s06" class="in">
+  <div class="sec-label">
+    <div class="sec-num">06</div>
+    <div class="sec-head">
+      <div class="sec-en">Elderly Risk · 65+ Age Group</div>
+      <div class="sec-title">高齡族群<strong>警示</strong></div>
+    </div>
+  </div>
+
+  <p class="lead">65 歲以上長者因汗腺功能退化、循環系統弱化，是熱傷害最高風險族群。2024 年 65 歲以上就診達 <strong>791 人</strong>，是 2011 年 239 人的 <strong>3.31 倍</strong>，成長速度遠超整體趨勢。</p>
+
+  <div class="chart-box">
+    <div class="chart-hd">
+      <div class="chart-hd-name">65 歲以上就診人次（2011–2024）</div>
+      <div class="chart-hd-tag">65+ combined · area chart</div>
+    </div>
+    <svg class="elder-svg" id="elderSvg" viewBox="0 0 1100 200" preserveAspectRatio="xMidYMid meet"><line x1="48" x2="1080" y1="172" y2="172" stroke="#EBEBEB" stroke-width=".5"></line><text x="40" y="176" text-anchor="end" fill="#888888" font-family="Space Grotesk" font-size="10">0</text><line x1="48" x2="1080" y1="134.57901390644753" y2="134.57901390644753" stroke="#EBEBEB" stroke-width=".5"></line><text x="40" y="138.57901390644753" text-anchor="end" fill="#888888" font-family="Space Grotesk" font-size="10">200</text><line x1="48" x2="1080" y1="97.15802781289507" y2="97.15802781289507" stroke="#EBEBEB" stroke-width=".5"></line><text x="40" y="101.15802781289507" text-anchor="end" fill="#888888" font-family="Space Grotesk" font-size="10">400</text><line x1="48" x2="1080" y1="59.737041719342606" y2="59.737041719342606" stroke="#EBEBEB" stroke-width=".5"></line><text x="40" y="63.737041719342606" text-anchor="end" fill="#888888" font-family="Space Grotesk" font-size="10">600</text><line x1="48" x2="1080" y1="22.316055625790156" y2="22.316055625790156" stroke="#EBEBEB" stroke-width=".5"></line><text x="40" y="26.316055625790156" text-anchor="end" fill="#888888" font-family="Space Grotesk" font-size="10">800</text><path d="M48,172 L48,151.79266750948165 L127.38461538461539,152.35398230088495 L206.76923076923077,140.37926675094815 L286.1538461538462,137.7597977243995 L365.53846153846155,145.61820480404552 L444.92307692307696,135.88874841972188 L524.3076923076924,130.46270543615677 L603.6923076923076,136.8242730720607 L683.0769230769231,139.81795195954487 L762.4615384615385,123.53982300884955 L841.8461538461539,128.40455120101137 L921.2307692307692,127.8432364096081 L1000.6153846153846,121.10745891276866 L1080,89.67383059418457 L1080,172 Z" fill="#4A4A4A" opacity=".25"></path><path d="M48,151.79266750948165 L127.38461538461539,152.35398230088495 L206.76923076923077,140.37926675094815 L286.1538461538462,137.7597977243995 L365.53846153846155,145.61820480404552 L444.92307692307696,135.88874841972188 L524.3076923076924,130.46270543615677 L603.6923076923076,136.8242730720607 L683.0769230769231,139.81795195954487 L762.4615384615385,123.53982300884955 L841.8461538461539,128.40455120101137 L921.2307692307692,127.8432364096081 L1000.6153846153846,121.10745891276866 L1080,89.67383059418457" stroke="#4A4A4A" stroke-width="2" fill="none"></path><defs><lineargradient id="eg" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#1A1A1A" stop-opacity=".2"></stop><stop offset="100%" stop-color="#1A1A1A" stop-opacity=".05"></stop></lineargradient></defs><path d="M48,127.2819216182048 L127.38461538461539,124.66245259165613 L206.76923076923077,111.75221238938053 L286.1538461538462,96.59671302149178 L365.53846153846155,109.69405815423515 L444.92307692307696,88.92541087231352 L524.3076923076924,82.56384323640961 L603.6923076923076,99.21618204804045 L683.0769230769231,108.19721871049305 L762.4615384615385,73.58280657395701 L841.8461538461539,96.9709228824273 L921.2307692307692,87.42857142857143 L1000.6153846153846,79.19595448798988 L1080,24 L1080,89.67383059418457 L1000.6153846153846,121.10745891276866 L921.2307692307692,127.8432364096081 L841.8461538461539,128.40455120101137 L762.4615384615385,123.53982300884955 L683.0769230769231,139.81795195954487 L603.6923076923076,136.8242730720607 L524.3076923076924,130.46270543615677 L444.92307692307696,135.88874841972188 L365.53846153846155,145.61820480404552 L286.1538461538462,137.7597977243995 L206.76923076923077,140.37926675094815 L127.38461538461539,152.35398230088495 L48,151.79266750948165 Z" fill="url(#eg)"></path><path d="M48,127.2819216182048 L127.38461538461539,124.66245259165613 L206.76923076923077,111.75221238938053 L286.1538461538462,96.59671302149178 L365.53846153846155,109.69405815423515 L444.92307692307696,88.92541087231352 L524.3076923076924,82.56384323640961 L603.6923076923076,99.21618204804045 L683.0769230769231,108.19721871049305 L762.4615384615385,73.58280657395701 L841.8461538461539,96.9709228824273 L921.2307692307692,87.42857142857143 L1000.6153846153846,79.19595448798988 L1080,24" stroke="#1A1A1A" stroke-width="2" fill="none"></path><circle cx="48" cy="127.2819216182048" r="4" fill="#1A1A1A" stroke="#F5F5F3" stroke-width="1.5" style="cursor: pointer;"></circle><text x="48" y="115.2819216182048" text-anchor="middle" fill="#888888" font-family="Space Grotesk" font-size="11" font-weight="600">239</text><text x="48" y="192" text-anchor="middle" fill="#888888" font-family="Space Grotesk" font-size="9">11</text><circle cx="127.38461538461539" cy="124.66245259165613" r="4" fill="#1A1A1A" stroke="#F5F5F3" stroke-width="1.5" style="cursor: pointer;"></circle><text x="127.38461538461539" y="192" text-anchor="middle" fill="#888888" font-family="Space Grotesk" font-size="9">12</text><circle cx="206.76923076923077" cy="111.75221238938053" r="4" fill="#1A1A1A" stroke="#F5F5F3" stroke-width="1.5" style="cursor: pointer;"></circle><text x="206.76923076923077" y="192" text-anchor="middle" fill="#888888" font-family="Space Grotesk" font-size="9">13</text><circle cx="286.1538461538462" cy="96.59671302149178" r="4" fill="#1A1A1A" stroke="#F5F5F3" stroke-width="1.5" style="cursor: pointer;"></circle><text x="286.1538461538462" y="192" text-anchor="middle" fill="#888888" font-family="Space Grotesk" font-size="9">14</text><circle cx="365.53846153846155" cy="109.69405815423515" r="4" fill="#1A1A1A" stroke="#F5F5F3" stroke-width="1.5" style="cursor: pointer;"></circle><text x="365.53846153846155" y="192" text-anchor="middle" fill="#888888" font-family="Space Grotesk" font-size="9">15</text><circle cx="444.92307692307696" cy="88.92541087231352" r="4" fill="#1A1A1A" stroke="#F5F5F3" stroke-width="1.5" style="cursor: pointer;"></circle><text x="444.92307692307696" y="192" text-anchor="middle" fill="#A8B200" font-family="Space Grotesk" font-size="9">16</text><circle cx="524.3076923076924" cy="82.56384323640961" r="4" fill="#1A1A1A" stroke="#F5F5F3" stroke-width="1.5" style="cursor: pointer;"></circle><text x="524.3076923076924" y="192" text-anchor="middle" fill="#888888" font-family="Space Grotesk" font-size="9">17</text><circle cx="603.6923076923076" cy="99.21618204804045" r="4" fill="#1A1A1A" stroke="#F5F5F3" stroke-width="1.5" style="cursor: pointer;"></circle><text x="603.6923076923076" y="192" text-anchor="middle" fill="#888888" font-family="Space Grotesk" font-size="9">18</text><circle cx="683.0769230769231" cy="108.19721871049305" r="4" fill="#1A1A1A" stroke="#F5F5F3" stroke-width="1.5" style="cursor: pointer;"></circle><text x="683.0769230769231" y="192" text-anchor="middle" fill="#888888" font-family="Space Grotesk" font-size="9">19</text><circle cx="762.4615384615385" cy="73.58280657395701" r="4" fill="#1A1A1A" stroke="#F5F5F3" stroke-width="1.5" style="cursor: pointer;"></circle><text x="762.4615384615385" y="192" text-anchor="middle" fill="#A8B200" font-family="Space Grotesk" font-size="9">20</text><circle cx="841.8461538461539" cy="96.9709228824273" r="4" fill="#1A1A1A" stroke="#F5F5F3" stroke-width="1.5" style="cursor: pointer;"></circle><text x="841.8461538461539" y="192" text-anchor="middle" fill="#888888" font-family="Space Grotesk" font-size="9">21</text><circle cx="921.2307692307692" cy="87.42857142857143" r="4" fill="#1A1A1A" stroke="#F5F5F3" stroke-width="1.5" style="cursor: pointer;"></circle><text x="921.2307692307692" y="192" text-anchor="middle" fill="#888888" font-family="Space Grotesk" font-size="9">22</text><circle cx="1000.6153846153846" cy="79.19595448798988" r="4" fill="#1A1A1A" stroke="#F5F5F3" stroke-width="1.5" style="cursor: pointer;"></circle><text x="1000.6153846153846" y="192" text-anchor="middle" fill="#888888" font-family="Space Grotesk" font-size="9">23</text><circle cx="1080" cy="24" r="4" fill="#1A1A1A" stroke="#F5F5F3" stroke-width="1.5" style="cursor: pointer;"></circle><text x="1080" y="12" text-anchor="middle" fill="#C8D400" font-family="Space Grotesk" font-size="11" font-weight="600">791</text><text x="1080" y="192" text-anchor="middle" fill="#A8B200" font-family="Space Grotesk" font-size="9">24</text></svg>
+    <div class="legend">
+      <div class="leg-item"><div class="leg-dot" style="background:var(--black)"></div>75歲以上</div>
+      <div class="leg-item"><div class="leg-dot" style="background:var(--g1)"></div>65–74歲</div>
+    </div>
+  </div>
+
+  <div class="row2" style="margin-top:8px">
+    <div class="chart-box">
+      <div class="chart-hd"><div class="chart-hd-name">高齡就診人次</div><div class="chart-hd-tag">milestone years</div></div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--g3);border:1px solid var(--g3)">
+        <div style="background:var(--white);padding:20px 18px">
+          <div style="font-family:var(--en);font-size:9px;font-weight:600;letter-spacing:.18em;color:var(--g2);margin-bottom:8px">2011</div>
+          <div style="font-family:var(--en);font-size:40px;font-weight:300;line-height:.85">239</div>
+          <div style="font-size:12px;color:var(--g2);margin-top:6px">人次（基準年）</div>
+        </div>
+        <div style="background:var(--white);padding:20px 18px;border-bottom:3px solid var(--lime)">
+          <div style="font-family:var(--en);font-size:9px;font-weight:600;letter-spacing:.18em;color:var(--lime-dk);margin-bottom:8px">2024</div>
+          <div style="font-family:var(--en);font-size:40px;font-weight:300;line-height:.85">791</div>
+          <div style="font-size:12px;color:var(--g2);margin-top:6px">人次 · +231%</div>
+        </div>
+      </div>
+    </div>
+    <div class="chart-box">
+      <div class="chart-hd"><div class="chart-hd-name">風險因子</div><div class="chart-hd-tag">contributing factors</div></div>
+      <div style="display:flex;flex-direction:column;gap:12px;margin-top:4px">
+        <div style="border-top:3px solid var(--lime);padding-top:12px">
+          <div style="font-weight:700;font-size:15px;margin-bottom:4px">生理因素</div>
+          <div style="font-size:13px;color:var(--g1);line-height:1.7">汗腺功能退化、循環系統弱化，體溫調節效能下降。</div>
+        </div>
+        <div style="border-top:1px solid var(--g3);padding-top:12px">
+          <div style="font-weight:700;font-size:15px;margin-bottom:4px">居家高溫</div>
+          <div style="font-size:13px;color:var(--g1);line-height:1.7">捨不得開冷氣、獨居缺乏協助，「居家中暑」屢見不鮮。</div>
+        </div>
+        <div style="border-top:1px solid var(--g3);padding-top:12px">
+          <div style="font-weight:700;font-size:15px;margin-bottom:4px">就醫障礙</div>
+          <div style="font-size:13px;color:var(--g1);line-height:1.7">行動不便或居住偏遠，症狀出現後未能即時尋求醫療。</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</div><!-- /wrap -->
+
+<!-- FOOTER -->
+<footer>
+  <div class="foot-g">
+    <div>
+      <div class="foot-h">台灣熱傷害就診數據報告</div>
+      <div style="font-size:22px;font-weight:100;letter-spacing:.04em;line-height:1.5;color:var(--white);margin-bottom:22px">
+        熱，不只是天氣。<br>
+        <span style="color:var(--lime)">它是政策議題。</span>
+      </div>
+      <div class="foot-meta">
+        資料來源：<strong>衛生福利部國民健康署</strong> / 疾管署<br>
+        「即時疫情監視及預警系統」熱急症就醫數據<br>
+        統計截至 2026 年 1 月 29 日 · 政府資料開放平台
+      </div>
+    </div>
+    <div>
+      <div class="foot-h">資料說明</div>
+      <ul class="foot-list">
+        <li>2011–2024 年完整資料</li>
+        <li>N = 33,859 人次（14 年）</li>
+        <li>涵蓋五個年齡層</li>
+        <li>含性別、縣市、月份</li>
+        <li>未涵蓋所有醫療院所</li>
+        <li>實際數字可能偏高</li>
+      </ul>
+    </div>
+    <div>
+      <div class="foot-h">設計規範</div>
+      <ul class="foot-list">
+        <li>VZT Brand Guidelines v1.0</li>
+        <li>Noto Sans TC · Space Grotesk</li>
+        <li>JetBrains Mono</li>
+        <li>—</li>
+        <li>還路於民行人路權促進會</li>
+        <li>Vision Zero Taiwan · 2026</li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <div>VISION ZERO TAIWAN · HEAT ILLNESS DATA REPORT 2026</div>
+    <div>SOURCE: MOHW · HPA · 2011–2024</div>
+  </div>
+</footer>
+
+<button class="btt" id="btt" aria-label="回到頂端">↑</button>
+<div class="tt" id="tt" style="left: 1099px; top: 617px; display: none;"><div class="tt-y" id="ttY">2023年 總計</div><div><span class="tt-v" id="ttV">2,738</span><span class="tt-u"> 人次</span></div></div>
+
+<script>
+// ── DATA ──
+const yearly = [
+  {y:2011,t:1487,m:1111,f:376,a0:78,a1:97,a2:1073,a3:108,a4:131},
+  {y:2012,t:1582,m:1170,f:412,a0:58,a1:101,a2:1170,a3:105,a4:148},
+  {y:2013,t:1926,m:1434,f:492,a0:66,a1:142,a2:1396,a3:169,a4:153},
+  {y:2014,t:2388,m:1753,f:635,a0:79,a1:146,a2:1760,a3:183,a4:220},
+  {y:2015,t:2093,m:1554,f:539,a0:59,a1:137,a2:1564,a3:141,a4:192},
+  {y:2016,t:2862,m:2132,f:730,a0:77,a1:171,a2:2170,a3:193,a4:251},
+  {y:2017,t:2690,m:2079,f:611,a0:107,a1:135,a2:1970,a3:222,a4:256},
+  {y:2018,t:2150,m:1608,f:542,a0:88,a1:103,a2:1570,a3:188,a4:201},
+  {y:2019,t:2018,m:1527,f:491,a0:75,a1:87,a2:1515,a3:172,a4:169},
+  {y:2020,t:2764,m:2085,f:679,a0:70,a1:115,a2:2053,a3:259,a4:267},
+  {y:2021,t:2025,m:1591,f:434,a0:28,a1:52,a2:1544,a3:233,a4:168},
+  {y:2022,t:2194,m:1682,f:512,a0:33,a1:87,a2:1622,a3:236,a4:216},
+  {y:2023,t:2738,m:2085,f:653,a0:91,a1:127,a2:2024,a3:272,a4:224},
+  {y:2024,t:3942,m:3124,f:818,a0:77,a1:131,a2:2943,a3:440,a4:351},
+];
+const monthly = [167,273,737,1535,3162,6453,9036,6066,3303,1325,559,243];
+const monthNames = ['1月','2月','3月','4月','5月','6月','7月','8月','9月','10月','11月','12月'];
+const peaks = new Set([2016,2020,2024]);
+const LIME='#C8D400', BLACK='#1A1A1A', G1='#4A4A4A', G2='#888888', G3='#D0D0D0', G4='#F5F5F3';
+
+// Tooltip
+const tt=document.getElementById('tt'), ttY=document.getElementById('ttY'), ttV=document.getElementById('ttV');
+function showTT(e,yr,val){ tt.style.display='block'; ttY.textContent=yr; ttV.textContent=Number(val).toLocaleString(); moveTT(e); }
+function moveTT(e){ let x=e.clientX+14,y=e.clientY-10; if(x+160>innerWidth)x=e.clientX-160; tt.style.left=x+'px'; tt.style.top=y+'px'; }
+function hideTT(){ tt.style.display='none'; }
+document.addEventListener('mousemove',moveTT);
+
+function ns(tag){ return document.createElementNS('http://www.w3.org/2000/svg',tag); }
+function el(tag,attrs={}){ const e=document.createElement(tag); Object.assign(e.style||{},{}); for(let[k,v] of Object.entries(attrs)) e.setAttribute(k,v); return e; }
+
+// ── TREND SVG ──
+(function(){
+  const svg=document.getElementById('trendSvg');
+  const W=1100,H=260,PL=48,PR=20,PT=32,PB=30;
+  const iW=W-PL-PR,iH=H-PT-PB;
+  const MAX=4400,n=yearly.length;
+  const xP=i=>PL+(i/(n-1))*iW;
+  const yP=v=>PT+(1-v/MAX)*iH;
+
+  // Grid lines
+  [0,1000,2000,3000,4000].forEach(v=>{
+    const y=yP(v);
+    const l=ns('line'); l.setAttribute('x1',PL);l.setAttribute('x2',W-PR);l.setAttribute('y1',y);l.setAttribute('y2',y);
+    l.setAttribute('stroke',v===0?G3:'#EBEBEB'); l.setAttribute('stroke-width',v===0?1:.5); svg.appendChild(l);
+    const t=ns('text'); t.setAttribute('x',PL-8);t.setAttribute('y',y+4);t.setAttribute('text-anchor','end');
+    t.setAttribute('fill',G2);t.setAttribute('font-family','Space Grotesk');t.setAttribute('font-size','11');
+    t.textContent=v===0?'0':(v/1000)+'K'; svg.appendChild(t);
+  });
+
+  // Area fill
+  const defs=ns('defs'), gr=ns('linearGradient');
+  gr.setAttribute('id','tg');gr.setAttribute('x1','0');gr.setAttribute('y1','0');gr.setAttribute('x2','0');gr.setAttribute('y2','1');
+  const s1=ns('stop');s1.setAttribute('offset','0%');s1.setAttribute('stop-color',LIME);s1.setAttribute('stop-opacity','0.10');
+  const s2=ns('stop');s2.setAttribute('offset','100%');s2.setAttribute('stop-color',LIME);s2.setAttribute('stop-opacity','0');
+  gr.appendChild(s1);gr.appendChild(s2);defs.appendChild(gr);svg.appendChild(defs);
+
+  const pts=yearly.map((d,i)=>`${xP(i)},${yP(d.t)}`);
+  const area=ns('path');
+  area.setAttribute('d',`M${xP(0)},${yP(0)} L${pts.join(' L')} L${xP(n-1)},${yP(0)} Z`);
+  area.setAttribute('fill','url(#tg)'); svg.appendChild(area);
+
+  const line=ns('path');
+  line.setAttribute('d','M'+pts.join(' L'));
+  line.setAttribute('stroke',G3);line.setAttribute('stroke-width','1.5');line.setAttribute('fill','none');
+  svg.appendChild(line);
+
+  // Bars + dots
+  yearly.forEach((d,i)=>{
+    const isPk=peaks.has(d.y), is21=d.y===2021;
+    const cx=xP(i), cy=yP(d.t);
+    const barW=iW/n*.6;
+
+    // bar
+    const barH=iH-(cy-PT);
+    const rect=ns('rect');
+    rect.setAttribute('x',cx-barW/2);rect.setAttribute('y',cy);
+    rect.setAttribute('width',barW);rect.setAttribute('height',barH);
+    rect.setAttribute('fill',isPk?LIME:is21?G3:G4);
+    rect.style.cursor='pointer';
+    rect.addEventListener('mousemove',e=>showTT(e,d.y+'年',d.t));
+    rect.addEventListener('mouseleave',hideTT);
+    svg.appendChild(rect);
+
+    // value label for peaks
+    if(isPk){
+      const t=ns('text');t.setAttribute('x',cx);t.setAttribute('y',cy-10);
+      t.setAttribute('text-anchor','middle');t.setAttribute('fill',LIME);
+      t.setAttribute('font-family','Space Grotesk');t.setAttribute('font-size','12');t.setAttribute('font-weight','600');
+      t.textContent=d.t.toLocaleString(); svg.appendChild(t);
+    }
+
+    // x label
+    const xl=ns('text');xl.setAttribute('x',cx);xl.setAttribute('y',H-6);
+    xl.setAttribute('text-anchor','middle');xl.setAttribute('fill',isPk?'#A8B200':G2);
+    xl.setAttribute('font-family','Space Grotesk');xl.setAttribute('font-size',isPk?'11':'9');
+    xl.setAttribute('font-weight',isPk?'600':'400');
+    xl.textContent=String(d.y).slice(2); svg.appendChild(xl);
+
+    // 2021 annotation
+    if(is21){
+      const al=ns('text');al.setAttribute('x',cx);al.setAttribute('y',cy-10);
+      al.setAttribute('text-anchor','middle');al.setAttribute('fill',G2);
+      al.setAttribute('font-family','Noto Sans TC');al.setAttribute('font-size','9');
+      al.textContent='疫情警戒'; svg.appendChild(al);
+    }
+  });
+})();
+
+// ── AGE STACKED ──
+(function(){
+  const container=document.getElementById('ageGrid');
+  const maxT=Math.max(...yearly.map(d=>d.t));
+  const segs=[
+    {key:'a4',color:BLACK},
+    {key:'a3',color:G1},
+    {key:'a2',color:LIME},
+    {key:'a1',color:G3},
+    {key:'a0',color:'#E8E8E6'},
+  ];
+  const H=176;
+
+  yearly.forEach(d=>{
+    const col=document.createElement('div');
+    col.className='age-col'; col.style.height='100%';
+    segs.forEach(({key,color})=>{
+      const v=d[key];
+      const h=(v/maxT)*H;
+      const seg=document.createElement('div');
+      seg.className='age-seg';
+      seg.style.height=h+'px';
+      seg.style.background=color;
+      col.appendChild(seg);
+    });
+    const lbl=document.createElement('div');
+    lbl.className='age-xlbl'+(peaks.has(d.y)?' pk':'');
+    lbl.textContent=String(d.y).slice(2);
+    col.appendChild(lbl);
+    col.addEventListener('mousemove',e=>showTT(e,d.y+'年 總計',d.t));
+    col.addEventListener('mouseleave',hideTT);
+    container.appendChild(col);
+  });
+})();
+
+// ── AGE PIE (horizontal bars) ──
+(function(){
+  const totals={a0:0,a1:0,a2:0,a3:0,a4:0};
+  yearly.forEach(d=>{ for(let k in totals) totals[k]+=d[k]; });
+  const grand=Object.values(totals).reduce((a,b)=>a+b,0);
+  const groups=[
+    {label:'19–64歲',key:'a2',color:LIME},
+    {label:'65–74歲',key:'a3',color:G1},
+    {label:'75歲以上',key:'a4',color:BLACK},
+    {label:'13–18歲',key:'a1',color:G3},
+    {label:'0–12歲',key:'a0',color:'#E8E8E6'},
+  ];
+  const container=document.getElementById('agePie');
+  groups.forEach(({label,key,color})=>{
+    const pct=(totals[key]/grand*100).toFixed(1);
+    const row=document.createElement('div');
+    row.innerHTML=`
+      <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:5px">
+        <div style="font-size:13px;color:var(--g1)">${label}</div>
+        <div style="font-family:Space Grotesk;font-size:13px;font-weight:600;color:var(--black)">${pct}%</div>
+      </div>
+      <div style="height:6px;background:var(--g4);width:100%">
+        <div style="height:100%;background:${color};width:${pct}%"></div>
+      </div>`;
+    container.appendChild(row);
+  });
+})();
+
+// ── SEX BARS ──
+(function(){
+  const container=document.getElementById('sexList');
+  yearly.forEach(d=>{
+    const tot=d.m+d.f;
+    const mp=(d.m/tot*100).toFixed(0);
+    const row=document.createElement('div');
+    row.className='sex-row';
+    const isPk=peaks.has(d.y);
+    row.innerHTML=`
+      <div class="sex-yr" style="${isPk?'color:var(--lime-dk);font-weight:600':''}">${String(d.y).slice(2)}</div>
+      <div class="sex-track">
+        <div class="sex-m" style="width:${mp}%">${mp>18?`<span>${mp}%</span>`:''}</div>
+        <div class="sex-f" style="width:${100-mp}%">${(100-mp)>12?`<span>${100-parseInt(mp)}%</span>`:''}</div>
+      </div>
+      <div class="sex-tot">${tot.toLocaleString()}</div>`;
+    container.appendChild(row);
+  });
+})();
+
+// ── MONTH BARS ──
+(function(){
+  const container=document.getElementById('monthGrid');
+  const maxM=Math.max(...monthly);
+  monthly.forEach((v,i)=>{
+    const mn=i+1;
+    const pct=(v/maxM)*100;
+    const isPk=mn===7, isHi=(mn===6||mn===8);
+    const div=document.createElement('div');
+    div.className='mb';
+    const bar=document.createElement('div');
+    bar.className='mb-bar'+(isPk?' peak':isHi?' hi':'');
+    bar.style.height=pct+'%';
+    bar.style.cursor='pointer';
+    bar.addEventListener('mousemove',e=>showTT(e,monthNames[i],v));
+    bar.addEventListener('mouseleave',hideTT);
+    const lbl=document.createElement('div');
+    lbl.className='mb-lbl';
+    lbl.textContent=monthNames[i];
+    div.appendChild(bar);div.appendChild(lbl);
+    container.appendChild(div);
+  });
+})();
+
+// ── ELDER SVG ──
+(function(){
+  const svg=document.getElementById('elderSvg');
+  const W=1100,H=200,PL=48,PR=20,PT=24,PB=28;
+  const iW=W-PL-PR,iH=H-PT-PB;
+  const elderData=yearly.map(d=>({y:d.y,v65:d.a3,v75:d.a4,tot:d.a3+d.a4}));
+  const maxE=Math.max(...elderData.map(d=>d.tot));
+  const n=yearly.length;
+  const xP=i=>PL+(i/(n-1))*iW;
+  const yP=v=>PT+(1-v/maxE)*iH;
+
+  // grid
+  [0,200,400,600,800].forEach(v=>{
+    if(v>maxE*1.05)return;
+    const y=yP(v);
+    const l=ns('line');l.setAttribute('x1',PL);l.setAttribute('x2',W-PR);l.setAttribute('y1',y);l.setAttribute('y2',y);
+    l.setAttribute('stroke','#EBEBEB');l.setAttribute('stroke-width','.5');svg.appendChild(l);
+    const t=ns('text');t.setAttribute('x',PL-8);t.setAttribute('y',y+4);t.setAttribute('text-anchor','end');
+    t.setAttribute('fill',G2);t.setAttribute('font-family','Space Grotesk');t.setAttribute('font-size','10');
+    t.textContent=v; svg.appendChild(t);
+  });
+
+  // stacked area: 65-74 (G1) on bottom, 75+ (black) on top
+  const pts65=elderData.map((d,i)=>`${xP(i)},${yP(d.v65)}`);
+  const ptsTot=elderData.map((d,i)=>`${xP(i)},${yP(d.tot)}`);
+
+  // 65-74 area (G1 fill)
+  const a65=ns('path');
+  a65.setAttribute('d',`M${xP(0)},${yP(0)} L${pts65.join(' L')} L${xP(n-1)},${yP(0)} Z`);
+  a65.setAttribute('fill',G1);a65.setAttribute('opacity','.25'); svg.appendChild(a65);
+  const l65=ns('path');
+  l65.setAttribute('d','M'+pts65.join(' L'));
+  l65.setAttribute('stroke',G1);l65.setAttribute('stroke-width','2');l65.setAttribute('fill','none'); svg.appendChild(l65);
+
+  // 75+ fill between 65-74 line and total line
+  const defs=ns('defs');
+  const gr2=ns('linearGradient');gr2.setAttribute('id','eg');gr2.setAttribute('x1','0');gr2.setAttribute('y1','0');gr2.setAttribute('x2','0');gr2.setAttribute('y2','1');
+  const es1=ns('stop');es1.setAttribute('offset','0%');es1.setAttribute('stop-color',BLACK);es1.setAttribute('stop-opacity','.2');
+  const es2=ns('stop');es2.setAttribute('offset','100%');es2.setAttribute('stop-color',BLACK);es2.setAttribute('stop-opacity','.05');
+  gr2.appendChild(es1);gr2.appendChild(es2);defs.appendChild(gr2);svg.appendChild(defs);
+
+  const a75=ns('path');
+  a75.setAttribute('d',`M${ptsTot.join(' L')} L${pts65.slice().reverse().join(' L')} Z`);
+  a75.setAttribute('fill','url(#eg)'); svg.appendChild(a75);
+
+  const lTot=ns('path');
+  lTot.setAttribute('d','M'+ptsTot.join(' L'));
+  lTot.setAttribute('stroke',BLACK);lTot.setAttribute('stroke-width','2');lTot.setAttribute('fill','none'); svg.appendChild(lTot);
+
+  // dots + labels
+  elderData.forEach((d,i)=>{
+    const cx=xP(i), cy=yP(d.tot);
+    const c=ns('circle');c.setAttribute('cx',cx);c.setAttribute('cy',cy);c.setAttribute('r','4');
+    c.setAttribute('fill',BLACK);c.setAttribute('stroke',G4);c.setAttribute('stroke-width','1.5');
+    c.style.cursor='pointer';
+    c.addEventListener('mousemove',e=>showTT(e,d.y+'年 65歲以上',d.tot));
+    c.addEventListener('mouseleave',hideTT);
+    svg.appendChild(c);
+
+    if(d.y===2024||d.y===2011){
+      const t=ns('text');t.setAttribute('x',cx);t.setAttribute('y',cy-(d.y===2024?12:12));
+      t.setAttribute('text-anchor','middle');t.setAttribute('fill',d.y===2024?LIME:G2);
+      t.setAttribute('font-family','Space Grotesk');t.setAttribute('font-size','11');t.setAttribute('font-weight','600');
+      t.textContent=d.tot; svg.appendChild(t);
+    }
+
+    const xl=ns('text');xl.setAttribute('x',cx);xl.setAttribute('y',H-8);
+    xl.setAttribute('text-anchor','middle');xl.setAttribute('fill',peaks.has(d.y)?'#A8B200':G2);
+    xl.setAttribute('font-family','Space Grotesk');xl.setAttribute('font-size','9');
+    xl.textContent=String(d.y).slice(2); svg.appendChild(xl);
+  });
+})();
+
+// ── SCROLL / NAV ──
+const prog=document.getElementById('prog');
+const snav=document.getElementById('snav');
+const heroEl=document.getElementById('hero');
+const btt=document.getElementById('btt');
+const secs=document.querySelectorAll('section[id]');
+const navAs=document.querySelectorAll('.snav-links a');
+
+window.addEventListener('scroll',()=>{
+  const tot=document.documentElement.scrollHeight-innerHeight;
+  prog.style.width=(scrollY/tot*100)+'%';
+  btt.classList.toggle('on',scrollY>600);
+},{ passive:true });
+
+new IntersectionObserver(([e])=>snav.classList.toggle('on',!e.isIntersecting),{threshold:.05}).observe(heroEl);
+
+new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      navAs.forEach(a=>a.classList.remove('act'));
+      const a=document.querySelector(`.snav-links a[href="#${e.target.id}"]`);
+      if(a)a.classList.add('act');
+    }
+  });
+},{rootMargin:'-40% 0px -55% 0px'}).observe(secs[0]||heroEl);
+secs.forEach(s=>new IntersectionObserver(entries=>{
+  entries.forEach(e=>{ if(e.isIntersecting){ navAs.forEach(a=>a.classList.remove('act')); const a=document.querySelector(`.snav-links a[href="#${s.id}"]`); if(a)a.classList.add('act'); } });
+},{rootMargin:'-40% 0px -55% 0px'}).observe(s));
+
+new IntersectionObserver(entries=>{
+  entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); } });
+},{threshold:.06}).observe(secs[0]||document.body);
+secs.forEach(s=>new IntersectionObserver(entries=>{
+  entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); } });
+},{threshold:.06}).observe(s));
+
+btt.addEventListener('click',()=>scrollTo({top:0,behavior:'smooth'}));
+</script>
+
+
+</body></html>
