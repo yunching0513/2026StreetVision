@@ -1,0 +1,1711 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1280">
+<title>交通的性別觀點 · Gender Lens on Mobility — Vision Zero Taiwan</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --lime:    #C8D400;
+  --lime-dk: #A8B200;
+  --black:   #1A1A1A;
+  --g1:      #4A4A4A;
+  --g2:      #888888;
+  --g3:      #D0D0D0;
+  --g4:      #F5F5F3;
+  --white:   #FFFFFF;
+  --zh:      'Noto Sans TC', sans-serif;
+  --en:      'Space Grotesk', sans-serif;
+  --mono:    'JetBrains Mono', monospace;
+}
+html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+body {
+  font-family: var(--zh);
+  background: var(--white);
+  color: var(--black);
+  line-height: 1.85;
+  font-weight: 300;
+  font-size: 16px;
+}
+
+/* ── PAGE WRAP ── */
+.page {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 100px 80px;
+  position: relative;
+}
+
+/* ── LANG MARK ── */
+.lang-mark {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--en);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--g2);
+  margin-bottom: 16px;
+}
+.lang-mark::before {
+  content: '';
+  display: inline-block;
+  width: 24px;
+  height: 1px;
+  background: var(--lime-dk);
+}
+
+/* ── SECTION LABEL ── */
+.sec-num {
+  font-family: var(--en);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--lime-dk);
+  margin-bottom: 24px;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   HERO
+   ═══════════════════════════════════════════════════════════ */
+.hero {
+  min-height: 100vh;
+  background: var(--black);
+  color: var(--white);
+  position: relative;
+  overflow: hidden;
+  padding: 64px 80px 80px;
+  display: flex;
+  flex-direction: column;
+}
+.hero-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  z-index: 2;
+  position: relative;
+}
+.hero-logo {
+  border: 1px solid rgba(255,255,255,0.25);
+  padding: 8px 16px;
+  font-family: var(--en);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.55);
+}
+.hero-tag {
+  font-family: var(--en);
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  color: rgba(255,255,255,0.4);
+  text-align: right;
+  line-height: 1.8;
+  text-transform: uppercase;
+}
+.hero-bigstat {
+  margin-top: 100px;
+  z-index: 2;
+  position: relative;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 80px;
+  align-items: flex-end;
+}
+.bigstat-num {
+  font-family: var(--en);
+  font-size: 380px;
+  font-weight: 100;
+  line-height: 0.78;
+  letter-spacing: -0.04em;
+  color: var(--lime);
+  position: relative;
+}
+.bigstat-num small {
+  font-size: 88px;
+  font-weight: 300;
+  vertical-align: top;
+  margin-left: 8px;
+  color: rgba(200,212,0,0.6);
+}
+.bigstat-caption {
+  padding-bottom: 32px;
+  border-left: 1px solid rgba(255,255,255,0.2);
+  padding-left: 36px;
+}
+.bigstat-caption .label-en {
+  font-family: var(--en);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--lime);
+  margin-bottom: 14px;
+}
+.bigstat-caption .label-zh {
+  font-size: 22px;
+  font-weight: 100;
+  letter-spacing: 0.04em;
+  line-height: 1.55;
+  color: rgba(255,255,255,0.85);
+  max-width: 460px;
+  margin-bottom: 20px;
+}
+.bigstat-caption .label-zh strong {
+  font-weight: 700;
+  color: var(--white);
+  display: inline-block;
+  border-bottom: 2px solid var(--lime);
+  padding-bottom: 2px;
+}
+.bigstat-caption .label-en-body {
+  font-family: var(--en);
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.7;
+  color: rgba(255,255,255,0.5);
+  max-width: 460px;
+  font-style: italic;
+}
+
+.hero-title-block {
+  margin-top: auto;
+  z-index: 2;
+  position: relative;
+  padding-top: 80px;
+  border-top: 1px solid rgba(255,255,255,0.12);
+}
+.hero-en-label {
+  font-family: var(--en);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--lime);
+  margin-bottom: 20px;
+}
+.hero-title-zh {
+  font-size: 84px;
+  font-weight: 100;
+  letter-spacing: 0.06em;
+  line-height: 1.1;
+}
+.hero-title-zh strong {
+  font-weight: 700;
+}
+.hero-title-en {
+  font-family: var(--en);
+  font-size: 30px;
+  font-weight: 300;
+  letter-spacing: 0.04em;
+  color: rgba(255,255,255,0.55);
+  margin-top: 18px;
+}
+
+.hero-circle {
+  position: absolute;
+  right: -180px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+  opacity: 0.06;
+  pointer-events: none;
+}
+
+.hero-foot {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding-top: 32px;
+  border-top: 1px solid rgba(255,255,255,0.12);
+  margin-top: 50px;
+  z-index: 2;
+  position: relative;
+}
+.hero-foot-l {
+  font-size: 13px;
+  color: rgba(255,255,255,0.45);
+  line-height: 1.9;
+}
+.hero-foot-l strong { color: rgba(255,255,255,0.85); font-weight: 400; }
+.hero-foot-r {
+  font-family: var(--en);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  color: rgba(255,255,255,0.35);
+  text-align: right;
+  line-height: 2;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   SECTION 01 — THE PATTERN
+   ═══════════════════════════════════════════════════════════ */
+.s-pattern {
+  background: var(--white);
+  padding-top: 140px;
+  padding-bottom: 140px;
+}
+.sec-header {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  margin-bottom: 80px;
+  align-items: end;
+}
+.sec-header h2 {
+  font-size: 56px;
+  font-weight: 100;
+  letter-spacing: 0.04em;
+  line-height: 1.15;
+}
+.sec-header h2 strong { font-weight: 700; }
+.sec-header h2 + .en-h {
+  font-family: var(--en);
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  color: var(--g2);
+  margin-top: 14px;
+}
+.sec-header .sec-intro {
+  font-size: 17px;
+  font-weight: 300;
+  line-height: 1.95;
+  color: var(--g1);
+  padding-bottom: 8px;
+}
+.sec-header .sec-intro strong {
+  font-weight: 700;
+  color: var(--black);
+}
+.sec-header .sec-intro-en {
+  font-family: var(--en);
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.75;
+  color: var(--g2);
+  font-style: italic;
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px dashed var(--g3);
+}
+
+/* CHART */
+.chart-wrap {
+  background: var(--g4);
+  padding: 64px 56px 48px;
+  border-top: 3px solid var(--lime);
+  margin-bottom: 60px;
+}
+.chart-title-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 8px;
+}
+.chart-title-bar h3 {
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+.chart-title-bar .chart-en {
+  font-family: var(--en);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--g2);
+}
+.chart-sub {
+  font-size: 13px;
+  color: var(--g1);
+  margin-bottom: 32px;
+}
+.chart-legend {
+  display: flex;
+  gap: 32px;
+  margin-bottom: 12px;
+}
+.lg-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+}
+.lg-dot {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+}
+.lg-dot.female { background: var(--lime); }
+.lg-dot.male { background: var(--black); }
+.lg-en {
+  font-family: var(--en);
+  font-size: 11px;
+  color: var(--g2);
+  letter-spacing: 0.06em;
+}
+
+.chart-svg {
+  width: 100%;
+  height: 360px;
+  margin-top: 8px;
+}
+
+.chart-foot-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 48px;
+  margin-top: 48px;
+  padding-top: 36px;
+  border-top: 1px solid var(--g3);
+}
+.cf-cell .cf-num {
+  font-family: var(--en);
+  font-size: 64px;
+  font-weight: 100;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  color: var(--black);
+}
+.cf-cell .cf-num small {
+  font-size: 22px;
+  font-weight: 300;
+  color: var(--g1);
+}
+.cf-cell .cf-zh {
+  font-size: 14px;
+  color: var(--g1);
+  margin-top: 14px;
+  line-height: 1.7;
+}
+.cf-cell .cf-en {
+  font-family: var(--en);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--g2);
+  margin-top: 6px;
+  font-weight: 500;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   SECTION 02 — MODE GAP
+   ═══════════════════════════════════════════════════════════ */
+.s-mode {
+  background: var(--black);
+  color: var(--white);
+  padding-top: 140px;
+  padding-bottom: 140px;
+}
+.s-mode .sec-num { color: var(--lime); }
+.s-mode .sec-header h2 { color: var(--white); }
+.s-mode .sec-header .en-h { color: rgba(255,255,255,0.5); }
+.s-mode .sec-header .sec-intro { color: rgba(255,255,255,0.75); }
+.s-mode .sec-header .sec-intro strong { color: var(--white); }
+.s-mode .sec-header .sec-intro-en { color: rgba(255,255,255,0.4); border-color: rgba(255,255,255,0.15); }
+
+.mode-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  margin-top: 32px;
+}
+.mode-side {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.1);
+  padding: 48px 40px;
+  position: relative;
+}
+.mode-side.female {
+  border-top: 4px solid var(--lime);
+}
+.mode-side.male {
+  border-top: 4px solid var(--white);
+}
+.mode-tag {
+  font-family: var(--en);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.5);
+  margin-bottom: 12px;
+}
+.mode-tag span { color: var(--lime); }
+.mode-side h3 {
+  font-size: 28px;
+  font-weight: 100;
+  letter-spacing: 0.04em;
+  margin-bottom: 32px;
+  color: var(--white);
+}
+.mode-side h3 strong { font-weight: 700; }
+
+.mode-big {
+  font-family: var(--en);
+  font-size: 120px;
+  font-weight: 100;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  margin: 20px 0 8px;
+}
+.mode-side.female .mode-big { color: var(--lime); }
+.mode-side.male .mode-big { color: var(--white); }
+.mode-big small { font-size: 32px; font-weight: 300; opacity: 0.5; }
+
+.mode-big-label {
+  font-size: 13px;
+  color: rgba(255,255,255,0.6);
+  margin-bottom: 32px;
+  padding-bottom: 32px;
+  border-bottom: 1px dashed rgba(255,255,255,0.15);
+}
+.mode-big-label-en {
+  font-family: var(--en);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.35);
+  margin-top: 4px;
+}
+
+.mode-bars { display: flex; flex-direction: column; gap: 18px; }
+.mb {
+  display: grid;
+  grid-template-columns: 140px 1fr 48px;
+  align-items: center;
+  gap: 14px;
+}
+.mb-label {
+  font-size: 13px;
+  color: rgba(255,255,255,0.75);
+  line-height: 1.4;
+}
+.mb-label small {
+  display: block;
+  font-family: var(--en);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.4);
+  margin-top: 2px;
+  font-weight: 500;
+}
+.mb-bar {
+  height: 8px;
+  background: rgba(255,255,255,0.1);
+  position: relative;
+  overflow: hidden;
+}
+.mb-fill {
+  height: 100%;
+  position: relative;
+}
+.mode-side.female .mb-fill { background: var(--lime); }
+.mode-side.male .mb-fill { background: var(--white); }
+.mb-val {
+  font-family: var(--en);
+  font-size: 14px;
+  font-weight: 600;
+  text-align: right;
+  color: var(--white);
+}
+
+.mode-quote {
+  margin-top: 80px;
+  padding: 56px 64px;
+  background: rgba(200,212,0,0.06);
+  border-left: 4px solid var(--lime);
+}
+.mode-quote-mark {
+  font-family: var(--en);
+  font-size: 80px;
+  line-height: 0.5;
+  color: var(--lime);
+  font-weight: 100;
+  margin-bottom: 16px;
+}
+.mode-quote-zh {
+  font-size: 24px;
+  font-weight: 300;
+  line-height: 1.7;
+  color: var(--white);
+  margin-bottom: 16px;
+}
+.mode-quote-zh strong { font-weight: 700; color: var(--lime); }
+.mode-quote-en {
+  font-family: var(--en);
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 1.75;
+  color: rgba(255,255,255,0.55);
+  font-style: italic;
+}
+.mode-quote-attr {
+  font-family: var(--en);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.4);
+  margin-top: 24px;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   SECTION 03 — HIDDEN BURDEN
+   ═══════════════════════════════════════════════════════════ */
+.s-burden {
+  background: var(--white);
+  padding-top: 140px;
+  padding-bottom: 140px;
+}
+
+.burden-bigstat {
+  display: grid;
+  grid-template-columns: 380px 1fr;
+  gap: 60px;
+  align-items: center;
+  margin-top: 24px;
+  padding: 56px 0;
+  border-top: 1px solid var(--g3);
+  border-bottom: 1px solid var(--g3);
+}
+.burden-bigstat-num {
+  font-family: var(--en);
+  font-size: 168px;
+  font-weight: 100;
+  line-height: 0.95;
+  letter-spacing: -0.04em;
+  color: var(--black);
+  position: relative;
+  padding-bottom: 18px;
+}
+.burden-bigstat-num small {
+  font-size: 48px;
+  font-weight: 300;
+  color: var(--lime-dk);
+  vertical-align: top;
+  margin-left: 6px;
+}
+.burden-bigstat-num::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 72px;
+  height: 4px;
+  background: var(--lime);
+}
+.burden-bigstat-info h3 {
+  font-size: 28px;
+  font-weight: 100;
+  letter-spacing: 0.04em;
+  line-height: 1.5;
+  margin-bottom: 18px;
+}
+.burden-bigstat-info h3 strong { font-weight: 700; }
+.burden-bigstat-info .en {
+  font-family: var(--en);
+  font-size: 14px;
+  font-weight: 300;
+  font-style: italic;
+  line-height: 1.7;
+  color: var(--g2);
+  margin-bottom: 24px;
+}
+.burden-bigstat-info .attribution {
+  font-family: var(--en);
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--lime-dk);
+  font-weight: 500;
+}
+
+.burden-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  margin-top: 60px;
+}
+.bs-cell {
+  padding: 40px 32px;
+  border-right: 1px solid var(--g3);
+}
+.bs-cell:last-child { border-right: none; }
+.bs-num {
+  font-family: var(--en);
+  font-size: 72px;
+  font-weight: 100;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: var(--black);
+}
+.bs-num small {
+  font-size: 22px;
+  color: var(--g1);
+}
+.bs-zh {
+  font-size: 15px;
+  color: var(--g1);
+  line-height: 1.7;
+  margin-top: 18px;
+}
+.bs-en {
+  font-family: var(--en);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--g2);
+  margin-top: 6px;
+}
+
+/* CONCEPT — trip chaining diagram */
+.concept-block {
+  margin-top: 100px;
+  padding: 64px 56px;
+  background: var(--g4);
+  border-top: 3px solid var(--lime);
+}
+.concept-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 8px;
+}
+.concept-head h3 {
+  font-size: 24px;
+  font-weight: 700;
+}
+.concept-head .en {
+  font-family: var(--en);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--lime-dk);
+}
+.concept-desc {
+  font-size: 15px;
+  color: var(--g1);
+  line-height: 1.85;
+  max-width: 820px;
+  margin-bottom: 48px;
+}
+
+.chain-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+}
+.chain-side {
+  position: relative;
+}
+.chain-tag {
+  font-family: var(--en);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--lime-dk);
+  margin-bottom: 12px;
+}
+.chain-side h4 {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 28px;
+  letter-spacing: 0.02em;
+}
+.chain-steps {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 16px;
+}
+.cs-step {
+  padding: 10px 16px;
+  background: var(--white);
+  border: 1px solid var(--g3);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+.cs-arrow {
+  font-family: var(--en);
+  font-size: 14px;
+  color: var(--lime-dk);
+  font-weight: 700;
+}
+.chain-side.female .cs-step:nth-child(odd) {
+  background: var(--lime);
+  border-color: var(--lime);
+}
+.chain-meta {
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px dashed var(--g3);
+  font-size: 13px;
+  color: var(--g1);
+}
+.chain-meta strong { color: var(--black); }
+.chain-meta-en {
+  font-family: var(--en);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  color: var(--g2);
+  margin-top: 4px;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   SECTION 04 — VIENNA STORY
+   ═══════════════════════════════════════════════════════════ */
+.s-vienna {
+  background: var(--g4);
+  padding-top: 140px;
+  padding-bottom: 140px;
+}
+
+.vienna-quote {
+  font-size: 48px;
+  font-weight: 100;
+  letter-spacing: 0.02em;
+  line-height: 1.35;
+  margin: 40px 0 28px;
+  max-width: 1000px;
+}
+.vienna-quote strong { font-weight: 700; }
+.vienna-quote em {
+  font-style: normal;
+  border-bottom: 3px solid var(--lime);
+  padding-bottom: 4px;
+}
+.vienna-quote-en {
+  font-family: var(--en);
+  font-size: 19px;
+  font-weight: 300;
+  font-style: italic;
+  line-height: 1.6;
+  color: var(--g2);
+  max-width: 800px;
+  margin-bottom: 60px;
+}
+
+.vienna-twocol {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  background: var(--white);
+  border: 1px solid var(--g3);
+  margin-top: 60px;
+}
+.vc-side {
+  padding: 56px 48px;
+  position: relative;
+}
+.vc-side:first-child { border-right: 1px solid var(--g3); }
+.vc-side .vc-tag {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 12px;
+  font-family: var(--en);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--g2);
+  margin-bottom: 18px;
+}
+.vc-side .vc-tag::before {
+  content: '';
+  display: inline-block;
+  width: 32px;
+  height: 1px;
+  background: var(--g2);
+}
+.vc-side.female .vc-tag { color: var(--lime-dk); }
+.vc-side.female .vc-tag::before { background: var(--lime-dk); }
+
+.vc-side h3 {
+  font-size: 32px;
+  font-weight: 100;
+  letter-spacing: 0.04em;
+  margin-bottom: 8px;
+  line-height: 1.3;
+}
+.vc-side h3 strong { font-weight: 700; }
+.vc-side .vc-en-h {
+  font-family: var(--en);
+  font-size: 13px;
+  font-weight: 400;
+  font-style: italic;
+  color: var(--g2);
+  margin-bottom: 32px;
+}
+.vc-side .vc-body {
+  font-size: 14px;
+  line-height: 1.95;
+  color: var(--g1);
+  margin-bottom: 24px;
+}
+.vc-side .vc-body strong { color: var(--black); font-weight: 700; }
+.vc-side .vc-body-en {
+  font-family: var(--en);
+  font-size: 13px;
+  font-weight: 300;
+  font-style: italic;
+  line-height: 1.75;
+  color: var(--g2);
+  padding-top: 18px;
+  border-top: 1px dashed var(--g3);
+}
+
+.vc-side .vc-time {
+  font-family: var(--en);
+  font-size: 64px;
+  font-weight: 100;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  margin-top: 32px;
+  margin-bottom: 8px;
+}
+.vc-side.male .vc-time { color: var(--g1); }
+.vc-side.female .vc-time { color: var(--lime-dk); }
+.vc-side .vc-time-cap {
+  font-family: var(--en);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--g2);
+}
+
+.vienna-meta {
+  margin-top: 56px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 24px;
+  border-top: 1px solid var(--g3);
+}
+.vienna-meta-l {
+  font-size: 13px;
+  color: var(--g1);
+  line-height: 1.7;
+}
+.vienna-meta-r {
+  font-family: var(--en);
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--g2);
+  text-align: right;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   SECTION 05 — POLICY
+   ═══════════════════════════════════════════════════════════ */
+.s-policy {
+  background: var(--white);
+  padding-top: 140px;
+  padding-bottom: 140px;
+}
+
+.pol-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0;
+  margin-top: 32px;
+  border-top: 1px solid var(--g3);
+  border-left: 1px solid var(--g3);
+}
+.pol-cell {
+  padding: 48px 40px;
+  border-right: 1px solid var(--g3);
+  border-bottom: 1px solid var(--g3);
+  position: relative;
+}
+.pol-num {
+  font-family: var(--en);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  color: var(--lime-dk);
+  margin-bottom: 16px;
+  display: inline-block;
+  padding: 4px 10px;
+  background: rgba(200,212,0,0.15);
+}
+.pol-cell h3 {
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  margin-bottom: 6px;
+  line-height: 1.4;
+}
+.pol-cell .pol-en-h {
+  font-family: var(--en);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: var(--g2);
+  margin-bottom: 24px;
+  font-style: italic;
+}
+.pol-cell .pol-body {
+  font-size: 14px;
+  color: var(--g1);
+  line-height: 1.85;
+  margin-bottom: 18px;
+}
+.pol-cell .pol-en {
+  font-family: var(--en);
+  font-size: 12px;
+  color: var(--g2);
+  line-height: 1.7;
+  font-style: italic;
+  padding-top: 14px;
+  border-top: 1px dashed var(--g3);
+}
+
+/* ═══════════════════════════════════════════════════════════
+   FOOTER
+   ═══════════════════════════════════════════════════════════ */
+footer {
+  background: var(--black);
+  color: var(--white);
+  padding: 80px 80px 60px;
+}
+footer .ft-wrap {
+  max-width: 1180px;
+  margin: 0 auto;
+}
+.ft-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr;
+  gap: 60px;
+  padding-bottom: 56px;
+  border-bottom: 1px solid rgba(255,255,255,0.12);
+}
+.ft-h {
+  font-family: var(--en);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--lime);
+  margin-bottom: 20px;
+}
+.ft-tag {
+  font-size: 26px;
+  font-weight: 100;
+  letter-spacing: 0.04em;
+  line-height: 1.5;
+  color: var(--white);
+  margin-bottom: 18px;
+}
+.ft-tag strong { color: var(--lime); font-weight: 700; }
+.ft-desc {
+  font-size: 13px;
+  color: rgba(255,255,255,0.5);
+  line-height: 1.85;
+}
+.ft-list {
+  list-style: none;
+  padding: 0;
+}
+.ft-list li {
+  font-size: 12px;
+  color: rgba(255,255,255,0.55);
+  padding: 6px 0;
+  line-height: 1.6;
+  border-bottom: 1px dashed rgba(255,255,255,0.08);
+}
+.ft-list li strong { color: var(--white); font-weight: 400; }
+.ft-list-en {
+  font-family: var(--en);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.3);
+  margin-top: 2px;
+  display: block;
+}
+
+.ft-bottom {
+  padding-top: 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: var(--en);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  color: rgba(255,255,255,0.3);
+}
+.ft-bottom-l strong { color: rgba(255,255,255,0.7); font-weight: 600; }
+
+/* PRINT */
+@media print {
+  body { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+  .hero { min-height: auto; page-break-after: always; }
+  .s-pattern, .s-mode, .s-burden, .s-vienna, .s-policy { page-break-after: always; }
+}
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════════════════
+     HERO
+     ═══════════════════════════════════════════════════════════ -->
+<section class="hero">
+  <div class="hero-top">
+    <div class="hero-logo">VZT · GENDER LENS · 2026</div>
+    <div class="hero-tag">
+      Vision Zero Taiwan<br>
+      INFOGRAPHIC · MAY 2026
+    </div>
+  </div>
+
+  <svg class="hero-circle" width="900" height="900" viewBox="0 0 900 900">
+    <circle cx="450" cy="450" r="380" fill="none" stroke="#C8D400" stroke-width="140"/>
+    <circle cx="450" cy="450" r="380" fill="none" stroke="#C8D400" stroke-width="140" stroke-dasharray="1193 2386" style="transform-origin:450px 450px;transform:rotate(-90deg)" opacity="0.6"/>
+  </svg>
+
+  <div class="hero-bigstat">
+    <div class="bigstat-num">1.75<small>×</small></div>
+    <div class="bigstat-caption">
+      <div class="label-en">The Gender Gap · 2024</div>
+      <div class="label-zh">
+        台灣女性公共運輸使用率<br>
+        為男性的<strong>近 1.75 倍</strong>
+      </div>
+      <div class="label-en-body">
+        Women in Taiwan use public transit nearly 1.75 times as often as men.
+        Yet the planning system still treats this difference as invisible.
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-title-block">
+    <div class="hero-en-label">VOL. 01 · GENDER LENS ON MOBILITY</div>
+    <h1 class="hero-title-zh">
+      交通的<strong>性別觀點</strong>
+    </h1>
+    <div class="hero-title-en">Cities Are Not Gender-Neutral.</div>
+  </div>
+
+  <div class="hero-foot">
+    <div class="hero-foot-l">
+      製作：<strong>Yun Ching Wu</strong>　|　協力：<strong>TCAN · VZT · 還路於民</strong><br>
+      Compiled by Yun Ching Wu for Taiwan Climate Action Network &amp; Vision Zero Taiwan.
+    </div>
+    <div class="hero-foot-r">
+      01 — THE PATTERN<br>
+      02 — THE MODE GAP<br>
+      03 — THE HIDDEN BURDEN<br>
+      04 — VIENNA LESSON<br>
+      05 — WAY FORWARD
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     01 — THE PATTERN
+     ═══════════════════════════════════════════════════════════ -->
+<section class="s-pattern">
+  <div class="page">
+    <div class="sec-num">01 — THE PATTERN · 趨勢觀察</div>
+
+    <div class="sec-header">
+      <div>
+        <h2>女性是永續運輸的<br><strong>沉默主力</strong></h2>
+        <div class="en-h">Women are the silent backbone of sustainable transport.</div>
+      </div>
+      <div>
+        <div class="sec-intro">
+          交通並非性別中立的活動。台灣女性運具次數之公共運輸市占率<strong>歷年穩定為男性的 1.5 倍以上</strong>，2024 年差距更擴大至 1.75 倍。然而，這份對公共運輸的依賴並未換得相應的規劃支持。
+        </div>
+        <div class="sec-intro-en">
+          Transport is not gender-neutral. Women in Taiwan have used public transit at least 1.5x the rate of men every year since 2009 — and 1.75x in 2024 — yet planning priorities still default to point-to-point male commuting patterns.
+        </div>
+      </div>
+    </div>
+
+    <div class="chart-wrap">
+      <div class="chart-title-bar">
+        <h3>2009–2024 公共運輸使用率（按性別）</h3>
+        <div class="chart-en">Transit Share by Gender · 2009–2024</div>
+      </div>
+      <div class="chart-sub">
+        資料：交通部統計處《民眾日常使用運具狀況調查》歷年數據　·　Source: MOTC National Travel Survey, 2009–2024
+      </div>
+
+      <div class="chart-legend">
+        <div class="lg-item">
+          <span class="lg-dot female"></span>
+          <span>女性 · <span class="lg-en">FEMALE</span></span>
+        </div>
+        <div class="lg-item">
+          <span class="lg-dot male"></span>
+          <span>男性 · <span class="lg-en">MALE</span></span>
+        </div>
+      </div>
+
+      <svg class="chart-svg" viewBox="0 0 1180 360" preserveAspectRatio="none">
+        <!-- Grid -->
+        <line x1="60" y1="40"  x2="1000" y2="40"  stroke="#D0D0D0" stroke-width="0.5" stroke-dasharray="2,4"/>
+        <line x1="60" y1="100" x2="1000" y2="100" stroke="#D0D0D0" stroke-width="0.5" stroke-dasharray="2,4"/>
+        <line x1="60" y1="160" x2="1000" y2="160" stroke="#D0D0D0" stroke-width="0.5" stroke-dasharray="2,4"/>
+        <line x1="60" y1="220" x2="1000" y2="220" stroke="#D0D0D0" stroke-width="0.5" stroke-dasharray="2,4"/>
+        <line x1="60" y1="280" x2="1000" y2="280" stroke="#D0D0D0" stroke-width="0.5" stroke-dasharray="2,4"/>
+
+        <!-- Y axis labels -->
+        <text x="50" y="44"  text-anchor="end" font-family="Space Grotesk" font-size="11" fill="#888">25%</text>
+        <text x="50" y="104" text-anchor="end" font-family="Space Grotesk" font-size="11" fill="#888">20%</text>
+        <text x="50" y="164" text-anchor="end" font-family="Space Grotesk" font-size="11" fill="#888">15%</text>
+        <text x="50" y="224" text-anchor="end" font-family="Space Grotesk" font-size="11" fill="#888">10%</text>
+        <text x="50" y="284" text-anchor="end" font-family="Space Grotesk" font-size="11" fill="#888">5%</text>
+
+        <!-- X axis -->
+        <line x1="60" y1="300" x2="1000" y2="300" stroke="#1A1A1A" stroke-width="1"/>
+
+        <!--
+          Years: 2009-2024  · X positions distributed from 100 to 1000
+          11 points equally spaced over 900 units → 90 units each
+          F values: 19.9 20.6 21.5 21.7 21.5 19.0 21.7 22.4 19.3 17.5 19.2
+          M values: 12.7 12.5 13.3 13.2 14.0 12.7 14.2 13.8 12.6 11.1 11.0
+          Y scale: 25% = 40, 5% = 280  →  each 1% = 12 units; y = 280 - (v-5)*12
+        -->
+
+        <!-- Female line -->
+        <polyline points="
+          100,101.2
+          190,92.8
+          280,82
+          370,79.6
+          460,82
+          550,112
+          640,79.6
+          730,71.2
+          820,108.4
+          910,130
+          1000,109.6"
+          fill="none" stroke="#C8D400" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
+
+        <!-- Male line -->
+        <polyline points="
+          100,187.6
+          190,190
+          280,180.4
+          370,181.6
+          460,172
+          550,187.6
+          640,169.6
+          730,174.4
+          820,188.8
+          910,206.8
+          1000,208"
+          fill="none" stroke="#1A1A1A" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
+
+        <!-- Female endpoint marker + labels (moved into clear space) -->
+        <circle cx="100"  cy="101.2" r="4" fill="#C8D400"/>
+        <circle cx="1000" cy="109.6" r="7" fill="#C8D400" stroke="#1A1A1A" stroke-width="1.5"/>
+        <text x="1020" y="104" font-family="Space Grotesk" font-size="16" font-weight="700" fill="#1A1A1A">19.2%</text>
+        <text x="1020" y="120" font-family="Space Grotesk" font-size="10" fill="#888" letter-spacing="0.14em">FEMALE</text>
+
+        <!-- Male endpoint marker + labels -->
+        <circle cx="100"  cy="187.6" r="4" fill="#1A1A1A"/>
+        <circle cx="1000" cy="208" r="7" fill="#1A1A1A" stroke="#C8D400" stroke-width="1.5"/>
+        <text x="1020" y="205" font-family="Space Grotesk" font-size="16" font-weight="700" fill="#1A1A1A">11.0%</text>
+        <text x="1020" y="221" font-family="Space Grotesk" font-size="10" fill="#888" letter-spacing="0.14em">MALE</text>
+
+        <!-- Gap connector between endpoints -->
+        <line x1="1000" y1="109.6" x2="1000" y2="208" stroke="#C8D400" stroke-width="1" stroke-dasharray="3,3" opacity="0.7"/>
+        <text x="993" y="162" text-anchor="end" font-family="Space Grotesk" font-size="11" fill="#A8B200" font-weight="700" letter-spacing="0.06em">+8.2 PP</text>
+        <text x="993" y="176" text-anchor="end" font-family="Noto Sans TC" font-size="10" fill="#888">2024 差距</text>
+
+        <!-- Year labels -->
+        <text x="100"  y="318" text-anchor="middle" font-family="Space Grotesk" font-size="11" fill="#888">2009</text>
+        <text x="280"  y="318" text-anchor="middle" font-family="Space Grotesk" font-size="11" fill="#888">2011</text>
+        <text x="460"  y="318" text-anchor="middle" font-family="Space Grotesk" font-size="11" fill="#888">2013</text>
+        <text x="640"  y="318" text-anchor="middle" font-family="Space Grotesk" font-size="11" fill="#888">2015</text>
+        <text x="820"  y="318" text-anchor="middle" font-family="Space Grotesk" font-size="11" fill="#888">2020</text>
+        <text x="1000" y="318" text-anchor="middle" font-family="Space Grotesk" font-size="11" fill="#888">2024</text>
+
+        <!-- Annotation: 2022 COVID dip (moved below to avoid +8.2pp overlap) -->
+        <circle cx="910" cy="130" r="4" fill="#A8B200" opacity="0.6"/>
+        <line x1="910" y1="138" x2="910" y2="248" stroke="#A8B200" stroke-width="0.5" stroke-dasharray="2,2"/>
+        <text x="910" y="262" text-anchor="middle" font-family="Space Grotesk" font-size="10" fill="#A8B200" font-weight="600" letter-spacing="0.06em">2022 · COVID</text>
+        <text x="910" y="276" text-anchor="middle" font-family="Noto Sans TC" font-size="9" fill="#888">疫情低點</text>
+      </svg>
+
+      <div class="chart-foot-grid">
+        <div class="cf-cell">
+          <div class="cf-num">19.2<small>%</small></div>
+          <div class="cf-zh">女性公共運輸使用率（2024）</div>
+          <div class="cf-en">Female Transit Share, 2024</div>
+        </div>
+        <div class="cf-cell">
+          <div class="cf-num">11.0<small>%</small></div>
+          <div class="cf-zh">男性公共運輸使用率（2024）</div>
+          <div class="cf-en">Male Transit Share, 2024</div>
+        </div>
+        <div class="cf-cell">
+          <div class="cf-num">8.2<small> pp</small></div>
+          <div class="cf-zh">2024 性別差距 · 歷次最大之一</div>
+          <div class="cf-en">2024 Gap · Among Largest On Record</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     02 — MODE GAP
+     ═══════════════════════════════════════════════════════════ -->
+<section class="s-mode">
+  <div class="page">
+    <div class="sec-num">02 — THE MODE GAP · 運具差異</div>
+
+    <div class="sec-header">
+      <div>
+        <h2>兩條<strong>截然不同</strong>的<br>移動軌跡</h2>
+        <div class="en-h">Two fundamentally different mobility paths.</div>
+      </div>
+      <div>
+        <div class="sec-intro">
+          臺北市調查顯示，女性通勤者選擇<strong>綠運輸</strong>的比例達 62.5%；男性則高度依賴<strong>機車（38.3%）與自用小客車（23.9%）</strong>。差異反映的不是偏好，而是<strong>成本、安全感與照顧責任</strong>的結構性差異。
+        </div>
+        <div class="sec-intro-en">
+          In Taipei, 62.5% of female commuters use green modes, while men depend disproportionately on motorcycles (38.3%) and private cars (23.9%). What looks like preference is in fact a structural difference rooted in cost, safety, and care work.
+        </div>
+      </div>
+    </div>
+
+    <div class="mode-grid">
+      <!-- FEMALE -->
+      <div class="mode-side female">
+        <div class="mode-tag">FEMALE COMMUTER · <span>女性通勤者</span></div>
+        <h3>偏向<strong>綠運輸</strong>的<br>選擇者</h3>
+
+        <div class="mode-big">62.5<small>%</small></div>
+        <div class="mode-big-label">
+          臺北市女性通勤者選擇綠運輸之比例
+          <div class="mode-big-label-en">Female Green-Mode Share, Taipei</div>
+        </div>
+
+        <div class="mode-bars">
+          <div class="mb">
+            <div class="mb-label">捷運 · 公車<small>MRT &amp; Bus</small></div>
+            <div class="mb-bar"><div class="mb-fill" style="width:78%"></div></div>
+            <div class="mb-val">高</div>
+          </div>
+          <div class="mb">
+            <div class="mb-label">步行 · 自行車<small>Walk &amp; Bike</small></div>
+            <div class="mb-bar"><div class="mb-fill" style="width:48%"></div></div>
+            <div class="mb-val">中</div>
+          </div>
+          <div class="mb">
+            <div class="mb-label">機車<small>Motorcycle</small></div>
+            <div class="mb-bar"><div class="mb-fill" style="width:30%"></div></div>
+            <div class="mb-val">低</div>
+          </div>
+          <div class="mb">
+            <div class="mb-label">自用小客車<small>Private Car</small></div>
+            <div class="mb-bar"><div class="mb-fill" style="width:18%"></div></div>
+            <div class="mb-val">低</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MALE -->
+      <div class="mode-side male">
+        <div class="mode-tag">MALE COMMUTER · <span>男性通勤者</span></div>
+        <h3>依賴<strong>私人機動運具</strong><br>的駕駛者</h3>
+
+        <div class="mode-big">38.3<small>%</small></div>
+        <div class="mode-big-label">
+          男性通勤者使用機車比例（含私人小客車 23.9%）
+          <div class="mode-big-label-en">Male Motorcycle Use (+ 23.9% Cars)</div>
+        </div>
+
+        <div class="mode-bars">
+          <div class="mb">
+            <div class="mb-label">機車<small>Motorcycle</small></div>
+            <div class="mb-bar"><div class="mb-fill" style="width:88%"></div></div>
+            <div class="mb-val">38%</div>
+          </div>
+          <div class="mb">
+            <div class="mb-label">自用小客車<small>Private Car</small></div>
+            <div class="mb-bar"><div class="mb-fill" style="width:60%"></div></div>
+            <div class="mb-val">24%</div>
+          </div>
+          <div class="mb">
+            <div class="mb-label">捷運 · 公車<small>MRT &amp; Bus</small></div>
+            <div class="mb-bar"><div class="mb-fill" style="width:40%"></div></div>
+            <div class="mb-val">中</div>
+          </div>
+          <div class="mb">
+            <div class="mb-label">步行 · 自行車<small>Walk &amp; Bike</small></div>
+            <div class="mb-bar"><div class="mb-fill" style="width:25%"></div></div>
+            <div class="mb-val">低</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- QUOTE -->
+    <div class="mode-quote">
+      <div class="mode-quote-mark">"</div>
+      <div class="mode-quote-zh">
+        如果女性的綠運輸貢獻接近男性的一倍，<br>
+        那麼<strong>她們才是真正的「永續交通使用者」</strong>。<br>
+        但她們在規劃會議桌上的能見度，仍然趨近於零。
+      </div>
+      <div class="mode-quote-en">
+        If women's contribution to sustainable mobility is nearly double that of men,
+        then they — not drivers — are the real sustainable transport users.
+        Yet their visibility at the planning table remains close to zero.
+      </div>
+      <div class="mode-quote-attr">— STREETS VISION WHITE PAPER · 2026</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     03 — THE HIDDEN BURDEN
+     ═══════════════════════════════════════════════════════════ -->
+<section class="s-burden">
+  <div class="page">
+    <div class="sec-num">03 — THE HIDDEN BURDEN · 隱形負擔</div>
+
+    <div class="sec-header">
+      <div>
+        <h2>對公共運輸的依賴<br>不等於<strong>被公平對待</strong></h2>
+        <div class="en-h">Dependence is not the same as being fairly served.</div>
+      </div>
+      <div>
+        <div class="sec-intro">
+          女性高比例使用公共運輸的同時，肩負<strong>職場與家庭照顧的雙重壓力</strong>。她們的出行不是線性的「家—公司」，而是接送、就醫、採買、照顧長輩等多節點任務的串聯。
+        </div>
+        <div class="sec-intro-en">
+          High transit use comes alongside the dual burden of paid work and family care. Their journeys are not linear "home–office" lines but multi-node chains — school drop-off, errands, eldercare, return home.
+        </div>
+      </div>
+    </div>
+
+    <!-- BIG STAT -->
+    <div class="burden-bigstat">
+      <div class="burden-bigstat-num">77.4<small>%</small></div>
+      <div class="burden-bigstat-info">
+        <h3>負照顧責任之女性<br>面臨<strong>職業與家庭雙重壓力</strong></h3>
+        <div class="en">
+          77.4% of Taiwanese women carrying care responsibilities face simultaneous workplace and family pressure.
+        </div>
+        <div class="attribution">SOURCE · Womany × CakeResume 2024 Trend Survey</div>
+      </div>
+    </div>
+
+    <!-- SUPPORTING STATS -->
+    <div class="burden-stats">
+      <div class="bs-cell">
+        <div class="bs-num">55<small>%</small></div>
+        <div class="bs-zh">女性認為「白天上班、晚上顧家」是最大職場瓶頸</div>
+        <div class="bs-en">Cite "Day Job + Night Caregiving" As Top Career Barrier</div>
+      </div>
+      <div class="bs-cell">
+        <div class="bs-num">83<small>%</small></div>
+        <div class="bs-zh">女性認為彈性工作有助留任<br><span style="color:#A8B200;">vs 僅 61% 工作場所實施</span></div>
+        <div class="bs-en">Say Flexible Work Aids Retention · Only 61% Provide It</div>
+      </div>
+      <div class="bs-cell">
+        <div class="bs-num">54<small>%</small></div>
+        <div class="bs-zh">女性曾因生育中斷職涯<br>（29 歲以下達 63%）</div>
+        <div class="bs-en">Career Interrupted Due To Childbirth (63% Under 29)</div>
+      </div>
+    </div>
+
+    <!-- TRIP CHAINING CONCEPT -->
+    <div class="concept-block">
+      <div class="concept-head">
+        <h3>行程串聯 — 被隱形的多節點旅次</h3>
+        <div class="en">Trip Chaining · Invisible Multi-Node Journeys</div>
+      </div>
+      <div class="concept-desc">
+        當男性的通勤是<strong>家 → 公司 → 家</strong>的兩段式線性旅次時，女性的通勤卻往往串聯起 4–7 個目的地。現行運具調查與大眾運輸路網設計，多以「點對點通勤」為基礎，無法服務這種「<strong>多目的、多節點、離峰時段</strong>」的旅次模式。
+        <br><br>
+        <em style="font-family:var(--en);font-style:italic;font-size:13px;color:var(--g2);">When a man's commute is a two-leg line, a woman's is a polygon — four to seven stops linking work, school drop-off, market, eldercare, and home. Most transit systems still serve the line.</em>
+      </div>
+
+      <div class="chain-grid">
+        <div class="chain-side male">
+          <div class="chain-tag">MALE PATTERN · 男性出行模式</div>
+          <h4>線性通勤 · Linear Commute</h4>
+          <div class="chain-steps">
+            <div class="cs-step">家</div>
+            <div class="cs-arrow">→</div>
+            <div class="cs-step">公司</div>
+            <div class="cs-arrow">→</div>
+            <div class="cs-step">家</div>
+          </div>
+          <div class="chain-meta">
+            <strong>2 段式旅次　·　平均 ~50 分鐘</strong>
+            <div class="chain-meta-en">2-LEG TRIP · ~50 MIN AVG</div>
+          </div>
+        </div>
+
+        <div class="chain-side female">
+          <div class="chain-tag">FEMALE PATTERN · 女性出行模式</div>
+          <h4>多節點串聯 · Trip Chaining</h4>
+          <div class="chain-steps">
+            <div class="cs-step">家</div>
+            <div class="cs-arrow">→</div>
+            <div class="cs-step">學校</div>
+            <div class="cs-arrow">→</div>
+            <div class="cs-step">公司</div>
+            <div class="cs-arrow">→</div>
+            <div class="cs-step">採買</div>
+            <div class="cs-arrow">→</div>
+            <div class="cs-step">看護</div>
+            <div class="cs-arrow">→</div>
+            <div class="cs-step">家</div>
+          </div>
+          <div class="chain-meta">
+            <strong>5–7 段式旅次　·　含離峰時段　·　時間與心理成本顯著更高</strong>
+            <div class="chain-meta-en">5–7 LEGS · OFF-PEAK · HIGHER TIME &amp; MENTAL COST</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     04 — VIENNA LESSON
+     ═══════════════════════════════════════════════════════════ -->
+<section class="s-vienna">
+  <div class="page">
+    <div class="sec-num">04 — VIENNA LESSON · 維也納的啟示</div>
+
+    <div class="sec-header">
+      <div>
+        <h2>1999 年的<br>維也納問卷</h2>
+        <div class="en-h">A 1999 questionnaire that reshaped a city.</div>
+      </div>
+      <div>
+        <div class="sec-intro">
+          維也納早在 1990 年代便啟動<strong>性別主流化</strong>規劃。1999 年的交通使用問卷，揭示了一個至今仍在重複的真相。
+        </div>
+        <div class="sec-intro-en">
+          Vienna pioneered gender mainstreaming in the 1990s. A 1999 mobility questionnaire surfaced a truth that still applies today.
+        </div>
+      </div>
+    </div>
+
+    <div class="vienna-quote">
+      男性 <em>5 分鐘</em> 填完問卷，<br>
+      女性卻 <strong>寫個不停</strong>。
+    </div>
+    <div class="vienna-quote-en">
+      "The men filled it out in five minutes: they went to work in the morning, came home at night. The women couldn't stop writing."
+    </div>
+
+    <div class="vienna-twocol">
+      <div class="vc-side male">
+        <div class="vc-tag">Mr. Schmidt</div>
+        <h3>「我去公司，然後<br>回家。」</h3>
+        <div class="vc-en-h">"I go to work, then come home."</div>
+        <div class="vc-body">
+          男性受訪者的回答<strong>清晰、簡短、可預測</strong>。傳統交通模型——以尖峰通勤、點對點軸線為核心——能夠服務這類使用者。
+        </div>
+        <div class="vc-body-en">
+          Male respondents gave clean, short, predictable answers. Traditional transport models — peak-hour commuter axes — serve this user well.
+        </div>
+        <div class="vc-time">5<small style="font-size:24px">min</small></div>
+        <div class="vc-time-cap">TIME TO ANSWER</div>
+      </div>
+
+      <div class="vc-side female">
+        <div class="vc-tag">Mrs. Schmidt</div>
+        <h3>「我送孩子上學，<br><strong>然後…</strong>」</h3>
+        <div class="vc-en-h">"I drop the kids at school, then…"</div>
+        <div class="vc-body">
+          女性受訪者寫滿問卷：接送小孩、就醫、採買、照顧長輩、接孩子下課、活動接送。<strong>多節點、跨時段、非通勤目的</strong>，與既有運輸設計嚴重錯位。
+        </div>
+        <div class="vc-body-en">
+          Women filled every line — school runs, doctor visits, errands, eldercare, pick-ups. Multi-node, multi-purpose, off-peak — entirely misaligned with how transit was designed.
+        </div>
+        <div class="vc-time">∞</div>
+        <div class="vc-time-cap">TIME TO ANSWER</div>
+      </div>
+    </div>
+
+    <div class="vienna-meta">
+      <div class="vienna-meta-l">
+        維也納後續執行 <strong>60+ 試點計畫</strong>：拓寬人行道、改善街道照明、重新配置長椅、女性友善住宅、安全捷徑加裝鏡子。<br>
+        Vienna has since implemented 60+ pilot projects in pavements, lighting, seating, gender-inclusive housing, and safer urban shortcuts.
+      </div>
+      <div class="vienna-meta-r">
+        VIENNA WOMEN'S OFFICE<br>
+        EVA KAIL · 1991–PRESENT
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     05 — POLICY
+     ═══════════════════════════════════════════════════════════ -->
+<section class="s-policy">
+  <div class="page">
+    <div class="sec-num">05 — WAY FORWARD · 政策路徑</div>
+
+    <div class="sec-header">
+      <div>
+        <h2>從<strong>性別主流化</strong>到<br>照護型街道</h2>
+        <div class="en-h">From gender mainstreaming to care-centered streets.</div>
+      </div>
+      <div>
+        <div class="sec-intro">
+          交通規劃應納入性別視角。我們倡議<strong>五項可整合至《地方雙零自治條例》</strong>的具體政策，使台灣城市真正為所有人運作。
+        </div>
+        <div class="sec-intro-en">
+          Five concrete proposals — designed to be embedded in the Local Dual-Zero Ordinance — to make Taiwanese cities work for everyone.
+        </div>
+      </div>
+    </div>
+
+    <div class="pol-grid">
+      <div class="pol-cell">
+        <div class="pol-num">P · 01</div>
+        <h3>性別影響評估入法</h3>
+        <div class="pol-en-h">Mandatory Gender Impact Assessment</div>
+        <div class="pol-body">
+          道路、人行道、大眾運輸場站之新建或整修工程應事前進行性別影響評估，將女性、照顧者、性別少數之需求納入規劃流程。
+        </div>
+        <div class="pol-en">
+          Require gender impact assessments for all road, pedestrian, and transit infrastructure projects — making the needs of women, caregivers, and gender minorities a structural input rather than an afterthought.
+        </div>
+      </div>
+
+      <div class="pol-cell">
+        <div class="pol-num">P · 02</div>
+        <h3>統計增列非二元選項</h3>
+        <div class="pol-en-h">Non-Binary Categories in Transport Statistics</div>
+        <div class="pol-body">
+          交通部與各縣市運具調查應自下次調查（2026）起，增列「非二元」、「其他」、「拒答」選項，並公開多節點旅次數據，避免性別少數族群數據隱形化。
+        </div>
+        <div class="pol-en">
+          Add non-binary, other, and decline-to-answer options in the next National Travel Survey (2026). Publish multi-node trip data so gender-minority commuters are no longer statistically invisible.
+        </div>
+      </div>
+
+      <div class="pol-cell">
+        <div class="pol-num">P · 03</div>
+        <h3>照護型街道試辦</h3>
+        <div class="pol-en-h">Care-Centered Street Pilots</div>
+        <div class="pol-body">
+          學區、醫療院所、社福機構周邊優先導入連續遮蔭、夜間照明、座椅密度、推車友善人行道，以「照顧者日常」為設計起點。
+        </div>
+        <div class="pol-en">
+          Roll out care-centered street pilots near schools, hospitals, and social-welfare facilities: continuous shading, night lighting, frequent seating, stroller-friendly sidewalks — designed around the daily lives of caregivers.
+        </div>
+      </div>
+
+      <div class="pol-cell">
+        <div class="pol-num">P · 04</div>
+        <h3>多節點票證 · 離峰加班</h3>
+        <div class="pol-en-h">Multi-Node Tickets &amp; Off-Peak Frequency</div>
+        <div class="pol-body">
+          研議「時段內可重複進出」票證設計，並強化離峰時段公車班次密度，回應 trip-chaining 多目的旅次模式。
+        </div>
+        <div class="pol-en">
+          Design tickets that allow re-entry within a time window, and increase off-peak bus frequency, to serve trip-chaining patterns that current commuter-centric networks ignore.
+        </div>
+      </div>
+
+      <div class="pol-cell">
+        <div class="pol-num">P · 05</div>
+        <h3>夜間安全設計</h3>
+        <div class="pol-en-h">Night-Time Safety By Design</div>
+        <div class="pol-body">
+          場站照明、CCTV、緊急通報按鈕、女性夜間車廂等選項應作為標準配備而非可選項；建立性別交通使用者焦點團體，定期回饋路線與場站設計。
+        </div>
+        <div class="pol-en">
+          Lighting, CCTV, emergency buttons, and women's-carriage options as standard — not optional. Convene recurring focus groups of gender-diverse users to inform route and station design.
+        </div>
+      </div>
+
+      <div class="pol-cell">
+        <div class="pol-num">P · 06</div>
+        <h3>通勤納入勞動條件</h3>
+        <div class="pol-en-h">Commute As Labor Right</div>
+        <div class="pol-body">
+          倡議將「通勤時間」納入勞動條件；輔導企業實施綠色通勤獎勵與彈性工時，回應 55% 女性「兼顧家庭身心俱疲」之結構壓力。
+        </div>
+        <div class="pol-en">
+          Treat commuting time as a labor-condition issue. Subsidize green-commute incentives and flexible work hours, addressing the 55% of women who report burnout from balancing day jobs with night caregiving.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     FOOTER
+     ═══════════════════════════════════════════════════════════ -->
+<footer>
+  <div class="ft-wrap">
+    <div class="ft-grid">
+      <div>
+        <div class="ft-h">VISION ZERO TAIWAN · 2026</div>
+        <div class="ft-tag">
+          交通的<strong>性別觀點</strong><br>
+          <span style="font-family:var(--en);font-size:18px;color:rgba(255,255,255,0.55);">Gender Lens on Mobility.</span>
+        </div>
+        <div class="ft-desc">
+          本資訊圖表為《街道願景白皮書》之衍生視覺彙整，作為 2026 地方選舉「還路於民五大訴求」之佐證資料。<br><br>
+          <em style="font-family:var(--en);font-size:11px;color:rgba(255,255,255,0.35);font-style:italic;">An infographic compiled from the Streets Vision White Paper, supporting the Five Demands campaign for the 2026 local elections.</em>
+        </div>
+      </div>
+
+      <div>
+        <div class="ft-h">Data Sources · 資料來源</div>
+        <ul class="ft-list">
+          <li>交通部統計處<br><span class="ft-list-en">MOTC National Travel Survey, 2009–2024</span></li>
+          <li>女人迷 × CakeResume<br><span class="ft-list-en">Womany Trend Survey, 2024</span></li>
+          <li>104 人力銀行<br><span class="ft-list-en">104 Job Bank Survey, 2024</span></li>
+          <li>新北市政府交通局<br><span class="ft-list-en">New Taipei City Transport Bureau</span></li>
+          <li>APA · IDB Transport Gender Lab<br><span class="ft-list-en">International Reference</span></li>
+        </ul>
+      </div>
+
+      <div>
+        <div class="ft-h">Compiled By · 製作</div>
+        <ul class="ft-list">
+          <li><strong>Yun Ching Wu</strong><br><span class="ft-list-en">EDITOR · COMPILER</span></li>
+          <li><strong>TCAN</strong><br><span class="ft-list-en">Taiwan Climate Action Network</span></li>
+          <li><strong>VZT</strong><br><span class="ft-list-en">Vision Zero Taiwan</span></li>
+          <li><strong>還路於民</strong><br><span class="ft-list-en">Pedestrian Rights Promotion Association</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="ft-bottom">
+      <div class="ft-bottom-l"><strong>VZT · GENDER LENS · v1.0</strong>　·　INFOGRAPHIC · 2026 EDITION</div>
+      <div>CITIES ARE NOT GENDER-NEUTRAL.</div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
