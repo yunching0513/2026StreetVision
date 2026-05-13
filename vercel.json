@@ -1,0 +1,9 @@
+{
+  "name": "2026-street-vision",
+  "rewrites": [
+    {
+      "source": "/",
+      "destination": "/交通的性別觀點_資訊圖表_v1.html"
+    }
+  ]
+}
