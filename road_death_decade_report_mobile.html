@@ -1,0 +1,1506 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>台灣道路死亡的十年真相｜手機版</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --lime: #C8D400;
+  --lime-dk: #A8B200;
+  --black: #1A1A1A;
+  --white: #FFFFFF;
+  --g1: #4A4A4A;
+  --g2: #888888;
+  --g3: #D0D0D0;
+  --g4: #F5F5F3;
+  --tc: 'Noto Sans TC', sans-serif;
+  --en: 'Space Grotesk', sans-serif;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+html { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+body {
+  font-family: var(--tc);
+  color: var(--black);
+  background: var(--white);
+  font-weight: 300;
+  line-height: 1.75;
+  font-size: 14px;
+}
+
+.frame {
+  max-width: 430px;
+  margin: 0 auto;
+  background: var(--white);
+  position: relative;
+}
+
+/* ─── Section base ─── */
+.section {
+  padding: 56px 24px 48px;
+  border-top: 1px solid var(--g3);
+}
+.section:first-of-type { border-top: none; }
+
+.sec-tag {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 28px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--g3);
+}
+.sec-tag-l {
+  font-family: var(--en);
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--g2);
+}
+.sec-tag-r {
+  font-family: var(--en);
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  color: var(--lime-dk);
+  text-transform: uppercase;
+}
+
+.sec-num {
+  font-family: var(--en);
+  font-size: 56px;
+  font-weight: 100;
+  letter-spacing: -0.02em;
+  color: var(--lime-dk);
+  line-height: 0.9;
+  margin-bottom: 4px;
+}
+.sec-eyebrow {
+  font-family: var(--en);
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--g2);
+  margin-bottom: 12px;
+  margin-top: 16px;
+}
+.sec-title {
+  font-size: 26px;
+  font-weight: 100;
+  letter-spacing: 0.04em;
+  line-height: 1.35;
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--g3);
+}
+.sec-title strong { font-weight: 700; }
+
+.lead {
+  font-size: 14px;
+  line-height: 1.95;
+  color: var(--g1);
+  margin-bottom: 32px;
+}
+.lead strong { font-weight: 700; color: var(--black); }
+
+/* ─── HERO ─── */
+.hero {
+  padding: 24px 24px 48px;
+}
+
+.hero-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding-bottom: 20px;
+  margin-bottom: 32px;
+  border-bottom: 1px solid var(--g3);
+}
+.brand-box {
+  border: 1px solid var(--black);
+  padding: 6px 10px;
+}
+.brand-en {
+  font-family: var(--en);
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  color: var(--black);
+}
+.brand-zh {
+  font-size: 9px;
+  margin-top: 3px;
+  letter-spacing: 0.04em;
+  color: var(--black);
+}
+.hero-meta {
+  text-align: right;
+  font-family: var(--en);
+  font-size: 9px;
+  letter-spacing: 0.18em;
+  color: var(--g2);
+  line-height: 1.7;
+  text-transform: uppercase;
+}
+
+.hero-visual {
+  position: relative;
+  height: 280px;
+  margin-bottom: 40px;
+}
+.hero-watermark {
+  position: absolute;
+  left: -8px;
+  bottom: 16px;
+  font-family: var(--en);
+  font-size: 116px;
+  font-weight: 100;
+  letter-spacing: -0.04em;
+  color: var(--g4);
+  line-height: 0.85;
+  z-index: 0;
+}
+.hero-ring {
+  position: absolute;
+  top: 0;
+  right: -10px;
+  width: 240px;
+  height: 240px;
+  z-index: 1;
+}
+
+.hero-eyebrow {
+  font-family: var(--en);
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--lime-dk);
+  margin-bottom: 16px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--black);
+  display: inline-block;
+}
+.hero-title {
+  font-size: 36px;
+  font-weight: 100;
+  letter-spacing: 0.04em;
+  line-height: 1.25;
+  margin-bottom: 16px;
+}
+.hero-title strong { font-weight: 700; }
+.hero-sub {
+  font-family: var(--en);
+  font-size: 14px;
+  font-weight: 300;
+  letter-spacing: 0.02em;
+  color: var(--g1);
+  margin-bottom: 28px;
+}
+.hero-lead {
+  font-size: 14px;
+  line-height: 2;
+  color: var(--g1);
+  border-left: 3px solid var(--lime);
+  padding-left: 16px;
+  margin-bottom: 36px;
+}
+.hero-lead strong { color: var(--black); font-weight: 700; }
+
+.hero-stats {
+  display: flex;
+  gap: 24px;
+  padding-top: 24px;
+  border-top: 1px solid var(--g3);
+}
+.hero-stat { flex: 1; }
+.hs-num {
+  font-family: var(--en);
+  font-size: 36px;
+  font-weight: 100;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  color: var(--black);
+}
+.hs-num.lime { color: var(--lime-dk); }
+.hs-num .u {
+  font-size: 12px;
+  margin-left: 3px;
+  font-weight: 300;
+  color: var(--g1);
+}
+.hs-lbl {
+  font-family: var(--en);
+  font-size: 9px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--g2);
+  margin-top: 8px;
+}
+.hs-zh {
+  font-size: 11px;
+  color: var(--g1);
+  margin-top: 2px;
+}
+
+.hero-credit {
+  margin-top: 24px;
+  padding-top: 16px;
+  font-size: 11px;
+  color: var(--g1);
+  line-height: 1.85;
+  border-top: 1px solid var(--g3);
+}
+.hero-credit strong { color: var(--black); font-weight: 700; }
+
+/* ─── Stat trio (vertical on mobile) ─── */
+.stat-trio {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 24px 0;
+  border-top: 2px solid var(--black);
+  border-bottom: 2px solid var(--black);
+  margin-bottom: 36px;
+}
+.stat-cell {
+  display: grid;
+  grid-template-columns: 130px 1fr;
+  gap: 16px;
+  align-items: center;
+}
+.stat-left { }
+.stat-tag {
+  font-family: var(--en);
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--g2);
+  margin-bottom: 4px;
+}
+.stat-big {
+  font-family: var(--en);
+  font-size: 40px;
+  font-weight: 100;
+  letter-spacing: -0.03em;
+  line-height: 1;
+}
+.stat-big.lm { color: var(--lime-dk); }
+.stat-big .pct { font-size: 18px; }
+.stat-unit {
+  font-family: var(--en);
+  font-size: 11px;
+  color: var(--g1);
+  margin-top: 6px;
+  letter-spacing: 0.02em;
+}
+.stat-desc {
+  font-size: 12px;
+  color: var(--g1);
+  line-height: 1.75;
+}
+.stat-desc strong { color: var(--black); font-weight: 700; }
+
+/* ─── Chart wrap ─── */
+.chart-wrap { margin: 24px 0 36px; }
+.chart-cap {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 12px;
+}
+.chart-tt {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+.chart-meta {
+  font-family: var(--en);
+  font-size: 9px;
+  letter-spacing: 0.16em;
+  color: var(--g2);
+  text-transform: uppercase;
+}
+.chart-leg {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 14px;
+  font-size: 11px;
+  color: var(--g1);
+}
+.chart-leg .lg-item { display: flex; align-items: center; gap: 8px; }
+.chart-leg .sw { width: 18px; height: 3px; flex-shrink: 0; }
+svg.chart { display: block; width: 100%; height: auto; font-family: var(--en); }
+
+/* ─── Insight box ─── */
+.insight {
+  background: var(--g4);
+  padding: 20px 22px;
+  border-left: 4px solid var(--lime);
+  margin: 28px 0;
+}
+.insight-tag {
+  font-family: var(--en);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--lime-dk);
+  margin-bottom: 8px;
+}
+.insight-body {
+  font-size: 13px;
+  line-height: 1.95;
+}
+.insight-body strong { font-weight: 700; }
+
+/* ─── VRU stack bar (works at narrow widths) ─── */
+.vru-stack {
+  display: flex;
+  width: 100%;
+  height: 64px;
+  margin: 24px 0 12px;
+}
+.vru-cell {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 6px;
+  position: relative;
+  min-width: 0;
+  overflow: hidden;
+}
+.vru-cell.dk { background: var(--black); color: var(--white); }
+.vru-cell.gy1 { background: var(--g1); color: var(--white); }
+.vru-cell.gy2 { background: var(--g2); color: var(--white); }
+.vru-cell.lm  { background: var(--lime); color: var(--black); }
+.vru-cell.gy3 { background: var(--g3); color: var(--black); }
+.vru-cell.gy4 { background: var(--g4); color: var(--black); }
+.vru-pct {
+  font-family: var(--en);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  line-height: 1;
+}
+.vru-name {
+  font-size: 9px;
+  margin-top: 3px;
+  letter-spacing: 0;
+}
+.vru-legend-mobile {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px 14px;
+  margin-top: 12px;
+  font-size: 11px;
+  color: var(--g1);
+}
+.vru-legend-mobile .lgi { display: flex; gap: 8px; align-items: center; }
+.vru-legend-mobile .swatch { width: 12px; height: 12px; flex-shrink: 0; }
+
+/* ─── Side-by-side number callout (mobile col) ─── */
+.callout-2 {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 28px;
+  margin: 28px 0;
+}
+.callout {
+  border-top: 2px solid var(--black);
+  padding-top: 16px;
+}
+.callout-num {
+  font-family: var(--en);
+  font-size: 56px;
+  font-weight: 100;
+  letter-spacing: -0.03em;
+  line-height: 1;
+}
+.callout-num .pct { font-size: 22px; vertical-align: top; }
+.callout-num .arrow { color: var(--lime-dk); margin: 0 8px; font-size: 36px; vertical-align: middle; }
+.callout-meta {
+  font-family: var(--en);
+  font-size: 9px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--g2);
+  margin-top: 10px;
+  margin-bottom: 12px;
+}
+.callout-body {
+  font-size: 13px;
+  line-height: 1.95;
+  color: var(--g1);
+}
+.callout-body strong { color: var(--black); font-weight: 700; }
+
+/* ─── Rank list (simplified mobile) ─── */
+.rank-list { margin: 24px 0 28px; }
+.rank-item {
+  display: grid;
+  grid-template-columns: 32px 1fr auto;
+  gap: 12px;
+  align-items: center;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--g3);
+}
+.rank-item.hl { background: #FBFBED; padding-left: 8px; padding-right: 8px; }
+.rank-rk {
+  font-family: var(--en);
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--g2);
+}
+.rank-mode { font-size: 13px; }
+.rank-mode .mn { font-weight: 700; }
+.rank-mode .mt {
+  font-size: 10px;
+  color: var(--g2);
+  margin-top: 2px;
+  font-family: var(--en);
+  letter-spacing: 0.04em;
+}
+.rank-pct {
+  font-family: var(--en);
+  font-size: 14px;
+  font-weight: 700;
+  text-align: right;
+}
+.rank-pct.lm { color: var(--lime-dk); }
+.rank-bar {
+  grid-column: 2 / 4;
+  height: 4px;
+  background: var(--g4);
+  position: relative;
+  margin-top: 8px;
+}
+.rank-bar > div { position: absolute; left: 0; top: 0; height: 100%; background: var(--black); }
+.rank-bar > div.lm { background: var(--lime); }
+
+/* ─── Small multiples mobile (1-col) ─── */
+.sm-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  margin: 24px 0;
+}
+.sm-item { }
+.sm-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 8px;
+}
+.sm-name { font-size: 13px; font-weight: 700; }
+.sm-delta {
+  font-family: var(--en);
+  font-size: 12px;
+  font-weight: 700;
+}
+.sm-delta.up { color: var(--lime-dk); }
+.sm-delta.dn { color: var(--black); }
+.sm-delta.eq { color: var(--g1); }
+.sm-body {
+  font-size: 11px;
+  color: var(--g1);
+  line-height: 1.8;
+  margin-top: 6px;
+}
+.sm-body strong { color: var(--black); font-weight: 700; }
+
+/* ─── Pillar (vertical) ─── */
+.pillars {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin: 28px 0 40px;
+}
+.pillar {
+  border-top: 3px solid var(--lime);
+  padding-top: 20px;
+}
+.pillar-n {
+  font-family: var(--en);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  color: var(--lime-dk);
+  margin-bottom: 8px;
+}
+.pillar-tt {
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  margin-bottom: 4px;
+}
+.pillar-en-tag {
+  font-family: var(--en);
+  font-size: 11px;
+  color: var(--g2);
+  letter-spacing: 0.08em;
+  margin-bottom: 12px;
+}
+.pillar-body {
+  font-size: 12px;
+  line-height: 1.95;
+  color: var(--g1);
+}
+.pillar-body strong { color: var(--black); font-weight: 700; }
+
+/* ─── Targets ─── */
+.targets {
+  border-top: 2px solid var(--black);
+  padding-top: 24px;
+  margin-top: 20px;
+}
+.targets-head {
+  font-family: var(--en);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  color: var(--g2);
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+.targets-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px 20px;
+}
+.target {
+  border-top: 1px solid var(--g3);
+  padding-top: 14px;
+}
+.target-n {
+  font-family: var(--en);
+  font-size: 22px;
+  font-weight: 100;
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+.target-n.lm { color: var(--lime-dk); }
+.target-l {
+  font-size: 11px;
+  font-weight: 700;
+  margin-top: 6px;
+}
+.target-d {
+  font-size: 10px;
+  color: var(--g2);
+  margin-top: 2px;
+  line-height: 1.6;
+}
+
+/* ─── Footer ─── */
+.footer {
+  background: var(--black);
+  color: var(--white);
+  padding: 48px 24px;
+}
+.footer h4 {
+  font-family: var(--en);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--lime);
+  margin-bottom: 14px;
+}
+.footer-block { margin-bottom: 32px; }
+.big-quote {
+  font-size: 20px;
+  font-weight: 100;
+  line-height: 1.55;
+  letter-spacing: 0.04em;
+  color: var(--white);
+  margin-bottom: 20px;
+}
+.big-quote em {
+  font-style: normal;
+  color: var(--lime);
+}
+.footer p {
+  font-size: 12px;
+  line-height: 1.9;
+  color: rgba(255,255,255,0.7);
+  font-weight: 300;
+}
+.footer p strong { color: var(--white); font-weight: 400; }
+.footer ul { list-style: none; }
+.footer ul li {
+  font-size: 11px;
+  color: rgba(255,255,255,0.65);
+  padding: 3px 0;
+  font-weight: 300;
+}
+.footer-credit {
+  margin-top: 8px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(255,255,255,0.12);
+  font-size: 12px;
+  color: rgba(255,255,255,0.75);
+}
+.footer-credit strong { color: var(--white); font-weight: 400; }
+.footer-bottom {
+  padding-top: 20px;
+  margin-top: 16px;
+  border-top: 1px solid rgba(255,255,255,0.12);
+  font-family: var(--en);
+  font-size: 9px;
+  letter-spacing: 0.2em;
+  color: rgba(255,255,255,0.4);
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 1.8;
+}
+</style>
+</head>
+<body>
+
+<div class="frame">
+
+<!-- ═══ HERO ═══ -->
+<section class="hero">
+  <div class="hero-top">
+    <div class="brand-box">
+      <div class="brand-en">VZT</div>
+      <div class="brand-zh">還路於民</div>
+    </div>
+    <div class="hero-meta">
+      Road Death Decade<br>
+      Report — V1<br>
+      ROC 105–114
+    </div>
+  </div>
+
+  <div class="hero-visual">
+    <div class="hero-watermark">2,670</div>
+    <svg class="hero-ring" viewBox="0 0 240 240" aria-hidden="true">
+      <circle cx="120" cy="120" r="86" fill="none" stroke="#C8D400" stroke-width="40"/>
+      <circle cx="120" cy="120" r="86" fill="none" stroke="#A8B200" stroke-width="40"
+              stroke-dasharray="338 540" style="transform-origin:120px 120px;transform:rotate(-90deg)" opacity="0.55"/>
+    </svg>
+  </div>
+
+  <div class="hero-eyebrow">Decade of Road Deaths</div>
+  <h1 class="hero-title">
+    台灣道路死亡的<br>
+    <strong>十年真相</strong>
+  </h1>
+  <div class="hero-sub">Vision Zero × Net Zero<br>Evidence Brief</div>
+  <p class="hero-lead">
+    民國 105–114 年，台灣前 10 大運具死亡人數從 2,686 → 2,670 人，
+    <strong>10 年僅減少 16 人</strong>；
+    但受傷人數從 39.1 萬攀升至 51.5 萬人（+31.7%）。
+    道路系統並未邁向零死亡，而是停滯在「<strong>死亡平台</strong>」上，
+    傷害規模持續擴大。
+  </p>
+
+  <div class="hero-stats">
+    <div class="hero-stat">
+      <div class="hs-num">2,670<span class="u">人</span></div>
+      <div class="hs-lbl">Deaths 2025</div>
+      <div class="hs-zh">114年死亡</div>
+    </div>
+    <div class="hero-stat">
+      <div class="hs-num lime">−0.6<span class="u">%</span></div>
+      <div class="hs-lbl">10Y Change</div>
+      <div class="hs-zh">10年變化</div>
+    </div>
+  </div>
+
+  <div class="hero-credit">
+    資料來源：<strong>交通部道路交通事故統計</strong><br>
+    產製日期：民國 115 年 4 月 8 日<br>
+    整理製作：<strong>Yun Ching Wu 吳昀慶</strong>
+  </div>
+</section>
+
+
+<!-- ═══ FINDING 01 ═══ -->
+<section class="section">
+  <div class="sec-tag">
+    <div class="sec-tag-l">VZT Report · Finding</div>
+    <div class="sec-tag-r">01 / 07</div>
+  </div>
+
+  <div class="sec-num">01</div>
+  <div class="sec-eyebrow">The Plateau and the Surge</div>
+  <h2 class="sec-title">「死亡平台」與<strong>「受傷飛漲」</strong>並存</h2>
+
+  <p class="lead">
+    10 年間，前 10 大運具<strong>死亡人數幾乎沒變</strong>（−0.6%），
+    但受傷成長 31.7%、件數成長 23.4%。
+    傷害規模在擴大，死亡卻無法繼續下降——
+    教育宣導與單點工程已撞上天花板。
+  </p>
+
+  <div class="stat-trio">
+    <div class="stat-cell">
+      <div class="stat-left">
+        <div class="stat-tag">Deaths · 10Y</div>
+        <div class="stat-big">−0.6<span class="pct">%</span></div>
+        <div class="stat-unit">2,686 → 2,670 人</div>
+      </div>
+      <div class="stat-desc">10 年僅減少 <strong>16 人</strong>，停滯在每年約 2,700 人的「死亡平台」。</div>
+    </div>
+    <div class="stat-cell">
+      <div class="stat-left">
+        <div class="stat-tag">Injuries · 10Y</div>
+        <div class="stat-big lm">+31.7<span class="pct">%</span></div>
+        <div class="stat-unit">39.1 → 51.5 萬人</div>
+      </div>
+      <div class="stat-desc">10 年增加 <strong>12.4 萬人</strong>，平均每年新增 1.2 萬人受傷。</div>
+    </div>
+    <div class="stat-cell">
+      <div class="stat-left">
+        <div class="stat-tag">Cases · 10Y</div>
+        <div class="stat-big lm">+23.4<span class="pct">%</span></div>
+        <div class="stat-unit">52.8 → 65.1 萬件</div>
+      </div>
+      <div class="stat-desc">事故件數同步擴大，反映<strong>系統性風險上升</strong>。</div>
+    </div>
+  </div>
+
+  <div class="chart-wrap">
+    <div class="chart-cap">
+      <div class="chart-tt">三項指標 10 年趨勢</div>
+      <div class="chart-meta">2016 = 100</div>
+    </div>
+    <div class="chart-leg">
+      <div class="lg-item"><span class="sw" style="background:#1A1A1A"></span>死亡指數（終值 99）</div>
+      <div class="lg-item"><span class="sw" style="background:#A8B200;height:3px;border-top:1px dashed #A8B200"></span>受傷指數（終值 132）</div>
+      <div class="lg-item"><span class="sw" style="background:#888;border-top:1px dotted #888"></span>件數指數（終值 123）</div>
+    </div>
+    <!-- Vertical-friendly small chart: 380x260 -->
+    <svg class="chart" viewBox="0 0 380 260" preserveAspectRatio="xMidYMid meet" role="img" aria-label="2016-2025 三項指標趨勢">
+      <g stroke="#D0D0D0" stroke-width="0.5">
+        <line x1="30" y1="30" x2="370" y2="30"/>
+        <line x1="30" y1="80" x2="370" y2="80"/>
+        <line x1="30" y1="130" x2="370" y2="130"/>
+        <line x1="30" y1="180" x2="370" y2="180"/>
+        <line x1="30" y1="200" x2="370" y2="200"/>
+      </g>
+      <g font-size="8" fill="#888">
+        <text x="26" y="34" text-anchor="end">140</text>
+        <text x="26" y="84" text-anchor="end">130</text>
+        <text x="26" y="134" text-anchor="end">120</text>
+        <text x="26" y="184" text-anchor="end">110</text>
+        <text x="26" y="204" text-anchor="end">100</text>
+      </g>
+      <line x1="30" y1="200" x2="370" y2="200" stroke="#1A1A1A" stroke-width="1"/>
+      <!--
+        x: 0..9 (10 years) mapped to 30..370, step=37.78
+        y: 100..140 → 200..30, scale=4.25 per index unit
+        y = 200 - (val-100)*4.25
+      -->
+      <!-- Cases gray dotted -->
+      <polyline fill="none" stroke="#888888" stroke-width="1.5" stroke-dasharray="2 3"
+        points="30,200 67.8,212.8 105.6,191.1 143.3,213.9 181.1,214.1 218.9,222.3 256.7,205.8 294.4,168.7 332.2,184.9 370,170.5"/>
+      <!-- Injuries lime-dark dashed -->
+      <polyline fill="none" stroke="#A8B200" stroke-width="2" stroke-dasharray="5 3"
+        points="30,200 67.8,208.9 105.6,173.2 143.3,143.9 181.1,116.3 218.9,121.4 256.7,98.6 294.4,65.7 332.2,83.0 370,65.3"/>
+      <!-- Deaths black solid -->
+      <polyline fill="none" stroke="#1A1A1A" stroke-width="2.2"
+        points="30,200 67.8,217.9 105.6,209.4 143.3,193.6 181.1,177.5 218.9,181.8 256.7,167.7 294.4,183.7 332.2,196.2 370,202.6"/>
+      <!-- Endpoints -->
+      <circle cx="30"  cy="200" r="2.5" fill="#1A1A1A"/>
+      <circle cx="370" cy="202.6" r="3.5" fill="#1A1A1A"/>
+      <circle cx="370" cy="65.3" r="3.5" fill="#A8B200"/>
+      <circle cx="370" cy="170.5" r="3" fill="#888"/>
+      <!-- End labels at right -->
+      <text x="370" y="216" text-anchor="end" font-size="9" font-weight="700" fill="#1A1A1A">99</text>
+      <text x="370" y="58" text-anchor="end" font-size="9" font-weight="700" fill="#A8B200">132</text>
+      <text x="370" y="163" text-anchor="end" font-size="9" font-weight="700" fill="#888">123</text>
+      <!-- X axis labels -->
+      <g font-size="8" fill="#888" text-anchor="middle">
+        <text x="30" y="222">'16</text>
+        <text x="105.6" y="222">'18</text>
+        <text x="181.1" y="222">'20</text>
+        <text x="256.7" y="222">'22</text>
+        <text x="332.2" y="222">'24</text>
+        <text x="370" y="222" text-anchor="end" fill="#1A1A1A" font-weight="700">'25</text>
+      </g>
+    </svg>
+  </div>
+
+  <div class="insight">
+    <div class="insight-tag">含義 · Implication</div>
+    <div class="insight-body">
+      死亡平台＋受傷膨脹的<strong>剪刀差</strong>顯示：道路系統的傷害「<strong>規模在擴大、嚴重度被醫療進步壓住</strong>」。
+      若不從根本進行<strong>速度管理、實體分離、衝突點消除</strong>，
+      下一個十年仍將繼續複製這條死亡平台。
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══ FINDING 02 ═══ -->
+<section class="section">
+  <div class="sec-tag">
+    <div class="sec-tag-l">Motorcycle Dominance</div>
+    <div class="sec-tag-r">02 / 07</div>
+  </div>
+
+  <div class="sec-num">02</div>
+  <div class="sec-eyebrow">62% Death Share</div>
+  <h2 class="sec-title">機車-普通重型死亡占比攀升至 <strong>62%</strong></h2>
+
+  <p class="lead">
+    機車-普通重型死亡占比從 <strong>55%</strong>（105 年）攀升至 <strong>62%</strong>（114 年），
+    高峰期（113 年）達 <strong>65%</strong>。
+    占比上升表示「<strong>其他類別下降比機車快</strong>」——
+    機車族群相對風險惡化中。
+  </p>
+
+  <div class="callout-2">
+    <div class="callout">
+      <div class="callout-num">62.4<span class="pct">%</span></div>
+      <div class="callout-meta">114 · Motorcycle Death Share</div>
+      <div class="callout-body">
+        114 年機車死亡 1,665 人，占全國前 10 運具總死亡的 <strong>62.4%</strong>。
+        反映機車「自始無路權」的結構性設計缺陷。
+      </div>
+    </div>
+    <div class="callout">
+      <div class="callout-num">+186<span class="pct" style="color:#A8B200">人</span></div>
+      <div class="callout-meta">10-Year Absolute Increase</div>
+      <div class="callout-body">
+        絕對死亡人數從 1,479 → 1,665 人，
+        <strong>10 年增加 186 人（+12.6%）</strong>。
+        必須在自治條例層級重新定義機車的合法路權空間。
+      </div>
+    </div>
+  </div>
+
+  <div class="chart-wrap">
+    <div class="chart-cap">
+      <div class="chart-tt">機車-普通重型死亡 10 年趨勢</div>
+      <div class="chart-meta">Annual Deaths</div>
+    </div>
+    <svg class="chart" viewBox="0 0 380 200" preserveAspectRatio="xMidYMid meet" role="img" aria-label="機車死亡10年趨勢">
+      <line x1="20" y1="170" x2="370" y2="170" stroke="#1A1A1A" stroke-width="1"/>
+      <!--
+        max 1832, min 0; bars scaled to height 150
+        scale: 150/1832 = 0.0819
+        x: 10 bars across 350px, bar width 27, gap 8
+      -->
+      <g>
+        <rect x="20"  y="48.9" width="27" height="121.1" fill="#888"/>
+        <rect x="55"  y="55.2" width="27" height="114.8" fill="#888"/>
+        <rect x="90"  y="45.4" width="27" height="124.6" fill="#888"/>
+        <rect x="125" y="41.7" width="27" height="128.3" fill="#888"/>
+        <rect x="160" y="32.3" width="27" height="137.7" fill="#888"/>
+        <rect x="195" y="30.9" width="27" height="139.1" fill="#888"/>
+        <rect x="230" y="20.0" width="27" height="150.0" fill="#C8D400"/>
+        <rect x="265" y="24.1" width="27" height="145.9" fill="#888"/>
+        <rect x="300" y="26.0" width="27" height="144.0" fill="#888"/>
+        <rect x="335" y="33.7" width="27" height="136.3" fill="#1A1A1A"/>
+        <!-- value labels -->
+        <text x="33.5"  y="42"  text-anchor="middle" font-size="8" font-weight="700">1479</text>
+        <text x="68.5"  y="48"  text-anchor="middle" font-size="8" font-weight="700">1401</text>
+        <text x="103.5" y="39"  text-anchor="middle" font-size="8" font-weight="700">1521</text>
+        <text x="138.5" y="35"  text-anchor="middle" font-size="8" font-weight="700">1566</text>
+        <text x="173.5" y="26"  text-anchor="middle" font-size="8" font-weight="700">1681</text>
+        <text x="208.5" y="24"  text-anchor="middle" font-size="8" font-weight="700">1698</text>
+        <text x="243.5" y="13"  text-anchor="middle" font-size="9" font-weight="700" fill="#A8B200">1832</text>
+        <text x="278.5" y="18"  text-anchor="middle" font-size="8" font-weight="700">1782</text>
+        <text x="313.5" y="20"  text-anchor="middle" font-size="8" font-weight="700">1759</text>
+        <text x="348.5" y="27"  text-anchor="middle" font-size="9" font-weight="700">1665</text>
+        <!-- x labels -->
+        <g font-size="8" fill="#888" text-anchor="middle">
+          <text x="33.5"  y="186">105</text>
+          <text x="68.5"  y="186">106</text>
+          <text x="103.5" y="186">107</text>
+          <text x="138.5" y="186">108</text>
+          <text x="173.5" y="186">109</text>
+          <text x="208.5" y="186">110</text>
+          <text x="243.5" y="186" fill="#A8B200" font-weight="700">111</text>
+          <text x="278.5" y="186">112</text>
+          <text x="313.5" y="186">113</text>
+          <text x="348.5" y="186" fill="#1A1A1A" font-weight="700">114</text>
+        </g>
+      </g>
+    </svg>
+  </div>
+</section>
+
+
+<!-- ═══ FINDING 03 ═══ -->
+<section class="section">
+  <div class="sec-tag">
+    <div class="sec-tag-l">Vulnerable Road User Trap</div>
+    <div class="sec-tag-r">03 / 07</div>
+  </div>
+
+  <div class="sec-num">03</div>
+  <div class="sec-eyebrow">VRU Death Share</div>
+  <h2 class="sec-title">弱勢用路人死亡占比常年 <strong>89–92%</strong></h2>
+
+  <p class="lead">
+    機車+行人+自行車+乘客+微電二，合計死亡占比 10 年來穩定在 <strong>九成</strong>。
+    「<strong>90% 風險集中在 90% 最弱勢的人身上</strong>」——
+    這是道路設計風險分佈與空間分配嚴重錯位的失敗指標。
+  </p>
+
+  <div class="chart-cap" style="margin-top:8px">
+    <div class="chart-tt">114 年運具死亡結構</div>
+    <div class="chart-meta">Composition · 2025</div>
+  </div>
+
+  <div class="vru-stack">
+    <div class="vru-cell dk" style="flex: 62.4">
+      <div class="vru-pct">62%</div>
+      <div class="vru-name">機車重型</div>
+    </div>
+    <div class="vru-cell gy1" style="flex: 12.7">
+      <div class="vru-pct">13%</div>
+      <div class="vru-name">行人</div>
+    </div>
+    <div class="vru-cell gy2" style="flex: 8.3">
+      <div class="vru-pct" style="font-size:11px">8%</div>
+      <div class="vru-name" style="font-size:8px">小客車</div>
+    </div>
+    <div class="vru-cell lm" style="flex: 6.3">
+      <div class="vru-pct" style="font-size:11px">6%</div>
+      <div class="vru-name" style="font-size:8px">自行車</div>
+    </div>
+    <div class="vru-cell gy3" style="flex: 5.7">
+      <div class="vru-pct" style="font-size:10px">6%</div>
+      <div class="vru-name" style="font-size:8px">乘客</div>
+    </div>
+    <div class="vru-cell gy4" style="flex: 4.6">
+      <div class="vru-pct" style="font-size:10px">5%</div>
+      <div class="vru-name" style="font-size:8px">其他</div>
+    </div>
+  </div>
+  <div class="vru-legend-mobile">
+    <div class="lgi"><span class="swatch" style="background:#1A1A1A"></span>機車-普通重型 1,665</div>
+    <div class="lgi"><span class="swatch" style="background:#4A4A4A"></span>人-行人 338</div>
+    <div class="lgi"><span class="swatch" style="background:#888"></span>小客車-自用 222</div>
+    <div class="lgi"><span class="swatch" style="background:#C8D400"></span>自行車 167</div>
+    <div class="lgi"><span class="swatch" style="background:#D0D0D0"></span>人-乘客 152</div>
+    <div class="lgi"><span class="swatch" style="background:#F5F5F3;border:1px solid #D0D0D0"></span>其他 6 類 共 126</div>
+  </div>
+
+  <div class="insight">
+    <div class="insight-tag">VRU 占比 · 10 年穩定</div>
+    <div class="insight-body">
+      <strong>105 年 90.1% → 114 年 88.8%</strong>，10 年幾乎未變動。
+      <strong>道路空間分配必須與風險分佈對應</strong>——
+      當前以小客車優先的街道斷面設計，與實際風險嚴重錯位。
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══ FINDING 04 ═══ -->
+<section class="section">
+  <div class="sec-tag">
+    <div class="sec-tag-l">Case Fatality Ranking</div>
+    <div class="sec-tag-r">04 / 07</div>
+  </div>
+
+  <div class="sec-num">04</div>
+  <div class="sec-eyebrow">Energy Disparity Decides</div>
+  <h2 class="sec-title">「<strong>致命度</strong>」排名：<br>能量懸殊決定生死</h2>
+
+  <p class="lead">
+    <strong>致命度＝死亡 ÷（死亡＋受傷）</strong>。
+    曳引車事故致命度 <strong>6.8%</strong>（每 15 件 1 件致命）居冠；
+    機車致命度僅 0.4% 但事故 34 萬件，<strong>件數×致命度</strong>才是總風險槓桿。
+  </p>
+
+  <div class="rank-list">
+    <!-- 1. 曳引車 hl -->
+    <div class="rank-item hl">
+      <div class="rank-rk">01</div>
+      <div class="rank-mode">
+        <div class="mn">曳引車-營業用</div>
+        <div class="mt">1,360 件 · 10 人死亡</div>
+      </div>
+      <div class="rank-pct lm">6.76%</div>
+      <div class="rank-bar"><div class="lm" style="width:100%"></div></div>
+    </div>
+    <!-- 2 大貨車營業 -->
+    <div class="rank-item">
+      <div class="rank-rk">02</div>
+      <div class="rank-mode">
+        <div class="mn">大貨車-營業</div>
+        <div class="mt">2,223 件 · 7 人死亡</div>
+      </div>
+      <div class="rank-pct">3.50%</div>
+      <div class="rank-bar"><div style="width:51.8%"></div></div>
+    </div>
+    <!-- 3 大貨車自用 -->
+    <div class="rank-item">
+      <div class="rank-rk">03</div>
+      <div class="rank-mode">
+        <div class="mn">大貨車-自用</div>
+        <div class="mt">3,089 件 · 8 人死亡</div>
+      </div>
+      <div class="rank-pct">3.39%</div>
+      <div class="rank-bar"><div style="width:50.2%"></div></div>
+    </div>
+    <!-- 4 小貨車 -->
+    <div class="rank-item">
+      <div class="rank-rk">04</div>
+      <div class="rank-mode">
+        <div class="mn">小貨車-自用</div>
+        <div class="mt">21,996 件 · 52 人死亡</div>
+      </div>
+      <div class="rank-pct">2.11%</div>
+      <div class="rank-bar"><div style="width:31.2%"></div></div>
+    </div>
+    <!-- 5 行人 hl -->
+    <div class="rank-item hl">
+      <div class="rank-rk">05</div>
+      <div class="rank-mode">
+        <div class="mn">人-行人</div>
+        <div class="mt">17,124 件 · 338 人死亡</div>
+      </div>
+      <div class="rank-pct lm">2.02%</div>
+      <div class="rank-bar"><div class="lm" style="width:29.9%"></div></div>
+    </div>
+    <!-- 6 自行車 -->
+    <div class="rank-item">
+      <div class="rank-rk">06</div>
+      <div class="rank-mode">
+        <div class="mn">慢車-腳踏自行車</div>
+        <div class="mt">17,092 件 · 167 人死亡</div>
+      </div>
+      <div class="rank-pct">1.05%</div>
+      <div class="rank-bar"><div style="width:15.5%"></div></div>
+    </div>
+    <!-- 7 小客車 -->
+    <div class="rank-item">
+      <div class="rank-rk">07</div>
+      <div class="rank-mode">
+        <div class="mn">小客車-自用</div>
+        <div class="mt">183,181 件 · 222 人死亡</div>
+      </div>
+      <div class="rank-pct">1.03%</div>
+      <div class="rank-bar"><div style="width:15.3%"></div></div>
+    </div>
+    <!-- 8 微電二 -->
+    <div class="rank-item">
+      <div class="rank-rk">08</div>
+      <div class="rank-mode">
+        <div class="mn">微型電動二輪車</div>
+        <div class="mt">9,888 件 · 49 人死亡</div>
+      </div>
+      <div class="rank-pct">0.56%</div>
+      <div class="rank-bar"><div style="width:8.3%"></div></div>
+    </div>
+    <!-- 9 機車 -->
+    <div class="rank-item">
+      <div class="rank-rk">09</div>
+      <div class="rank-mode">
+        <div class="mn">機車-普通重型</div>
+        <div class="mt">348,190 件 · 1,665 人死亡</div>
+      </div>
+      <div class="rank-pct">0.41%</div>
+      <div class="rank-bar"><div style="width:6.1%"></div></div>
+    </div>
+    <!-- 10 乘客 -->
+    <div class="rank-item">
+      <div class="rank-rk">10</div>
+      <div class="rank-mode">
+        <div class="mn">人-乘客</div>
+        <div class="mt">47,081 件 · 152 人死亡</div>
+      </div>
+      <div class="rank-pct">0.31%</div>
+      <div class="rank-bar"><div style="width:4.6%"></div></div>
+    </div>
+  </div>
+
+  <div class="insight">
+    <div class="insight-tag">3 大解讀 · Key Insights</div>
+    <div class="insight-body">
+      <strong>① 曳引車致命度居冠</strong>：每 15 件就 1 件致命，重型商用車碰撞能量懸殊。<br>
+      <strong>② 行人致命度 2.0%</strong>：每 50 件中 1 件致命，反映車輛撞行人時減速不足。<br>
+      <strong>③ 機車的乘積效應</strong>：致命度僅 0.41%，但 34 萬件 × 致命度 = 死亡人數居首。
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══ FINDING 05 ═══ -->
+<section class="section">
+  <div class="sec-tag">
+    <div class="sec-tag-l">10-Year Mode Trajectories</div>
+    <div class="sec-tag-r">05 / 07</div>
+  </div>
+
+  <div class="sec-num">05</div>
+  <div class="sec-eyebrow">Mode Trajectories</div>
+  <h2 class="sec-title">主要運具的 <strong>10 年走向</strong>：誰下降、誰上升</h2>
+
+  <p class="lead">
+    將 4 大運具攤開，可看到<strong>非均衡的改善版圖</strong>：
+    行人與乘客明顯下降，但機車與小客車駕駛卻同步上升。
+    這也是為什麼總死亡會「卡在平台」——一邊降一邊升、互相抵消。
+  </p>
+
+  <div class="sm-grid">
+    <!-- 機車 -->
+    <div class="sm-item">
+      <div class="sm-head">
+        <div class="sm-name">機車-普通重型</div>
+        <div class="sm-delta up">+12.6%</div>
+      </div>
+      <svg class="chart" viewBox="0 0 380 80" preserveAspectRatio="xMidYMid meet" role="img" aria-label="機車10年趨勢">
+        <polyline fill="none" stroke="#1A1A1A" stroke-width="2"
+          points="10,52.9 50,61.2 90,48.4 130,43.6 170,31.4 210,29.5 250,15.3 290,20.6 330,23.0 370,33.0"/>
+        <circle cx="10" cy="52.9" r="3" fill="#1A1A1A"/>
+        <circle cx="370" cy="33.0" r="4" fill="#A8B200"/>
+        <text x="10" y="78" font-size="8" fill="#888">105</text>
+        <text x="370" y="78" text-anchor="end" font-size="8" fill="#888">114</text>
+        <text x="10" y="46" font-size="9" fill="#888" font-weight="700">1,479</text>
+        <text x="370" y="26" text-anchor="end" font-size="9" font-weight="700" fill="#A8B200">1,665</text>
+      </svg>
+      <p class="sm-body">絕對人數增加，占比攀升至 62%。<strong>機車「自始無路權」的結構性缺陷</strong>仍待解。</p>
+    </div>
+    <!-- 行人 -->
+    <div class="sm-item">
+      <div class="sm-head">
+        <div class="sm-name">人-行人</div>
+        <div class="sm-delta dn">−17.4%</div>
+      </div>
+      <svg class="chart" viewBox="0 0 380 80" preserveAspectRatio="xMidYMid meet" role="img" aria-label="行人10年趨勢">
+        <polyline fill="none" stroke="#1A1A1A" stroke-width="2"
+          points="10,36.4 50,48.4 90,37.9 130,16.8 170,27.1 210,36.1 250,42.5 290,53.0 330,61.3 370,65.0"/>
+        <circle cx="10" cy="36.4" r="3" fill="#1A1A1A"/>
+        <circle cx="370" cy="65.0" r="4" fill="#1A1A1A"/>
+        <text x="10" y="78" font-size="8" fill="#888">105</text>
+        <text x="370" y="78" text-anchor="end" font-size="8" fill="#888">114</text>
+        <text x="10" y="30" font-size="9" fill="#888" font-weight="700">409</text>
+        <text x="370" y="58" text-anchor="end" font-size="9" font-weight="700">338</text>
+      </svg>
+      <p class="sm-body">改善趨勢明確，但<strong>致命度仍居第 5</strong>。改善反映「行人空間被擠壓」而非設計改善。</p>
+    </div>
+    <!-- 小客車 -->
+    <div class="sm-item">
+      <div class="sm-head">
+        <div class="sm-name">小客車-自用</div>
+        <div class="sm-delta up">+27.6%</div>
+      </div>
+      <svg class="chart" viewBox="0 0 380 80" preserveAspectRatio="xMidYMid meet" role="img" aria-label="小客車10年趨勢">
+        <polyline fill="none" stroke="#1A1A1A" stroke-width="2"
+          points="10,52.8 50,52.8 90,67.2 130,54.4 170,64.8 210,52.8 250,62.4 290,36.0 330,21.6 370,14.4"/>
+        <circle cx="10" cy="52.8" r="3" fill="#1A1A1A"/>
+        <circle cx="370" cy="14.4" r="4" fill="#A8B200"/>
+        <text x="10" y="78" font-size="8" fill="#888">105</text>
+        <text x="370" y="78" text-anchor="end" font-size="8" fill="#888">114</text>
+        <text x="10" y="46" font-size="9" fill="#888" font-weight="700">174</text>
+        <text x="370" y="8" text-anchor="end" font-size="9" font-weight="700" fill="#A8B200">222</text>
+      </svg>
+      <p class="sm-body"><strong>唯一顯著上升的非弱勢用路人類別</strong>。需檢視高齡駕駛、SUV 比例、鄉道事故結構。</p>
+    </div>
+    <!-- 自行車 -->
+    <div class="sm-item">
+      <div class="sm-head">
+        <div class="sm-name">慢車-腳踏自行車</div>
+        <div class="sm-delta eq">+0.6%</div>
+      </div>
+      <svg class="chart" viewBox="0 0 380 80" preserveAspectRatio="xMidYMid meet" role="img" aria-label="自行車10年趨勢">
+        <polyline fill="none" stroke="#1A1A1A" stroke-width="2"
+          points="10,51.5 50,36.2 90,40.0 130,32.4 170,12.0 210,37.4 250,36.2 290,57.8 330,66.7 370,50.2"/>
+        <circle cx="10" cy="51.5" r="3" fill="#1A1A1A"/>
+        <circle cx="370" cy="50.2" r="4" fill="#4A4A4A"/>
+        <text x="10" y="78" font-size="8" fill="#888">105</text>
+        <text x="370" y="78" text-anchor="end" font-size="8" fill="#888">114</text>
+        <text x="10" y="44" font-size="9" fill="#888" font-weight="700">166</text>
+        <text x="370" y="43" text-anchor="end" font-size="9" font-weight="700">167</text>
+      </svg>
+      <p class="sm-body"><strong>10 年幾乎持平</strong>，未隨自行車政策改善。既有車道多為「劃線型」、缺乏實體分隔。</p>
+    </div>
+  </div>
+
+  <div class="insight">
+    <div class="insight-tag">關鍵啟示 · The Bicycle Case</div>
+    <div class="insight-body">
+      在全國積極推動自行車道與共享單車的政策背景下，自行車死亡<strong>10 年沒下降</strong>，
+      直接呼應《地方雙零自治條例》<strong>第 9、10 條</strong>——
+      「實體分隔不可妥協」「劃線車道不算建設」必須寫入績效指標。
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══ FINDING 06 ═══ -->
+<section class="section">
+  <div class="sec-tag">
+    <div class="sec-tag-l">Regulatory Gap · Micro-EV</div>
+    <div class="sec-tag-r">06 / 07</div>
+  </div>
+
+  <div class="sec-num">06</div>
+  <div class="sec-eyebrow">Classification Shift</div>
+  <h2 class="sec-title">分類斷裂與<strong>監管真空</strong></h2>
+
+  <p class="lead">
+    111 年法規修正將原「電動自行車」改稱「<strong>微型電動二輪車</strong>」、納入「慢車」類別，
+    但其體積、速度、駕駛資格與一般自行車差距懸殊。
+    機車-普通輕型自 112 年起退出前 10，慢車-微型電動二輪車則於 114 年<strong>首次進榜</strong>。
+  </p>
+
+  <div class="chart-wrap">
+    <div class="chart-cap">
+      <div class="chart-tt">機車輕型退榜 ↔ 微電二進榜</div>
+      <div class="chart-meta">Classification Shift</div>
+    </div>
+    <div class="chart-leg">
+      <div class="lg-item"><span class="sw" style="background:#1A1A1A"></span>機車-普通輕型（退榜）</div>
+      <div class="lg-item"><span class="sw" style="background:#C8D400"></span>微型電動二輪車（114 進榜）</div>
+    </div>
+    <svg class="chart" viewBox="0 0 380 200" preserveAspectRatio="xMidYMid meet" role="img" aria-label="微電二進榜">
+      <line x1="20" y1="170" x2="370" y2="170" stroke="#1A1A1A" stroke-width="1"/>
+      <!--
+        max 200 → height 150, scale 0.75
+        10 bars width 27 gap 8
+      -->
+      <g>
+        <rect x="20"  y="47.8"  width="27" height="122.2" fill="#1A1A1A"/>
+        <rect x="55"  y="65.8"  width="27" height="104.2" fill="#1A1A1A"/>
+        <rect x="90"  y="94.3"  width="27" height="75.7"  fill="#1A1A1A"/>
+        <rect x="125" y="112.3" width="27" height="57.7"  fill="#1A1A1A"/>
+        <rect x="160" y="112.3" width="27" height="57.7"  fill="#1A1A1A"/>
+        <rect x="195" y="128.0" width="27" height="42.0"  fill="#1A1A1A"/>
+        <rect x="230" y="127.3" width="27" height="42.7"  fill="#1A1A1A"/>
+        <!-- dashed placeholders 112,113,114 (light) -->
+        <rect x="265" y="156"   width="27" height="14" fill="none" stroke="#888" stroke-dasharray="2 2"/>
+        <rect x="300" y="156"   width="27" height="14" fill="none" stroke="#888" stroke-dasharray="2 2"/>
+        <rect x="335" y="156"   width="27" height="14" fill="none" stroke="#888" stroke-dasharray="2 2"/>
+        <!-- micro-EV bar 49 -->
+        <rect x="335" y="133.3" width="27" height="36.7" fill="#C8D400"/>
+
+        <!-- value labels -->
+        <text x="33.5"  y="42"  text-anchor="middle" font-size="9" font-weight="700">163</text>
+        <text x="68.5"  y="60"  text-anchor="middle" font-size="9" font-weight="700">139</text>
+        <text x="103.5" y="89"  text-anchor="middle" font-size="9" font-weight="700">101</text>
+        <text x="138.5" y="107" text-anchor="middle" font-size="9" font-weight="700">77</text>
+        <text x="173.5" y="107" text-anchor="middle" font-size="9" font-weight="700">77</text>
+        <text x="208.5" y="123" text-anchor="middle" font-size="9" font-weight="700">56</text>
+        <text x="243.5" y="122" text-anchor="middle" font-size="9" font-weight="700">57</text>
+        <text x="278.5" y="152" text-anchor="middle" font-size="8" fill="#888">退榜</text>
+        <text x="313.5" y="152" text-anchor="middle" font-size="8" fill="#888">退榜</text>
+        <text x="348.5" y="128" text-anchor="middle" font-size="9" font-weight="700" fill="#A8B200">49</text>
+
+        <!-- X labels -->
+        <g font-size="8" fill="#888" text-anchor="middle">
+          <text x="33.5"  y="186">105</text>
+          <text x="68.5"  y="186">106</text>
+          <text x="103.5" y="186">107</text>
+          <text x="138.5" y="186">108</text>
+          <text x="173.5" y="186">109</text>
+          <text x="208.5" y="186">110</text>
+          <text x="243.5" y="186">111</text>
+          <text x="278.5" y="186">112</text>
+          <text x="313.5" y="186">113</text>
+          <text x="348.5" y="186" fill="#A8B200" font-weight="700">114</text>
+        </g>
+      </g>
+    </svg>
+  </div>
+
+  <div class="insight">
+    <div class="insight-tag">3 大風險 · Triple Risk</div>
+    <div class="insight-body">
+      <strong>① 連續性比較失準</strong>：機車總死亡被低估。<br>
+      <strong>② 監管真空</strong>：微電二無強制駕訓、無強制責任險、無安全帽強制標準。<br>
+      <strong>③ 路權混淆</strong>：行駛慢車道/人行道，將衝突<strong>重新導向行人與自行車空間</strong>。
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══ FINDING 07 ═══ -->
+<section class="section">
+  <div class="sec-tag">
+    <div class="sec-tag-l">Heavy Commercial · Counter-Trend</div>
+    <div class="sec-tag-r">07 / 07</div>
+  </div>
+
+  <div class="sec-num">07</div>
+  <div class="sec-eyebrow">Heavy Commercial Vehicles</div>
+  <h2 class="sec-title">大型營業車輛死亡<strong>逆勢上升</strong></h2>
+
+  <p class="lead">
+    曳引車/大貨車-營業/半聯結車三類合計死亡，<strong>從 105 年 3 人飆升至 114 年 17 人</strong>，
+    113 年高達 19 人。與全國道安改善方向相反。
+  </p>
+
+  <div class="callout-2">
+    <div class="callout">
+      <div class="callout-num">3<span class="arrow">→</span>17</div>
+      <div class="callout-meta">2016 → 2025 · Deaths</div>
+      <div class="callout-body">
+        三類大型營業車死亡 10 年成長 <strong>逾 5 倍</strong>，
+        且大型營業車事故<strong>致命度極高</strong>——
+        少量事故就帶來重大傷亡。
+      </div>
+    </div>
+    <div class="callout">
+      <div class="callout-num">6.8<span class="pct">%</span></div>
+      <div class="callout-meta">Tractor-Trailer Fatality Rate</div>
+      <div class="callout-body">
+        曳引車事故<strong>每 15 件就 1 件致命</strong>。
+        都市內貨運最後一哩之「替代運具與時段管制」需同步研擬；
+        視野盲區補強裝備、路線管制、疲勞駕駛規範
+        應納入自治條例「商用車安全條款」。
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══ POLICY ═══ -->
+<section class="section">
+  <div class="sec-tag">
+    <div class="sec-tag-l">Policy Implications</div>
+    <div class="sec-tag-r">∞</div>
+  </div>
+
+  <div class="sec-num">∞</div>
+  <div class="sec-eyebrow">From Data to Policy</div>
+  <h2 class="sec-title">突破「死亡平台」的<strong>三大支柱</strong></h2>
+
+  <p class="lead">
+    7 項統計洞見指向同一個結論：<strong>過去 10 年的道安政策已撞上天花板</strong>。
+    教育宣導、單點工程、個人歸責的取徑無法繼續降低死亡，
+    必須轉向 Vision Zero 的「<strong>系統取徑（System Approach）</strong>」。
+  </p>
+
+  <div class="pillars">
+    <div class="pillar">
+      <div class="pillar-n">PILLAR · 01</div>
+      <div class="pillar-tt">速度管理</div>
+      <div class="pillar-en-tag">Speed Management</div>
+      <div class="pillar-body">
+        碰撞動能與速度平方成正比。
+        <strong>市區速限 30 km/h、學校與行人友善區 20 km/h</strong>，
+        搭配實體減速設施（不是測速照相），
+        將「致命碰撞」轉為「可存活碰撞」。
+        對應自治條例第 12、13 條。
+      </div>
+    </div>
+    <div class="pillar">
+      <div class="pillar-n">PILLAR · 02</div>
+      <div class="pillar-tt">實體分離</div>
+      <div class="pillar-en-tag">Physical Separation</div>
+      <div class="pillar-body">
+        VRU 死亡占比常年 9 成。
+        新建/改建自行車道<strong>不得以標線劃設充數</strong>，
+        應以實體緣石、植栽帶或安全島分隔。
+        10 年內完成主要幹道路網串聯。
+        對應自治條例第 9、10 條。
+      </div>
+    </div>
+    <div class="pillar">
+      <div class="pillar-n">PILLAR · 03</div>
+      <div class="pillar-tt">衝突點消除</div>
+      <div class="pillar-en-tag">Conflict Elimination</div>
+      <div class="pillar-body">
+        曳引車致命度 6.8%、行人致命度 2.0%。
+        交直流頻繁路口採<strong>荷蘭式安全路口</strong>、
+        行穿線退縮、視距改善。
+        路口才是真正的死亡熱點。
+        對應自治條例第 9 條第三項。
+      </div>
+    </div>
+  </div>
+
+  <div class="targets">
+    <div class="targets-head">5 大績效目標</div>
+    <div class="targets-grid">
+      <div class="target">
+        <div class="target-n">2035</div>
+        <div class="target-l">交通死傷減半</div>
+        <div class="target-d">相對 2025 基準年</div>
+      </div>
+      <div class="target">
+        <div class="target-n lm">2050</div>
+        <div class="target-l">零死亡 · 零碳排</div>
+        <div class="target-d">Vision Zero × Net Zero</div>
+      </div>
+      <div class="target">
+        <div class="target-n">100%</div>
+        <div class="target-l">實體分隔自行車道</div>
+        <div class="target-d">新建/改建道路強制標準</div>
+      </div>
+      <div class="target">
+        <div class="target-n">10年</div>
+        <div class="target-l">主要幹道路網串聯</div>
+        <div class="target-d">至民國 125 年底前</div>
+      </div>
+      <div class="target" style="grid-column: 1 / 3">
+        <div class="target-n">3年</div>
+        <div class="target-l">優先區完工</div>
+        <div class="target-d">大眾運輸場站半徑 500m + 學校通學半徑 200m</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══ FOOTER ═══ -->
+<footer class="footer">
+  <div class="footer-block">
+    <h4>The Mission · 使命</h4>
+    <div class="big-quote">
+      我們相信交通安全<br>
+      與淨零排放<br>
+      是<em>生命議題</em>。<br>
+      Less is more.
+    </div>
+    <p>
+      本資訊圖表由 <strong>Vision Zero Taiwan（還路於民行人路權促進會）</strong>
+      與 <strong>台灣氣候行動網路（TCAN）</strong> 合作整理，
+      作為 2026 地方選舉前公民倡議與候選人對話之證據基礎。
+    </p>
+  </div>
+
+  <div class="footer-block">
+    <h4>Data Source</h4>
+    <ul>
+      <li>交通部道路交通事故統計系統</li>
+      <li>產製日期：民國 115 年 4 月 8 日</li>
+      <li>時間範圍：民國 105–114 年</li>
+      <li>觀測：10 年 × 10 運具＝100 筆</li>
+    </ul>
+  </div>
+
+  <div class="footer-block">
+    <h4>Apply To</h4>
+    <ul>
+      <li>《地方雙零自治條例》草案</li>
+      <li>2026 候選人五大訴求承諾書</li>
+      <li>道路設計準則修訂</li>
+      <li>道安會報專案檢討依據</li>
+    </ul>
+  </div>
+
+  <div class="footer-credit">
+    整理製作：<strong>Yun Ching Wu 吳昀慶</strong>
+  </div>
+
+  <div class="footer-bottom">
+    VISION ZERO TAIWAN<br>
+    ROAD DEATH DECADE REPORT v1.0<br>
+    2026 EDITION · MAY
+  </div>
+</footer>
+
+</div>
+
+</body>
+</html>
