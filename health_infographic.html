@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1280">
+<title>交通空污與台灣公衛 — 本土流行病學證據圖表集</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --lime:    #C8D400;
+  --lime-dk: #A8B200;
+  --black:   #1A1A1A;
+  --g1:      #4A4A4A;
+  --g2:      #888888;
+  --g3:      #D0D0D0;
+  --g4:      #F5F5F3;
+  --white:   #FFFFFF;
+  --red:     #D14848;
+  --zh:      'Noto Sans TC', sans-serif;
+  --en:      'Space Grotesk', sans-serif;
+  --mono:    'JetBrains Mono', monospace;
+}
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--zh);
+  background: var(--white);
+  color: var(--black);
+  line-height: 1.85;
+  font-weight: 300;
+  -webkit-font-smoothing: antialiased;
+}
+.wrap { max-width: 1280px; margin: 0 auto; padding: 64px 80px; }
+
+/* ── HERO ── */
+.hero {
+  min-height: 100vh;
+  background: var(--black);
+  color: var(--white);
+  padding: 64px 80px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+.hero-top { display: flex; justify-content: space-between; align-items: flex-start; z-index: 2; position: relative; }
+.hero-logo {
+  border: 1px solid rgba(255,255,255,0.3);
+  padding: 8px 16px;
+  font-family: var(--en);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.5);
+}
+.hero-tag { font-family: var(--en); font-size: 10px; letter-spacing: 0.18em; color: rgba(255,255,255,0.4); text-align: right; line-height: 1.8; }
+.hero-mid { flex: 1; display: flex; align-items: center; padding: 80px 0 40px; position: relative; z-index: 2; }
+.hero-circle { position: absolute; right: -120px; top: 40%; transform: translateY(-50%); z-index: 1; opacity: 0.18; }
+.hero-title-block { max-width: 820px; z-index: 2; position: relative; margin-top: 40px; }
+.hero-en { font-family: var(--en); font-size: 13px; font-weight: 500; letter-spacing: 0.24em; text-transform: uppercase; color: var(--lime); margin-bottom: 18px; }
+.hero-zh { font-size: 72px; font-weight: 100; letter-spacing: 0.04em; line-height: 1.2; }
+.hero-zh strong { display: block; font-size: 28px; font-weight: 700; letter-spacing: 0.18em; color: rgba(255,255,255,0.75); margin-top: 18px; }
+.hero-desc { margin-top: 28px; font-size: 18px; color: rgba(255,255,255,0.65); line-height: 1.9; border-left: 3px solid var(--lime); padding-left: 22px; max-width: 720px; }
+.hero-foot { display: flex; justify-content: space-between; align-items: flex-end; padding-top: 28px; border-top: 1px solid rgba(255,255,255,0.12); margin-top: 60px; z-index: 2; position: relative; }
+.hero-meta { font-size: 13px; color: rgba(255,255,255,0.45); line-height: 1.95; }
+.hero-meta strong { color: rgba(255,255,255,0.9); font-weight: 400; }
+.hero-stats { font-family: var(--en); font-size: 11px; letter-spacing: 0.1em; color: rgba(255,255,255,0.35); text-align: right; line-height: 1.95; }
+
+/* ── SECTION ── */
+section { padding: 110px 0; border-top: 1px solid var(--g3); }
+section:first-of-type { border-top: none; padding-top: 80px; }
+.sec-label { display: flex; align-items: baseline; gap: 28px; margin-bottom: 56px; }
+.sec-num { font-family: var(--en); font-size: 96px; font-weight: 300; line-height: 0.9; color: var(--lime); letter-spacing: -0.03em; }
+.sec-title-block { flex: 1; padding-bottom: 14px; border-bottom: 1px solid var(--g3); }
+.sec-en { font-family: var(--en); font-size: 11px; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--g2); margin-bottom: 8px; }
+.sec-title { font-size: 44px; font-weight: 100; letter-spacing: 0.04em; line-height: 1.3; }
+.sec-title strong { font-weight: 700; }
+
+.lead { font-size: 21px; font-weight: 300; line-height: 1.95; color: var(--g1); max-width: 920px; margin-bottom: 56px; text-wrap: pretty; }
+.lead strong { font-weight: 700; color: var(--black); }
+
+/* ── KEY STAT ── */
+.kstat-row { display: grid; grid-template-columns: 1.1fr 1fr; gap: 56px; align-items: stretch; }
+.kstat-big {
+  background: var(--white);
+  padding: 36px 40px;
+  border-bottom: 6px solid var(--lime);
+  border-top: 1px solid var(--g3);
+  border-left: 1px solid var(--g3);
+  border-right: 1px solid var(--g3);
+}
+.kstat-cat { font-family: var(--en); font-size: 11px; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--lime-dk); margin-bottom: 14px; }
+.kstat-num { font-family: var(--en); font-size: 124px; font-weight: 300; line-height: 0.85; letter-spacing: -0.03em; color: var(--black); }
+.kstat-num .u { font-size: 36px; color: var(--g2); margin-left: 6px; letter-spacing: 0; }
+.kstat-num .pct { font-size: 64px; color: var(--g1); }
+.kstat-label { font-size: 19px; color: var(--black); margin-top: 22px; line-height: 1.55; font-weight: 700; }
+.kstat-sub { font-size: 14px; color: var(--g2); margin-top: 10px; line-height: 1.7; }
+
+.kstat-chart {
+  background: var(--g4);
+  padding: 32px 36px;
+}
+.kchart-h { font-family: var(--en); font-size: 11px; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--g2); margin-bottom: 6px; }
+.kchart-t { font-size: 18px; font-weight: 700; margin-bottom: 22px; letter-spacing: 0.02em; }
+
+/* ── BAR CHART ── */
+.bar-row { display: grid; grid-template-columns: 120px 1fr 70px; gap: 14px; align-items: center; padding: 8px 0; }
+.bar-l { font-size: 13px; color: var(--g1); font-weight: 400; }
+.bar-track { background: var(--white); height: 22px; border: 1px solid var(--g3); position: relative; }
+.bar-fill { height: 100%; background: var(--lime); }
+.bar-fill.dk { background: var(--black); }
+.bar-fill.gray { background: var(--g2); }
+.bar-fill.red { background: var(--red); }
+.bar-v { font-family: var(--en); font-size: 13px; font-weight: 600; text-align: right; color: var(--black); }
+
+/* ── DUAL COLUMN STAT GRID ── */
+.stat-grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+.sg-card {
+  background: var(--white);
+  border: 1px solid var(--g3);
+  border-top: 4px solid var(--lime);
+  padding: 26px 24px;
+}
+.sg-cat { font-family: var(--en); font-size: 10px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--lime-dk); margin-bottom: 12px; }
+.sg-n { font-family: var(--en); font-size: 52px; font-weight: 300; line-height: 0.95; letter-spacing: -0.02em; }
+.sg-n .u { font-size: 20px; color: var(--g2); margin-left: 4px; }
+.sg-l { font-size: 14px; color: var(--g1); margin-top: 14px; line-height: 1.6; }
+
+/* ── COMPARE CARD ── */
+.compare {
+  background: var(--g4);
+  padding: 36px 44px;
+  margin-top: 36px;
+}
+.compare-h { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 24px; padding-bottom: 14px; border-bottom: 1px solid var(--g3); }
+.compare-t { font-size: 18px; font-weight: 700; letter-spacing: 0.04em; }
+.compare-source { font-family: var(--en); font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--g2); }
+
+/* ── HIGHLIGHT QUOTE ── */
+.hl { background: var(--black); color: var(--white); padding: 36px 44px; margin: 40px 0; border-left: 6px solid var(--lime); }
+.hl-cat { font-family: var(--en); font-size: 11px; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--lime); margin-bottom: 14px; }
+.hl-t { font-size: 22px; font-weight: 300; line-height: 1.7; letter-spacing: 0.02em; }
+.hl-t strong { font-weight: 700; color: var(--lime); }
+
+/* ── HR / RR card ── */
+.hr-row { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0; margin-top: 28px; background: var(--white); border: 1px solid var(--g3); }
+.hr-cell { padding: 28px 30px; border-right: 1px solid var(--g3); }
+.hr-cell:last-child { border-right: none; }
+.hr-cat { font-family: var(--en); font-size: 10px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--lime-dk); margin-bottom: 12px; }
+.hr-n { font-family: var(--en); font-size: 48px; font-weight: 400; line-height: 0.95; letter-spacing: -0.01em; }
+.hr-l { font-size: 13px; color: var(--g1); margin-top: 12px; line-height: 1.6; }
+.hr-ci { font-family: var(--mono); font-size: 11px; color: var(--g2); margin-top: 6px; }
+
+/* table */
+.tbl { width: 100%; border-collapse: collapse; margin-top: 24px; background: var(--white); border: 1px solid var(--g3); }
+.tbl th { background: var(--black); color: var(--white); padding: 14px 18px; font-size: 13px; font-weight: 700; letter-spacing: 0.06em; text-align: left; }
+.tbl th.r, .tbl td.r { text-align: right; font-family: var(--en); }
+.tbl td { padding: 14px 18px; font-size: 14px; color: var(--g1); border-bottom: 1px solid var(--g3); }
+.tbl tr:last-child td { border-bottom: none; }
+.tbl td.em { font-weight: 700; color: var(--black); background: var(--white); }
+.tbl tr.em-row { background: rgba(200, 212, 0, 0.08); }
+.tbl tr.em-row td { color: var(--black); font-weight: 600; background: rgba(200, 212, 0, 0.08); }
+
+/* tags */
+.pill { display: inline-block; background: var(--lime); font-size: 13px; font-weight: 700; padding: 5px 12px; letter-spacing: 0.04em; margin-right: 6px; }
+.pill.dk { background: var(--black); color: var(--white); }
+.pill.out { background: transparent; border: 1px solid var(--g3); color: var(--g1); font-weight: 400; }
+
+.cite-tag {
+  font-family: var(--en); font-size: 10px; letter-spacing: 0.16em;
+  color: var(--g2); text-transform: uppercase; margin-top: 18px;
+  display: block; border-top: 1px solid var(--g3); padding-top: 12px;
+}
+
+/* PM2.5 commute chart */
+.pm-chart { background: var(--white); padding: 32px 36px; border-top: 4px solid var(--lime); margin-top: 32px; }
+.pm-bar-wrap { display: grid; grid-template-columns: 140px 1fr 100px; gap: 16px; align-items: center; padding: 12px 0; border-bottom: 1px dashed var(--g3); }
+.pm-bar-wrap:last-child { border-bottom: none; }
+.pm-mode { font-size: 14px; font-weight: 400; color: var(--g1); }
+.pm-mode strong { font-weight: 700; color: var(--black); display: block; font-size: 15px; }
+.pm-track { background: var(--g4); height: 32px; position: relative; }
+.pm-fill { height: 100%; background: var(--lime); transition: width 0.6s; }
+.pm-fill.med { background: var(--lime-dk); }
+.pm-fill.high { background: var(--red); }
+.pm-val { font-family: var(--en); font-size: 18px; font-weight: 600; text-align: right; }
+.pm-val .u { font-size: 11px; color: var(--g2); font-weight: 400; display: block; margin-top: 2px; }
+.pm-scale { display: flex; justify-content: space-between; padding-top: 12px; margin-top: 8px; border-top: 1px solid var(--g3); font-family: var(--mono); font-size: 11px; color: var(--g2); }
+
+/* pyramid */
+.pyr { margin-top: 28px; }
+.pyr-row { display: grid; grid-template-columns: 1fr 200px; gap: 0; margin-bottom: 4px; }
+.pyr-bar { background: var(--lime); height: 64px; display: flex; align-items: center; padding: 0 24px; }
+.pyr-bar.l4 { background: var(--lime); }
+.pyr-bar.l3 { background: var(--lime-dk); color: var(--white); }
+.pyr-bar.l2 { background: var(--g1); color: var(--white); }
+.pyr-bar.l1 { background: var(--black); color: var(--white); }
+.pyr-cat { font-size: 16px; font-weight: 700; letter-spacing: 0.02em; }
+.pyr-side { background: var(--white); padding: 12px 20px; border: 1px solid var(--g3); border-left: none; display: flex; align-items: center; font-size: 12px; color: var(--g1); line-height: 1.55; }
+
+/* taiwan map cities */
+.cities-bar { margin-top: 28px; }
+.city-row { display: grid; grid-template-columns: 100px 1fr 100px; gap: 18px; align-items: center; padding: 10px 0; }
+.city-l { font-size: 14px; font-weight: 700; }
+.city-track { height: 28px; background: var(--g4); position: relative; }
+.city-fill { height: 100%; background: var(--lime); }
+.city-fill.high { background: var(--red); }
+.city-v { font-family: var(--en); font-size: 14px; font-weight: 600; text-align: right; }
+
+/* ── FOOTER ── */
+footer {
+  background: var(--black);
+  color: var(--white);
+  padding: 80px;
+  margin-top: 80px;
+}
+.foot-grid { display: grid; grid-template-columns: 2fr 1.2fr; gap: 60px; }
+.foot-meta { font-size: 14px; color: rgba(255,255,255,0.45); line-height: 1.95; }
+.foot-meta strong { color: var(--white); font-weight: 400; }
+.foot-h { font-family: var(--en); font-size: 11px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--lime); margin-bottom: 18px; }
+.foot-list { list-style: none; padding: 0; }
+.foot-list li { font-size: 12.5px; color: rgba(255,255,255,0.65); padding: 5px 0; font-weight: 300; line-height: 1.65; border-bottom: 1px dashed rgba(255,255,255,0.1); }
+.foot-list li:last-child { border-bottom: none; }
+.foot-bottom { padding-top: 36px; margin-top: 56px; border-top: 1px solid rgba(255,255,255,0.12); display: flex; justify-content: space-between; font-family: var(--en); font-size: 11px; letter-spacing: 0.18em; color: rgba(255,255,255,0.35); }
+
+@media print {
+  body { background: var(--white); }
+  section { page-break-inside: avoid; }
+  .hero, .sec-num, footer { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+}
+</style>
+</head>
+<body>
+
+<!-- ═══ HERO ═══ -->
+<header class="hero">
+  <div class="hero-top">
+    <div class="hero-logo">VISION ZERO TAIWAN · 還路於民</div>
+    <div class="hero-tag">PUBLIC HEALTH EVIDENCE<br>2026 EDITION · MAY</div>
+  </div>
+
+  <svg class="hero-circle" width="900" height="900" viewBox="0 0 900 900">
+    <circle cx="450" cy="450" r="360" fill="none" stroke="#C8D400" stroke-width="100"/>
+    <circle cx="450" cy="450" r="360" fill="none" stroke="#C8D400" stroke-width="100" stroke-dasharray="565 2262" style="transform-origin:450px 450px;transform:rotate(-90deg)" opacity="0.55"/>
+  </svg>
+
+  <div class="hero-title-block">
+    <div class="hero-en">Public Health Evidence Brief · Traffic-Related Air Pollution</div>
+    <div class="hero-zh">
+      交通空污與台灣公衛
+      <strong>FROM PM2.5 TO PARKINSON&apos;S · TAIWAN COHORT EVIDENCE</strong>
+    </div>
+    <div class="hero-desc">
+      本資訊圖表彙整台灣本土流行病學研究，呈現交通相關空氣污染（TRAP）對國民健康的系統性影響。從肺腺癌、帕金森氏症、阿茲海默症到兒童氣喘，數據顯示：交通空污不只是呼吸道議題，而是橫跨呼吸、心血管、神經、發育系統的全身性公衛危機。
+    </div>
+  </div>
+
+  <div class="hero-foot">
+    <div class="hero-meta">
+      編製單位：<strong>還路於民行人路權促進會 × Vision Zero Taiwan × TCAN</strong><br>
+      適用：街道願景白皮書 · 雙零交通自治條例草案 · 政策倡議材料
+    </div>
+    <div class="hero-stats">
+      01 — Lung Adenocarcinoma<br>
+      02 — Parkinson&apos;s Disease<br>
+      03 — Alzheimer&apos;s &amp; Dementia<br>
+      04 — Childhood Asthma<br>
+      05 — PM2.5 Commuting Exposure<br>
+      06 — Synthesis &amp; Policy Link
+    </div>
+  </div>
+</header>
+
+<!-- ═══ 01 LUNG ADENOCARCINOMA ═══ -->
+<div class="wrap">
+<section>
+  <div class="sec-label">
+    <div class="sec-num">01</div>
+    <div class="sec-title-block">
+      <div class="sec-en">Lung Adenocarcinoma · 肺腺癌</div>
+      <div class="sec-title">不吸菸卻得肺癌，<strong>台灣的東亞獨特困境</strong></div>
+    </div>
+  </div>
+
+  <p class="lead">
+    肺腺癌已成為台灣肺癌的主流型態，且呈現出與西方截然不同的流行病學特徵：<strong>四分之三的女性肺癌患者並不吸菸</strong>。台大公衛詹長權團隊長達 30 年的追蹤研究指出，居住地 PM2.5 每增加 10 μg/m³，肺腺癌風險比一般肺癌高出 4.4%——髒空氣引發肺腺癌的風險，已超越重度吸菸引發其他類型肺癌的風險。
+  </p>
+
+  <div class="kstat-row">
+    <div class="kstat-big">
+      <div class="kstat-cat">2022 · TAIWAN CANCER REGISTRY</div>
+      <div class="kstat-num">13,189<span class="u"> 人</span></div>
+      <div class="kstat-label">2022 年台灣新發生肺腺癌個案數</div>
+      <div class="kstat-sub">占整體肺癌 73%，女性肺癌中占比高達 88%。<br>台灣每天約 49 人罹患肺癌，其中近 4 分之 3 為肺腺癌。</div>
+    </div>
+
+    <div class="kstat-chart">
+      <div class="kchart-h">CHART · GENDER BREAKDOWN</div>
+      <div class="kchart-t">女性肺癌中，腺癌與「不吸菸」的比例</div>
+
+      <div class="bar-row">
+        <div class="bar-l">女性肺腺癌占比</div>
+        <div class="bar-track"><div class="bar-fill" style="width:88%"></div></div>
+        <div class="bar-v">88%</div>
+      </div>
+      <div class="bar-row">
+        <div class="bar-l">男性肺腺癌占比</div>
+        <div class="bar-track"><div class="bar-fill gray" style="width:60%"></div></div>
+        <div class="bar-v">~60%</div>
+      </div>
+      <div class="bar-row">
+        <div class="bar-l">女性肺癌不吸菸者</div>
+        <div class="bar-track"><div class="bar-fill dk" style="width:75%"></div></div>
+        <div class="bar-v">75%</div>
+      </div>
+      <div class="bar-row">
+        <div class="bar-l">全體肺癌中腺癌</div>
+        <div class="bar-track"><div class="bar-fill" style="width:73%"></div></div>
+        <div class="bar-v">73%</div>
+      </div>
+      <span class="cite-tag">SOURCE · 衛福部國健署 111 年癌症登記報告</span>
+    </div>
+  </div>
+
+  <div class="hl">
+    <div class="hl-cat">KEY FINDING · NTU PUBLIC HEALTH 30-YEAR COHORT</div>
+    <div class="hl-t">
+      PM2.5 每增加 <strong>10 μg/m³</strong>，肺腺癌風險比其他類型肺癌高出 <strong>4.4%</strong>。<br>
+      髒空氣引發肺腺癌的風險，已 <strong>超越重度吸菸</strong> 引發其他類型肺癌的風險。
+    </div>
+  </div>
+
+  <div class="compare">
+    <div class="compare-h">
+      <div class="compare-t">2014 年台灣肺癌死亡之 PM2.5 歸因比例 · 區域差異</div>
+      <div class="compare-source">SOURCE · 台灣癌症基金會</div>
+    </div>
+    <div class="cities-bar">
+      <div class="city-row">
+        <div class="city-l">雲林</div>
+        <div class="city-track"><div class="city-fill high" style="width:86.5%"></div></div>
+        <div class="city-v">17.3%</div>
+      </div>
+      <div class="city-row">
+        <div class="city-l">高雄</div>
+        <div class="city-track"><div class="city-fill high" style="width:79%"></div></div>
+        <div class="city-v">15.8%</div>
+      </div>
+      <div class="city-row">
+        <div class="city-l">全國平均</div>
+        <div class="city-track"><div class="city-fill" style="width:68%"></div></div>
+        <div class="city-v">13.6%</div>
+      </div>
+      <div class="city-row">
+        <div class="city-l">新北</div>
+        <div class="city-track"><div class="city-fill" style="width:59%"></div></div>
+        <div class="city-v">11.8%</div>
+      </div>
+    </div>
+    <p style="font-size:14px;color:var(--g2);margin-top:18px;line-height:1.7">
+      全國 1,252 / 9,167 例肺癌死亡與 PM2.5 相關。國內研究進一步發現，PM2.5 每增加 10 μg/m³，
+      <strong style="color:var(--black)">女性肺癌死亡率上升 16%</strong>，是國外研究（8%）的兩倍，顯示台灣女性對交通空污的脆弱度尤其顯著。
+    </p>
+  </div>
+</section>
+
+<!-- ═══ 02 PARKINSON&apos;S ═══ -->
+<section>
+  <div class="sec-label">
+    <div class="sec-num">02</div>
+    <div class="sec-title-block">
+      <div class="sec-en">Parkinson&apos;s Disease · 帕金森氏症</div>
+      <div class="sec-title">45 萬人台灣世代追蹤，<strong>PM2.5 每升一階，PD 風險升 22%</strong></div>
+    </div>
+  </div>
+
+  <p class="lead">
+    交通空污不只損害呼吸道與心血管，更透過神經發炎與氧化壓力機制傷害中樞神經系統。發表於 <em>Journal of Movement Disorders</em>（2024）的台灣全國世代研究，是目前亞洲規模最大的本土證據。
+  </p>
+
+  <div class="hr-row">
+    <div class="hr-cell">
+      <div class="hr-cat">COHORT SIZE</div>
+      <div class="hr-n">454,583</div>
+      <div class="hr-l">參與者人數<br>平均年齡 63.1 歲，男女各半</div>
+    </div>
+    <div class="hr-cell">
+      <div class="hr-cat">FOLLOW-UP</div>
+      <div class="hr-n">11.1 <span style="font-size:24px;color:var(--g2)">年</span></div>
+      <div class="hr-l">平均追蹤期間<br>共 18,862 人發病（4%）</div>
+    </div>
+    <div class="hr-cell" style="background:rgba(200,212,0,0.1)">
+      <div class="hr-cat" style="color:var(--lime-dk)">HAZARD RATIO</div>
+      <div class="hr-n" style="color:var(--lime-dk)">1.22</div>
+      <div class="hr-l">PM2.5 每升一個四分位距<br>（10.17 μg/m³）的 PD 風險比</div>
+      <div class="hr-ci">95% CI: 1.20 – 1.23</div>
+    </div>
+  </div>
+
+  <div class="hl">
+    <div class="hl-cat">CO-MORBIDITY EVIDENCE</div>
+    <div class="hl-t">
+      慢性阻塞性肺病（COPD）患者在 PM2.5 暴露下，<strong>罹患帕金森氏症的風險顯著高於一般人群</strong>。<br>
+      交通空污透過呼吸 → 心肺 → 神經系統的連鎖效應，正在加速台灣超高齡社會的長照壓力。
+    </div>
+  </div>
+
+  <span class="cite-tag">SOURCE · Journal of Movement Disorders (2024) · Nationwide cohort study in Taiwan · National Health Insurance Research Database</span>
+</section>
+
+<!-- ═══ 03 ALZHEIMER&apos;S ═══ -->
+<section>
+  <div class="sec-label">
+    <div class="sec-num">03</div>
+    <div class="sec-title-block">
+      <div class="sec-en">Alzheimer&apos;s &amp; Dementia · 阿茲海默症</div>
+      <div class="sec-title">高 PM2.5 暴露 × 基因易感性，<strong>失智風險飆升 3.54 倍</strong></div>
+    </div>
+  </div>
+
+  <p class="lead">
+    台灣精準醫療計畫（TPMI）結合 Taiwan Biobank 的配對研究，揭示了空污與失智症之間的「基因—環境交互作用」。對於帶有 NECTIN2 風險基因的高齡者，居住於高 PM2.5 暴露地區將使阿茲海默症風險翻倍再翻倍。
+  </p>
+
+  <div class="kstat-row">
+    <div class="kstat-big">
+      <div class="kstat-cat">GENE × ENVIRONMENT · ADJUSTED OR</div>
+      <div class="kstat-num">3.54<span class="u">×</span></div>
+      <div class="kstat-label">高 PM2.5 暴露 + NECTIN2 風險基因者<br>的阿茲海默症勝算比</div>
+      <div class="kstat-sub">vs. 無風險基因者。95% CI: 1.60–7.03<br>「高 PM2.5 暴露」定義為每年超過 165 天 PM2.5 &gt; 35 μg/m³</div>
+    </div>
+
+    <div class="kstat-chart">
+      <div class="kchart-h">STUDY DESIGN · CASE-CONTROL</div>
+      <div class="kchart-t">台灣精準醫療計畫 · 65–71 歲配對研究</div>
+
+      <table class="tbl">
+        <tr><th>分組</th><th class="r">人數</th></tr>
+        <tr><td>阿茲海默症病例</td><td class="r em">3,229 人</td></tr>
+        <tr><td>對照組</td><td class="r em">12,916 人</td></tr>
+        <tr class="em-row"><td>暴露評估期間</td><td class="r">2005–2014</td></tr>
+        <tr><td>資料來源</td><td class="r">TPMI + Taiwan Biobank</td></tr>
+      </table>
+      <span class="cite-tag">SOURCE · Alzheimer&apos;s &amp; Dementia (2024)</span>
+    </div>
+  </div>
+
+  <p style="margin-top:36px;font-size:17px;color:var(--g1);line-height:1.95;max-width:920px">
+    <strong style="color:var(--black)">為何此研究對台灣具有特殊政策意義？</strong>
+    台灣已正式進入超高齡社會，65 歲以上長者突破 20%（467.3 萬人）。當失智症盛行率上升，
+    長照需求與健保支出將同步飆升。空污是 <strong style="color:var(--black)">可介入的環境風險因子</strong>，
+    交通減量政策即等同於失智症的預防性投資。
+  </p>
+</section>
+
+<!-- ═══ 04 CHILD ASTHMA ═══ -->
+<section>
+  <div class="sec-label">
+    <div class="sec-num">04</div>
+    <div class="sec-title-block">
+      <div class="sec-en">Childhood Asthma · 兒童氣喘</div>
+      <div class="sec-title">全球 194 國中，<strong>台灣兒童氣喘罹病率排名第 4</strong></div>
+    </div>
+  </div>
+
+  <p class="lead">
+    《Lancet Planetary Health》研究指出，全球每年有多達 400 萬名兒童因交通空污引發氣喘。台灣是 <strong>唯一進入全球前 10 名的東亞國家</strong>，每 10 萬名兒童中有 420 例由交通污染引發氣喘——而這個數字背後，是車輛廢氣排放高度與兒童身高重疊的結構性問題。
+  </p>
+
+  <div class="pm-chart">
+    <div class="kchart-h">RANKING · TRAFFIC-RELATED CHILD ASTHMA INCIDENCE</div>
+    <div class="kchart-t">每 10 萬名兒童中因交通空污引發氣喘的個案數</div>
+
+    <div class="pm-bar-wrap">
+      <div class="pm-mode"><strong>🥇 科威特</strong><span style="font-size:11px;color:var(--g2)">排名 #1</span></div>
+      <div class="pm-track"><div class="pm-fill high" style="width:100%"></div></div>
+      <div class="pm-val">550<span class="u">每 10 萬人</span></div>
+    </div>
+    <div class="pm-bar-wrap">
+      <div class="pm-mode"><strong>🥈 阿聯</strong><span style="font-size:11px;color:var(--g2)">排名 #2</span></div>
+      <div class="pm-track"><div class="pm-fill high" style="width:83.6%"></div></div>
+      <div class="pm-val">460<span class="u">每 10 萬人</span></div>
+    </div>
+    <div class="pm-bar-wrap">
+      <div class="pm-mode"><strong>🥉 加拿大</strong><span style="font-size:11px;color:var(--g2)">排名 #3</span></div>
+      <div class="pm-track"><div class="pm-fill med" style="width:81.8%"></div></div>
+      <div class="pm-val">450<span class="u">每 10 萬人</span></div>
+    </div>
+    <div class="pm-bar-wrap" style="background:rgba(200,212,0,0.12);padding:14px 12px;margin:8px -12px">
+      <div class="pm-mode"><strong style="color:var(--lime-dk)">🇹🇼 台灣</strong><span style="font-size:11px;color:var(--lime-dk);font-weight:700">排名 #4（東亞唯一）</span></div>
+      <div class="pm-track" style="background:var(--white)"><div class="pm-fill" style="width:76.4%"></div></div>
+      <div class="pm-val" style="color:var(--lime-dk)">420<span class="u">每 10 萬人</span></div>
+    </div>
+    <span class="cite-tag">SOURCE · Lancet Planetary Health · 公視新聞網報導 (2019)</span>
+  </div>
+
+  <div class="hl">
+    <div class="hl-cat">WHY CHILDREN ARE SO VULNERABLE</div>
+    <div class="hl-t">
+      車輛排氣管的高度與兒童身高 <strong>相當</strong>，使孩童吸入的廢氣濃度遠高於成人。<br>
+      這正是國中、小通學環境必須遠離車流、建置實體隔離的核心理由——<strong>不只是車禍安全，更是空污暴露減量</strong>。
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 05 PM2.5 BY COMMUTE ═══ -->
+<section>
+  <div class="sec-label">
+    <div class="sec-num">05</div>
+    <div class="sec-title-block">
+      <div class="sec-en">PM2.5 by Commute Mode · 通勤運具與空污暴露</div>
+      <div class="sec-title">機車族的肺，<strong>是台灣最嚴重的職業暴露之一</strong></div>
+    </div>
+  </div>
+
+  <p class="lead">
+    王彥智等人（2021）發表於 <em>Atmosphere</em> 的台北都會區實地測量研究，是目前台灣最完整的本土通勤暴露數據。結果顯示，機車騎士在通勤途中的 PM2.5 暴露濃度，是政府監測站數值的數倍以上。
+  </p>
+
+  <div class="pm-chart">
+    <div class="kchart-h">FIELD MEASUREMENT · TAIPEI METROPOLITAN AREA</div>
+    <div class="kchart-t">不同運具通勤途中的 PM2.5 暴露濃度中位數</div>
+
+    <div class="pm-bar-wrap">
+      <div class="pm-mode"><strong>機車</strong>Scooter</div>
+      <div class="pm-track"><div class="pm-fill high" style="width:71.4%"></div></div>
+      <div class="pm-val">75<span class="u">μg/m³</span></div>
+    </div>
+    <div class="pm-bar-wrap">
+      <div class="pm-mode"><strong>步行</strong>Walking</div>
+      <div class="pm-track"><div class="pm-fill med" style="width:38%"></div></div>
+      <div class="pm-val">40<span class="u">μg/m³</span></div>
+    </div>
+    <div class="pm-bar-wrap">
+      <div class="pm-mode"><strong>機車（範圍）</strong>Scooter range</div>
+      <div class="pm-track"><div class="pm-fill" style="width:100%;background:linear-gradient(to right,var(--lime-dk) 0%,var(--lime-dk) 57%,var(--red) 57%,var(--red) 100%)"></div></div>
+      <div class="pm-val">60–105<span class="u">μg/m³</span></div>
+    </div>
+    <div class="pm-bar-wrap">
+      <div class="pm-mode"><strong>WHO 年均建議值</strong>WHO guideline</div>
+      <div class="pm-track"><div class="pm-fill" style="width:4.8%;background:var(--g2)"></div></div>
+      <div class="pm-val">5<span class="u">μg/m³</span></div>
+    </div>
+    <span class="cite-tag">SOURCE · Wang et al. (2021) Atmosphere · WHO Air Quality Guidelines (2021)</span>
+  </div>
+
+  <div class="stat-grid-4" style="margin-top:36px">
+    <div class="sg-card">
+      <div class="sg-cat">OCCUPATIONAL</div>
+      <div class="sg-n">46<span class="u">mg/yr</span></div>
+      <div class="sg-l">機車外送員每日 8 小時道路曝露，估計年累積 PM2.5 吸入量</div>
+    </div>
+    <div class="sg-card">
+      <div class="sg-cat">UNDERESTIMATION</div>
+      <div class="sg-n">10–20<span class="u">×</span></div>
+      <div class="sg-l">近地面 PM2.5 濃度，較 10–15 公尺高的監測站可能高出之倍數</div>
+    </div>
+    <div class="sg-card">
+      <div class="sg-cat">CARDIOPULMONARY</div>
+      <div class="sg-n">+6<span class="u">%</span></div>
+      <div class="sg-l">PM2.5 每增加 10 μg/m³，長期心肺死亡率上升幅度</div>
+    </div>
+    <div class="sg-card">
+      <div class="sg-cat">FEMALE LUNG CANCER</div>
+      <div class="sg-n">+16<span class="u">%</span></div>
+      <div class="sg-l">台灣本土數據：PM2.5 每增 10 μg/m³，女性肺癌死亡率上升幅度（2× 國際）</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 06 SYNTHESIS ═══ -->
+<section>
+  <div class="sec-label">
+    <div class="sec-num">06</div>
+    <div class="sec-title-block">
+      <div class="sec-en">Synthesis · 疾病金字塔與政策連結</div>
+      <div class="sec-title">從急性氣喘到神經退化，<strong>交通空污是台灣公衛的全身性危機</strong></div>
+    </div>
+  </div>
+
+  <p class="lead">
+    將前述五項本土證據整合為「疾病金字塔」，可看出交通相關空污影響的疾病譜系，<strong>橫跨呼吸、心血管、神經、發育系統</strong>。每一層都對應到不同的公衛代價與長期社會成本。
+  </p>
+
+  <div class="pyr">
+    <div class="pyr-row">
+      <div class="pyr-bar l4">
+        <div class="pyr-cat">急性 / 高發　兒童氣喘</div>
+      </div>
+      <div class="pyr-side">每 10 萬人 420 例<br>全球排名第 4</div>
+    </div>
+    <div class="pyr-row" style="grid-template-columns:0.9fr 200px">
+      <div class="pyr-bar l3">
+        <div class="pyr-cat">大宗 / 慢性　心血管疾病</div>
+      </div>
+      <div class="pyr-side">PM2.5 +10 μg/m³<br>心肺死亡率 +6%</div>
+    </div>
+    <div class="pyr-row" style="grid-template-columns:0.75fr 200px">
+      <div class="pyr-bar l3">
+        <div class="pyr-cat">致死 / 高代價　肺腺癌</div>
+      </div>
+      <div class="pyr-side">73% 肺癌占比<br>女性死亡率 +16%</div>
+    </div>
+    <div class="pyr-row" style="grid-template-columns:0.55fr 200px">
+      <div class="pyr-bar l2">
+        <div class="pyr-cat">神經退化　帕金森氏症</div>
+      </div>
+      <div class="pyr-side">HR 1.22 per IQR<br>45 萬人世代</div>
+    </div>
+    <div class="pyr-row" style="grid-template-columns:0.4fr 200px">
+      <div class="pyr-bar l1">
+        <div class="pyr-cat">不可逆　阿茲海默症</div>
+      </div>
+      <div class="pyr-side">OR 3.54 ×<br>基因 × 環境</div>
+    </div>
+  </div>
+
+  <table class="tbl" style="margin-top:48px">
+    <tr>
+      <th>疾病譜系</th>
+      <th>本土關鍵數據</th>
+      <th>對應政策訴求</th>
+    </tr>
+    <tr>
+      <td class="em">兒童氣喘</td>
+      <td>全球第 4 名／420 例 per 100k</td>
+      <td>學校 300m 通學環境改造</td>
+    </tr>
+    <tr>
+      <td class="em">心血管疾病</td>
+      <td>PM2.5 +10 μg/m³ → 死亡 +6%</td>
+      <td>低碳交通區、機車總量管制</td>
+    </tr>
+    <tr>
+      <td class="em">肺腺癌</td>
+      <td>新發 13,189 人（2022）／73%</td>
+      <td>道路空間重分配、主動運輸網</td>
+    </tr>
+    <tr>
+      <td class="em">帕金森氏症</td>
+      <td>HR 1.22（n=454,583）</td>
+      <td>燃油車輛總量抑減、汰舊</td>
+    </tr>
+    <tr>
+      <td class="em">阿茲海默症</td>
+      <td>OR 3.54（高 PM2.5 + 基因易感）</td>
+      <td>長照預防性投資、行人友善區</td>
+    </tr>
+  </table>
+
+  <div class="hl" style="margin-top:48px">
+    <div class="hl-cat">SYSTEM-LEVEL CONCLUSION</div>
+    <div class="hl-t">
+      交通轉型不只是減碳與減傷亡。<br>
+      它是減少 2050 年我國 <strong>長照與健保體系崩潰</strong> 的關鍵預防性投資。<br>
+      <span style="font-size:18px;color:rgba(255,255,255,0.7);font-weight:300;display:block;margin-top:14px">
+      Vision Zero × Net Zero × Public Health = 同一個系統問題的三個切面
+      </span>
+    </div>
+  </div>
+</section>
+</div>
+
+<!-- ═══ FOOTER ═══ -->
+<footer>
+  <div class="foot-grid">
+    <div>
+      <div class="foot-h">編製單位 · COMPILED BY</div>
+      <div class="foot-meta">
+        <strong>還路於民行人路權促進會</strong>（Vision Zero Taiwan）<br>
+        × 台灣氣候行動網絡（TCAN）<br>
+        × 街道願景白皮書工作小組<br><br>
+        <span style="font-size:12px;color:rgba(255,255,255,0.35)">
+        本資訊圖表以 VZT Brand Guidelines v1.0 製作<br>
+        資料截止日：2026 年 5 月　·　版本：v1.0
+        </span>
+      </div>
+    </div>
+
+    <div>
+      <div class="foot-h">參考文獻 · REFERENCES</div>
+      <ul class="foot-list">
+        <li>Wang, C.-Y. et al. (2021). <em>Atmosphere</em>, 12(3), 396.</li>
+        <li>Pope C.A. III (2002). <em>JAMA</em>, 287(9), 1132.</li>
+        <li>詹長權團隊 (2024). 30-year PM2.5 &amp; lung adenocarcinoma. <em>Environmental Research</em>.</li>
+        <li>Taiwan Nationwide Cohort (2024). PM2.5 &amp; Parkinson&apos;s. <em>J Movement Disorders</em>.</li>
+        <li>TPMI × Taiwan Biobank (2024). Air pollution × APOE/NECTIN2 &amp; AD. <em>Alzheimer&apos;s &amp; Dementia</em>.</li>
+        <li>Lancet Planetary Health (2019). Global child asthma from traffic pollution.</li>
+        <li>衛福部國健署. 111 年癌症登記報告.</li>
+        <li>台灣癌症基金會. PM2.5 對肺癌的影響.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="foot-bottom">
+    <div>VZT × PUBLIC HEALTH BRIEF · 2026.05</div>
+    <div>NOT FOR INDIVIDUAL CLINICAL USE</div>
+  </div>
+</footer>
+
+</body>
+</html>
